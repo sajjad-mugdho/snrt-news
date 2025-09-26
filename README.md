@@ -25,6 +25,22 @@ Notes
 - This CDN approach is great for quick prototyping and Figma-to-HTML previews.
 - For production or to customize Tailwind (add plugins, purging, etc.) switch to the official Tailwind CLI/PostCSS/Vite setup described at https://tailwindcss.com/docs/installation.
 
+Mobile-first with Tailwind
+
+This project follows a mobile-first pattern (the Tailwind default). A few rules to keep the codebase consistent:
+
+- Base styles should target the smallest viewport (mobile). Use responsive prefixes for larger screens: e.g. `md:flex` means "flex on screens >= md" while staying stacked by default.
+- Prefer utilities without breakpoint prefixes for mobile behavior, and add `sm:`, `md:`, `lg:`, `xl:` only to change layout on larger sizes.
+- Examples:
+
+    - Hide the desktop nav on mobile and show it on md+: `hidden md:flex`
+    - Typography: `text-base md:text-lg lg:text-2xl` (base is mobile)
+    - Grid: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3`
+
+- Keep the layout container centered with limited max width — this repository uses `src/layout.css` `.site-container` to enforce max-width: 1440px and consistent horizontal padding. The base padding is mobile-friendly; larger screens get more space via media queries.
+
+Following these conventions will keep the template predictable and easy to extend from mobile to desktop.
+
 Fonts
 
 - Tajawal is loaded from Google Fonts for quick preview. The CSS also imports it — you can keep or remove the `@import` depending on your production setup.

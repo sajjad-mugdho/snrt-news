@@ -16,13 +16,13 @@
     />
     <!-- Local fonts stylesheet (self-host Nobel Uno) -->
     <link rel="stylesheet" href="/src/fonts.css">
+    <!-- Layout helpers: enforce max-width 1440px and centered alignment -->
+    <link rel="stylesheet" href="/src/layout.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="bg-gray-50 text-gray-800 font-sans">
     <header class="bg-white border-b">
-      <div
-        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
-      >
+      <div class="site-container py-4 flex items-center justify-between">
         <div class="flex items-center gap-4">
           <a href="#" class="text-2xl font-extrabold text-brand-500">SNRT</a>
           <nav class="hidden md:flex gap-4 text-sm text-gray-600">
@@ -31,6 +31,8 @@
             <a href="#" class="hover:text-gray-900">Politics</a>
             <a href="#" class="hover:text-gray-900">Business</a>
             <a href="#" class="hover:text-gray-900">Tech</a>
+            <!-- Desktop dark mode switch (visible on md+) -->
+            <button id="theme-toggle-nav" aria-label="Toggle dark mode" class="ml-4 text-sm border px-3 py-1 rounded-md">Dark</button>
           </nav>
         </div>
         <div class="flex items-center gap-3">
@@ -39,6 +41,7 @@
             placeholder="Search"
             class="hidden sm:block border rounded-md px-3 py-1 text-sm"
           />
+          <button id="theme-toggle" aria-label="Toggle dark mode" class="text-sm border px-3 py-1 rounded-md">Dark</button>
           <button class="text-sm bg-brand-500 text-white px-3 py-1 rounded-md">
             Subscribe
           </button>
@@ -46,8 +49,9 @@
       </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-8">
-      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <main>
+      <div class="site-container py-8">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Hero -->
         <article class="lg:col-span-2">
           <div
@@ -175,10 +179,12 @@
           </article>
         </div>
       </section>
+        </section>
+      </div>
     </main>
 
     <footer class="mt-12 bg-white border-t">
-      <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-gray-600">
+      <div class="site-container px-0 py-8 text-sm text-gray-600">
         <div class="flex flex-col md:flex-row justify-between gap-4">
           <div>© 2025 SNRT News</div>
           <div class="flex gap-4">
@@ -189,5 +195,41 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function(){
+        var btn = document.getElementById('theme-toggle');
+        var navBtn = document.getElementById('theme-toggle-nav');
+        var root = document.documentElement;
+
+        function updateButtonsLabel(t){
+          var label = t==='dark' ? 'Light' : 'Dark';
+          if(btn) btn.textContent = label;
+          if(navBtn) navBtn.textContent = label;
+        }
+
+        function applyTheme(t){
+          if(t==='dark') root.classList.add('dark'); else root.classList.remove('dark');
+          root.classList.add('user-selected');
+          updateButtonsLabel(t);
+        }
+
+        var saved = localStorage.getItem('snrt-theme');
+        if(saved) applyTheme(saved);
+        else {
+          var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          applyTheme(prefers);
+        }
+
+        function toggleFrom(el){
+          var isDark = document.documentElement.classList.contains('dark');
+          var next = isDark ? 'light' : 'dark';
+          applyTheme(next);
+          localStorage.setItem('snrt-theme', next);
+        }
+
+        if(btn) btn.addEventListener('click', function(){ toggleFrom(btn); });
+        if(navBtn) navBtn.addEventListener('click', function(){ toggleFrom(navBtn); });
+      })();
+    </script>
   </body>
 </html>
