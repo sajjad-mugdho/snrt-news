@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SNRT News — Template</title>
+    <meta
+      name="description"
+      content="News site template built with Tailwind CSS"
+    />
+    <!-- Preload Tajawal from Google for better CLS (kept as-is) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Local fonts stylesheet (self-host Nobel Uno) -->
+    <link rel="stylesheet" href="/src/fonts.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <header class="bg-white border-b">
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-2xl font-extrabold text-brand-500">SNRT</a>
+          <nav class="hidden md:flex gap-4 text-sm text-gray-600">
+            <a href="#" class="hover:text-gray-900">Home</a>
+            <a href="#" class="hover:text-gray-900">World</a>
+            <a href="#" class="hover:text-gray-900">Politics</a>
+            <a href="#" class="hover:text-gray-900">Business</a>
+            <a href="#" class="hover:text-gray-900">Tech</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-3">
+          <input
+            aria-label="Search"
+            placeholder="Search"
+            class="hidden sm:block border rounded-md px-3 py-1 text-sm"
+          />
+          <button class="text-sm bg-brand-500 text-white px-3 py-1 rounded-md">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Hero -->
+        <article class="lg:col-span-2">
+          <div
+            class="relative hero-bg rounded-lg overflow-hidden"
+            style="
+              background-image: url('https://source.unsplash.com/1200x800/?news');
+            "
+          >
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="relative p-8 text-white">
+              <p class="text-sm uppercase tracking-wider">Top Story</p>
+              <h1
+                class="text-3xl text-red-500 md:text-5xl font-extrabold leading-tight"
+              >
+                Major headline from the Figma design converted to HTML +
+                Tailwind
+              </h1>
+              <p class="mt-3 max-w-prose text-gray-100">
+                A short summary to hook readers and provide context for the main
+                story.
+              </p>
+              <div class="mt-4 flex gap-3">
+                <a
+                  href="#"
+                  class="bg-white text-gray-900 px-4 py-2 rounded-md font-medium"
+                  >Read more</a
+                >
+                <a
+                  href="#"
+                  class="border border-white text-white px-4 py-2 rounded-md"
+                  >Share</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Trending list -->
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="article-card p-4">
+              <h3 class="font-semibold">Secondary story headline</h3>
+              <p class="text-sm text-gray-600 mt-2">
+                A 1-2 line summary to entice clicks for the secondary story.
+              </p>
+            </div>
+            <div class="article-card p-4">
+              <h3 class="font-semibold">Another important update</h3>
+              <p class="text-sm text-gray-600 mt-2">
+                Brief summary of another news item from the Figma layout.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside>
+          <div class="p-4 bg-white rounded-lg shadow-sm">
+            <h4 class="font-semibold mb-3">Latest</h4>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li>
+                <a href="#" class="hover:text-gray-900"
+                  >Quick breaking story title</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gray-900"
+                  >Market roundup: Stocks mixed</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gray-900"
+                  >Opinion: The future of tech</a
+                >
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Grid of articles -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold mb-4">More stories</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Repeatable card -->
+          <article class="article-card">
+            <img
+              class="w-full h-40 object-cover"
+              src="https://source.unsplash.com/800x600/?journalism"
+              alt=""
+            />
+            <div class="p-4">
+              <p class="text-xs text-gray-500">World · 2 hours ago</p>
+              <h3 class="font-semibold mt-2">News article headline</h3>
+              <p class="text-sm text-gray-600 mt-2">
+                Short description that summarizes the article content to attract
+                clicks.
+              </p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img
+              class="w-full h-40 object-cover"
+              src="https://source.unsplash.com/800x600/?politics"
+              alt=""
+            />
+            <div class="p-4">
+              <p class="text-xs text-gray-500">Politics · 4 hours ago</p>
+              <h3 class="font-semibold mt-2">Headline for political story</h3>
+              <p class="text-sm text-gray-600 mt-2">
+                Short description for the political story card.
+              </p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img
+              class="w-full h-40 object-cover"
+              src="https://source.unsplash.com/800x600/?business"
+              alt=""
+            />
+            <div class="p-4">
+              <p class="text-xs text-gray-500">Business · 6 hours ago</p>
+              <h3 class="font-semibold mt-2">Business story headline</h3>
+              <p class="text-sm text-gray-600 mt-2">
+                Brief business story description.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-12 bg-white border-t">
+      <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-gray-600">
+        <div class="flex flex-col md:flex-row justify-between gap-4">
+          <div>© 2025 SNRT News</div>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-gray-900">Privacy</a>
+            <a href="#" class="hover:text-gray-900">Terms</a>
+            <a href="#" class="hover:text-gray-900">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

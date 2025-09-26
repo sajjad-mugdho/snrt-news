@@ -1,0 +1,15 @@
+{
+  "name": "snrt-news-template",
+  "version": "1.0.0",
+  "description": "Static HTML + Tailwind CSS news site template (Figma -> HTML)",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^4.1.13"
+  }
+}
