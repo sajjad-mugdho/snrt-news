@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SNRT News — Template</title>
+    <meta
+      name="description"
+      content="News site template built with Tailwind CSS"
+    />
+    <!-- Preload Tajawal from Google for better CLS (kept as-is) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Local fonts stylesheet (self-host Nobel Uno) -->
+    <link rel="stylesheet" href="/src/fonts.css" />
+    <!-- Layout helpers: enforce max-width 1440px and centered alignment -->
+    <link rel="stylesheet" href="/src/layout.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <header class="w-full border-b border-gray-200 shadow-sm">
+      <!-- Top bar -->
+      <div class="bg-gray-100 text-sm">
+        <div
+          class="site-container mx-auto px-2 py-2 grid grid-cols-3 items-center text-gray-600"
+        >
+          <!-- Left: date + location -->
+          <div class="text-left">
+            Lun, 03 Sep, 2024 &nbsp; | &nbsp; Casablanca &nbsp; | &nbsp; 24°C
+          </div>
+
+          <!-- Center: Logo -->
+          <div class="flex justify-center">
+            <a href="#" class="flex items-center">
+              <img src="images/Logo.png" alt="SNRT Logo" class="w-[95px]" />
+              <div
+                class="leading-tight text-black font-extrabold w-[100px] mt-10"
+              >
+                SNRT<br />
+                <span class="tracking-wider">NEWS</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Right: lang + theme -->
+          <div class="flex justify-end items-center space-x-4 font-semibold">
+            <span class="text-black">FR</span>
+            <button id="theme-toggle-nav" aria-label="Toggle dark mode">
+              <svg
+                class="w-5 h-5 text-gray-800"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m8.485-8.485l-.707.707M4.222 19.778l.707-.707M21 12h1M2 12H1m16.95 6.364l-.707-.707M6.343 6.343l-.707-.707"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main nav -->
+      <div class="bg-white border-t border-gray-200">
+        <div class="site-container mx-auto px-4 py-3 flex justify-center">
+          <nav class="flex gap-6 text-sm text-gray-800 font-semibold">
+            <a href="#" class="hover:text-red-600">ACTUALITÉS</a>
+            <a href="#" class="hover:text-red-600">VRAI OU FAKE</a>
+            <a href="#" class="hover:text-red-600">DOSSIER</a>
+            <a href="#" class="hover:text-red-600">ESPACE PARTENAIRES</a>
+            <a href="#" class="hover:text-red-600">VIDÉOS</a>
+            <a href="#" class="hover:text-red-600">IMAGES</a>
+            <a href="#" class="hover:text-red-600">LIVE</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Red sub nav -->
+      <div class="bg-red-600 shadow-md">
+        <div class="site-container mx-auto px-4 py-2">
+          <nav
+            class="flex overflow-x-auto space-x-6 text-sm text-white font-medium justify-center whitespace-nowrap"
+          >
+            <a href="#" class="hover:text-gray-200">ACTIVITÉS ROYALES</a>
+            <a href="#" class="hover:text-gray-200">ACTIVITÉS PRINCIÈRES</a>
+            <a href="#" class="hover:text-gray-200">POLITIQUE</a>
+            <a href="#" class="hover:text-gray-200">SPORT</a>
+            <a href="#" class="hover:text-gray-200">SOCIÉTÉ</a>
+            <a href="#" class="hover:text-gray-200">ÉCONOMIE</a>
+            <a href="#" class="hover:text-gray-200">AFRICA</a>
+            <a href="#" class="hover:text-gray-200">MONDE</a>
+            <a href="#" class="hover:text-gray-200">LIFESTYLE</a>
+            <a href="#" class="hover:text-gray-200">TECHNOLOGIE</a>
+            <a href="#" class="hover:text-gray-200">AGENDA CULTUREL</a>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </nav>
+        </div>
+      </div>
+      <div class="flex items-center justify-center p-4 m-4">
+        <img
+          src="images/bg3.png"
+          alt="Background Image"
+          class="max-w-full h-auto"
+        />
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div class="site-container py-8">
+        <!-- Hero + Sidebar -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Hero -->
+          <article class="lg:col-span-2">
+            <div class="relative hero-bg rounded-lg overflow-hidden">
+              <!-- Content container -->
+              <div
+                class="relative flex flex-col md:flex-row items-start gap-8 my-6"
+              >
+                <!-- Text column -->
+                <div class="flex flex-col justify-start w-[330px]">
+                  <!-- Button -->
+                  <button
+                    class="bg-[#24D5CC] h-[30px] text-white font-semibold px-4 py-2"
+                  >
+                    SPORT
+                  </button>
+
+                  <!-- Heading -->
+                  <h1 class="mt-3 text-[20px] text-black font-black w-[270px]">
+                    Aventures en Altitude, Une Femme et son Chien Conquièrent
+                    les Sommets
+                  </h1>
+
+                  <!-- Paragraph -->
+                  <p
+                    class="mt-3 w-[270px] text-[16px] ffont-nobel text-gray-900 my-3"
+                  >
+                    Dans une quête de liberté et de connexion avec la nature,
+                    Sophie Martin, une passionnée de randonnée de 32 ans, a
+                    entrepris une aventure extraordinaire avec son fidèle
+                    compagnon à quatre pattes, Max.
+                  </p>
+
+                  <!-- Link/button -->
+                  <div class="mt-4">
+                    <a
+                      href="#"
+                      class="bg-white text-gray-900 px-4 py-2 rounded-md font-medium"
+                      >En ce moment</a
+                    >
+                  </div>
+                </div>
+
+                <!-- Image column -->
+                <div class="w-[629px] relative overflow-hidden rounded-md">
+                  <img
+                    src="images/banner1.jpg"
+                    alt=""
+                    class="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- img card -->
+
+            <div class="flex gap-[30px]">
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/img-card/card1.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- img 2 -->
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/img-card/card-2.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- img 3 -->
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/img-card/card-3.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <!-- text card -->
+
+            <div class="flex gap-[30px] my-5">
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <button
+                  class="w bg-[#4682B4] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  MONDE
+                </button>
+
+                <p class="font-nobel font-bold text-[16px] text-black my-10">
+                  La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
+                  rues parsemées de taxis jaunes
+                </p>
+                <a href="#" class="text-[14px] hover:text-gray-900">
+                  Publié à 09h15
+                </a>
+              </div>
+              <!-- text 2 -->
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <button
+                  class="bg-[#FF4500] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  AFRICA</button
+                ><button
+                  class="bg-black h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  Dossier
+                </button>
+                <button
+                  class="bg-white text-black h-[30px] font-semibold px-4 py-2 border"
+                >
+                  3 articles
+                </button>
+                <p class="font-nobel font-bold text-[16px] text-black my-10">
+                  une plateforme dynamique dédiée à la recherche et à la
+                  promotion de solutions locales
+                </p>
+                <a href="#" class="text-[14px] hover:text-gray-900">
+                  Publié à 16h03 <span>|</span> Activités royales
+                </a>
+              </div>
+              <!-- text 3 -->
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <button
+                  class="bg-[#32CD32] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  SOCIETE
+                </button>
+                <p class="font-nobel font-bold text-[16px] text-black my-10">
+                  La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
+                  rues parsemées de taxis jaunes
+                </p>
+                <a href="#" class="text-[14px] hover:text-gray-900">
+                  Publié à 7h45
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sidebar -->
+          <aside>
+            <div class="p-4 bg-white rounded-lg shadow-sm">
+              <h4 class="font-semibold mb-3">Latest</h4>
+              <img
+                src="images/BG2.jpg"
+                alt="Background"
+                class="w-[300px] h-[250px] object-cover opacity-100"
+              />
+              <!-- text section -->
+              <ul class="space-y-3 text-sm text-gray-700">
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    Soufiane el-Bakkali distingué du grade de commandeur de
+                    l’ordre du Ouissam alaouite
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 16h03 <span>|</span> Activités royales
+                  </a>
+                </li>
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    Une réforme judiciaire controversée en voie d’être adoptée
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 15h03<span>|</span> Publié à 15h03
+                  </a>
+                </li>
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    SM le Roi félicite le président ouzbek à l’occasion de la
+                    fête nationale de son pays
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié A 15h25 <span>|</span> Activités Royales
+                  </a>
+                </li>
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    Le monde produit annuellement 57 millions de tonnes de
+                    pollution plastique
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 13h58 <span>|</span> Monde
+                  </a>
+                </li>
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    Une plateforme dynamique dédiée à la recherche et à la
+                    promotion de solutions locales
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 13h58 <span>|</span> africa
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+        <!-- VIDéos section -->
+        <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+          <h1 class="text-2xl font-bold mb-6">VIDéos</h1>
+
+          <!-- 4 cards in a row -->
+          <div class="">
+            <!-- img-1 -->
+
+            <div class="flex gap-[30px]">
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/videos/videos1.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+
+                <div class="absolute inset-0 flex justify-center items-center">
+                  <img src="images/videos/youtub.png" alt="" class="w-[40px]" />
+                </div>
+              </div>
+
+              <!-- img 2 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/videos/videos2.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+
+                <div class="absolute inset-0 flex justify-center items-center">
+                  <img src="images/videos/youtub.png" alt="" class="w-[40px]" />
+                </div>
+              </div>
+              <!-- img 3 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/videos/videos4.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+
+                <div class="absolute inset-0 flex justify-center items-center">
+                  <img src="images/videos/youtub.png" alt="" class="w-[40px]" />
+                </div>
+              </div>
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/videos/videos3.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+
+                <div class="absolute inset-0 flex justify-center items-center">
+                  <img src="images/videos/youtub.png" alt="" class="w-[40px]" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- text card-1 -->
+          <div class="flex gap-[30px] my-5">
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <button
+                class="bg-[#FFB800] h-[30px] text-white font-semibold px-4 py-2"
+              >
+                ECONOMIE</button
+              ><button
+                class="bg-black h-[30px] text-white font-semibold px-4 py-2"
+              >
+                DOSSIER
+              </button>
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
+                rues parsemées de taxis jaunes
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 09h15
+              </a>
+            </div>
+            <!-- text 2 -->
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <button
+                class="bg-[#FF6F61] h-[30px] text-white font-semibold px-4 py-2"
+              >
+                LIFESTYLE
+              </button>
+
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                une plateforme dynamique dédiée à la recherche et à la promotion
+                de solutions locales
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 16h03 <span>|</span> Activités royales
+              </a>
+            </div>
+            <!-- text 3 -->
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <button
+                class="bg-[#32CD32] h-[30px] text-white font-semibold px-4 py-2"
+              >
+                SOCIETE
+              </button>
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
+                rues parsemées de taxis jaunes
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h45
+              </a>
+            </div>
+            <!-- text 4 -->
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <button
+                class="bg-[#24D5CC] h-[30px] text-white font-semibold px-4 py-2"
+              >
+                SPORT
+              </button>
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
+                rues parsemées de taxis jaunes
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h45
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button class="px-4 py-2 bg-[#FF0000] text-white font-black rounded">
+          ACTIVITES ROYALES
+        </button>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Hero -->
+
+          <article class="lg:col-span-2">
+            <div class="relative hero-bg rounded-lg overflow-hidden">
+              <!-- Content container -->
+              <div
+                class="relative flex flex-col md:flex-row items-start gap-8 my-6"
+              >
+                <!-- Text column -->
+                <div class="flex flex-col justify-start w-[330px]">
+                  <!-- Button -->
+                  <button class="w-[64px] h-[30px] bg-[#24D5CC]">SPORT</button>
+
+                  <!-- Heading -->
+                  <h1 class="mt-3 text-[20px] text-black font-black w-[270px]">
+                    SM le Roi reçoit à Tétouan le champion olympique Soufiane El
+                    Bakkali
+                  </h1>
+
+                  <!-- Paragraph -->
+                  <p
+                    class="mt-3 w-[270px] text-[16px] ffont-nobel text-gray-900 my-3"
+                  >
+                    Sa Majesté le Roi Mohammed VI, que Dieu L'assiste, a reçu,
+                    mercredi au Palais Royal à Tétouan, l'athlète Soufiane El
+                    Bakkali, médaillé d'or du 3.000 m steeple masculin lors des
+                    Jeux Olympiques d'été (Paris 2024).
+                  </p>
+
+                  <!-- Link/button -->
+                  <div class="mt-4">
+                    <a
+                      href="#"
+                      class="bg-white text-gray-900 px-4 py-2 rounded-md font-medium"
+                      >Lire la suite</a
+                    >
+                  </div>
+                </div>
+
+                <!-- Image column -->
+                <div class="w-[629px] relative overflow-hidden">
+                  <img
+                    src="images/Activités Royales.png"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sidebar -->
+          <aside>
+            <div class="bg-white rounded-lg shadow-sm">
+              <!-- text section -->
+              <ul class="space-y-3 text-sm text-gray-700">
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    Soufiane el-Bakkali distingué du grade de commandeur de
+                    l’ordre du Ouissam alaouite
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 7h03
+                  </a>
+                </li>
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    SM le Roi félicite le Président du Vietnam à l’occasion de
+                    la fête nationale de son pays
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 7h03
+                  </a>
+                </li>
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    SM le Roi félicite le Souverain de Malaisie à l'occasion de
+                    la fête nationale de son pays
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 7h03
+                  </a>
+                </li>
+                <li class="my-5">
+                  <p
+                    class="w-[300px] opacity-100 leading-snug text-[16px] font-bold font-[Nobel_Uno] capitalize mb-3"
+                  >
+                    SM le Roi félicite le Souverain de Malaisie à l'occasion de
+                    la fête nationale de son pays
+                  </p>
+                  <a href="#" class="text-[14px] hover:text-gray-900">
+                    Publié à 7h03
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+        <!-- ACTIVITES PRINCIERES -->
+        <button
+          class="bg-[#FF0000] h-[30px] text-white font-semibold px-4 py-2"
+        >
+          ACTIVITES PRINCIERES
+        </button>
+
+        <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+          <!-- 4 cards in a row -->
+          <div class="">
+            <!-- img-1 -->
+
+            <div class="flex gap-[30px]">
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ACTIVITES PRINCIERES/ACTIVITES PRINCIERES1.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- img 2 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ACTIVITES PRINCIERES/ACTIVITES PRINCIERES2.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- img 3 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ACTIVITES PRINCIERES/ACTIVITES PRINCIERES3.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ACTIVITES PRINCIERES/ACTIVITES PRINCIERES4.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- text card-1 -->
+          <div class="flex gap-[30px] my-5">
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                Sur Très Haute Instruction de SM le Roi, les Princesses Lalla
+                Meryem, Lalla Asmae et Lalla Hasnaa reçues à déjeuner au Palais
+                de l’Elysée
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+            <!-- text 2 -->
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                Le prince Moulay El Hassan lance la construction de la station
+                de dessalement de Casablanca
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+            <!-- text 3 -->
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                La Princesse Lalla Meryem préside le conseil d'administration
+                des œuvres sociales des FAR
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+            <!-- text 4 -->
+            <div class="w-[300px] h-[199px] overflow-hidden">
+              <p class="font-nobel font-bold text-[16px] text-black my-10">
+                SAR le Prince Héritier Moulay El Hassan préside à Tétouan un
+                déjeuner offert par le Chef du gouvernement
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPORT SECTION-->
+        <button
+          class="bg-[#24D5CC] h-[30px] text-white font-semibold px-4 py-2"
+        >
+          SPORT
+        </button>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Hero -->
+          <article class="lg:col-span-2">
+            <!-- img card -->
+
+            <div class="flex gap-[30px]">
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/SPORT1.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- img 2 -->
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/SPORT2.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- img 3 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <!-- Sport image -->
+                <img
+                  src="images/SPORT3.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+
+                <!-- YouTube icon -->
+                <img
+                  src="images/videos/youtub.png"
+                  alt="YouTube"
+                  class="absolute top-0 right-0 w-[40px] h-[40px]"
+                />
+              </div>
+            </div>
+            <!-- text card -->
+
+            <div class="flex gap-[30px] my-5">
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <button
+                  class="bg-[#4682B4] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  MONDE
+                </button>
+
+                <p class="font-nobel font-bold text-[16px] text-black my-10">
+                  La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
+                  rues parsemées de taxis jaunes
+                </p>
+                <a href="#" class="text-[14px] hover:text-gray-900">
+                  Publié à 09h15
+                </a>
+              </div>
+              <!-- text 2 -->
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <button
+                  class="bg-[#FF4500] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  AFRICA</button
+                ><button
+                  class="bg-black h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  Dossier
+                </button>
+                <button
+                  class="bg-white text-black border border-black h-[30px] font-semibold px-4 py-2"
+                >
+                  3 articles
+                </button>
+                <p class="font-nobel font-bold text-[16px] text-black my-10">
+                  une plateforme dynamique dédiée à la recherche et à la
+                  promotion de solutions locales
+                </p>
+                <a href="#" class="text-[14px] hover:text-gray-900">
+                  Publié à 16h03 <span>|</span> Activités royales
+                </a>
+              </div>
+              <!-- text 3 -->
+              <div class="w-[300px] h-[199px] overflow-hidden">
+                <button
+                  class="bg-[#32CD32] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  SOCIETE
+                </button>
+                <p class="font-nobel font-bold text-[16px] text-black my-10">
+                  La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
+                  rues parsemées de taxis jaunes
+                </p>
+                <a href="#" class="text-[14px] hover:text-gray-900">
+                  Publié à 7h45
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Sidebar BOTOLA -->
+          <aside class="w-[320px] bg-white shadow-lg rounded overflow-hidden">
+            <!-- Header -->
+            <div
+              class="bg-[#24D5CC] px-4 py-3 flex items-center justify-between"
+            >
+              <span class="flex items-center gap-2">
+                البطولة
+                <img
+                  class="w-[34px] h-[34px] object-contain brightness-0 invert"
+                  src="images/Logo.png"
+                  alt="Logo"
+                />
+                BOTOLA
+              </span>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex text-sm font-semibold">
+              <button class="flex-1 bg-black text-white px-3 py-2">
+                JOURNÉES
+              </button>
+              <button class="flex-1 bg-[#3A3A3A] text-white px-3 py-2 border">
+                CLASSEMENT
+              </button>
+              <button class="flex-1 bg-[#3A3A3A] text-white px-3 py-2 border">
+                BUTEURS
+              </button>
+            </div>
+
+            <!-- Journées Dropdown -->
+            <div
+              class="bg-[#FF0000] text-white flex items-center justify-between px-4 py-2 font-semibold text-sm"
+            >
+              <span>JOURNÉES 30</span>
+              <span class="text-lg">▾</span>
+            </div>
+
+            <!-- Matches List -->
+            <div class="">
+              <!-- Match 1 -->
+              <div
+                class="flex items-center justify-between px-4 py-4 hover:bg-gray-100"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/RSB.png"
+                    alt="RSB"
+                    class="w-10 h-10"
+                  />
+                  <p class="text-xs font-semibold">RSB</p>
+                </div>
+                <div class="text-center text-xs">
+                  <p class="font-medium">Jeudi 13 Juin 2024</p>
+                  <p class="font-bold text-gray-800">18:00</p>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/RCAZ.png"
+                    alt="RCAZ"
+                    class="w-10 h-10"
+                  />
+                  <p class="text-xs font-semibold">RCAZ</p>
+                </div>
+              </div>
+
+              <!-- Match 2 -->
+              <div
+                class="flex items-center justify-between px-4 py-4 hover:bg-gray-100"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/MAS.png"
+                    alt="MAS"
+                    class="w-10 h-10 border border-blue-500 rounded"
+                  />
+                  <p class="text-xs font-semibold">MAS</p>
+                </div>
+                <div class="text-center text-xs">
+                  <p class="font-medium">Jeudi 13 Juin 2024</p>
+                  <p class="font-bold text-gray-800">18:00</p>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/OCS.png"
+                    alt="OCS"
+                    class="w-10 h-10"
+                  />
+                  <p class="text-xs font-semibold">OCS</p>
+                </div>
+              </div>
+
+              <!-- Match 3 -->
+              <div
+                class="flex items-center justify-between px-4 py-4 hover:bg-gray-100"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/UTS.png"
+                    alt="UTS"
+                    class="w-10 h-10"
+                  />
+                  <p class="text-xs font-semibold">UTS</p>
+                </div>
+                <div class="text-center text-xs">
+                  <p class="font-medium">Jeudi 13 Juin 2024</p>
+                  <p class="font-bold text-gray-800">18:00</p>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/HUSA.png"
+                    alt="HUSA"
+                    class="w-10 h-10"
+                  />
+                  <p class="text-xs font-semibold">HUSA</p>
+                </div>
+              </div>
+
+              <!-- Match 4 -->
+              <div
+                class="flex items-center justify-between px-4 py-4 hover:bg-gray-100"
+              >
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/WAC.png"
+                    alt="WAC"
+                    class="w-10 h-10"
+                  />
+                  <p class="text-xs font-semibold">WAC</p>
+                </div>
+                <div class="text-center text-xs">
+                  <p class="font-medium">Jeudi 13 Juin 2024</p>
+                  <p class="font-bold text-gray-800">18:00</p>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                  <img
+                    src="images/BOTOLA/MAT.png"
+                    alt="MAT"
+                    class="w-10 h-10"
+                  />
+                  <p class="text-xs font-semibold">MAT</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+        <!-- ESPACE PARTENAIRES SECTION-->
+        <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+          <h1 class="text-2xl font-bold mb-6">ESPACE PARTENAIRES</h1>
+
+          <!-- 4 cards in a row -->
+          <div class="">
+            <!-- img-1 -->
+
+            <div class="flex gap-[30px]">
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ESPACE/ESPACE1.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- img 2 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ESPACE/ESPACE2.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- img 3 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ESPACE/ESPACE3.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/ESPACE/ESPACE4.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- text card-1 -->
+          <div class="flex gap-[30px] my-5">
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Plongez dans un monde de saveurs exotiques avec le nouveau Fanta
+                Mangue-Ananas Ce mélange rafraîchissant !
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+
+            <!-- text 2 -->
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                entrepreneur ou gestionnaire d'entreprise, vous savez combien il
+                est crucial de maximiser votre efficacité tout en réduisant les
+                coûts
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+
+            <!-- text 3 -->
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                L'oxygène est le gaz le plus abondant dans l'atmosphère
+                terrestre ?
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+
+            <!-- text 4 -->
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                L'intelligence artificielle peut apprendre seule sans
+                intervention humaine?
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié le 3 juin
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGES AECTION  SECTION-->
+        <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+          <h1 class="text-2xl font-bold mb-6">IMAGES</h1>
+
+          <!-- 4 cards in a row -->
+          <div class="">
+            <!-- img-1 -->
+
+            <div class="flex gap-[30px]">
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/IMAGES/IMAGES1.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- img 2 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/IMAGES/IMAGES2.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- img 3 -->
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/IMAGES/IMAGES3.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="relative w-[300px] h-[199px] overflow-hidden">
+                <img
+                  src="images/IMAGES/IMAGES4.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- text cards wrapper -->
+          <div class="flex gap-[30px] my-5">
+            <!-- text card-1 -->
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <div>
+                <button
+                  class="bg-[#24D5CC] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  SPORT
+                </button>
+                <p class="font-nobel font-bold text-[16px] text-black mt-4">
+                  Impacts sur l'économie mondiale La crise des matières
+                  premières : Impacts sur l'économie mondiale
+                </p>
+              </div>
+              <a href="#" class="text-[14px] text-[#FF0000] hover:text-black">
+                Publié à 09h15
+              </a>
+            </div>
+
+            <!-- text card-2 -->
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <div>
+                <button
+                  class="bg-[#FF6F61] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  LIFESTYLE
+                </button>
+                <p class="font-nobel font-bold text-[16px] text-black mt-4">
+                  Ryan Reynolds et Hugh Jackman dans Deadpool et Wolverine
+                </p>
+              </div>
+              <a href="#" class="text-[14px] text-[#FF0000] hover:text-black">
+                Publié à 09h15
+              </a>
+            </div>
+
+            <!-- text card-3 -->
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <div class="flex gap-2">
+                <button
+                  class="bg-[#32CD32] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  SOCIETE
+                </button>
+                <button
+                  class="bg-black h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  DOSSIER
+                </button>
+              </div>
+              <p class="font-nobel font-bold text-[16px] text-black mt-4">
+                Plongez dans la musique Gnaoua : Découvrez l’âme vibrante du
+                Maroc
+              </p>
+              <a href="#" class="text-[14px] text-[#FF0000] hover:text-black">
+                Publié à 09h15
+              </a>
+            </div>
+
+            <!-- text card-4 -->
+            <div
+              class="w-[300px] h-[199px] overflow-hidden flex flex-col justify-between"
+            >
+              <div>
+                <button
+                  class="bg-[#FF4500] h-[30px] text-white font-semibold px-4 py-2"
+                >
+                  AFRICA
+                </button>
+                <p class="font-nobel font-bold text-[16px] text-black mt-4">
+                  à Beni, le combat sans fin contre les ADF
+                </p>
+              </div>
+              <a href="#" class="text-[14px] text-red-900"> Publié à 09h15 </a>
+            </div>
+          </div>
+        </div>
+        <!-- PolitiQUE SECTION -->
+        <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+          <!-- 4 cards in a row -->
+          <div class="">
+            <!-- img-1 -->
+
+            <div class="flex gap-[30px]">
+              <div class="w-[300px]">
+                <!-- button -->
+                <div class="mb-3">
+                  <button
+                    class="bg-[#007BFF] h-[30px] text-white font-semibold px-4 py-2 rounded-md hover:bg-red-700"
+                  >
+                    POLITIQUE
+                  </button>
+                </div>
+
+                <!-- image -->
+                <div class="w-[300px] h-[199px] overflow-hidden rounded-lg">
+                  <img
+                    src="images/PolitiQUE.png"
+                    alt="Politique"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <div class="w-[300px]">
+                <!-- button -->
+                <div class="mb-3">
+                  <button
+                    class="bg-[#32CD32] h-[30px] text-white font-semibold px-4 py-2 rounded"
+                  >
+                    SOCIETE
+                  </button>
+                </div>
+                <!-- image -->
+                <div class="w-[300px] h-[199px] overflow-hidden rounded-lg">
+                  <img
+                    src="images/société.png"
+                    alt="Société"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <!-- img 3 -->
+              <div class="w-[300px]">
+                <!-- button -->
+                <div class="mb-3">
+                  <button
+                    class="bg-[#FFC300] h-[30px] text-white font-semibold px-4 py-2 rounded"
+                  >
+                    ÉCONOMIE
+                  </button>
+                </div>
+                <!-- image -->
+                <div class="w-[300px] h-[199px] overflow-hidden rounded-lg">
+                  <img
+                    src="images/économie.png"
+                    alt="Économie"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <!-- img 4 -->
+              <div class="w-[300px]">
+                <!-- button -->
+                <div class="mb-3">
+                  <button
+                    class="bg-[#FF4500] h-[30px] text-white font-semibold px-4 py-2 rounded"
+                  >
+                    AFRICA
+                  </button>
+                </div>
+                <!-- image -->
+                <div class="w-[300px] h-[199px] overflow-hidden rounded-lg">
+                  <img
+                    src="images/AFRICA.png"
+                    alt="Africa"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- text card-1 -->
+          <div class="flex gap-[30px] flex-wrap col-span-full mt-6">
+            <!-- text 1 -->
+            <div
+              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                La gouvernance mondiale face aux crises sanitaires et
+                climatiques
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Promouvoir l'inclusion et la diversité au travail permet, grâce
+                à plus de bien-être et d'engagement
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Les politiques d'inclusion : Vers une société plus équitable
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+            </div>
+
+            <!-- text 2 -->
+            <div
+              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Les politiques d'inclusion : Vers une société plus équitable
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Les migrations : Défis et opportunités pour les sociétés
+                d'accueil
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Les mouvements sociaux : Nouveaux acteurs du changement sociétal
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+            </div>
+
+            <!-- text 3 -->
+            <div
+              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Les défis économiques post-pandémie : Perspectives et stratégies
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Les startups : Acteurs clés de la croissance économique moderne
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                La crise des matières premières : Impacts sur l'économie
+                mondiale
+              </p>
+              <a
+                href="#"
+                class="text-[14px] text-[#FF0000] hover:text-gray-900"
+              >
+                Publié à 7h03
+              </a>
+            </div>
+
+            <!-- text 4 -->
+            <div
+              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+            >
+              <p class="font-nobel font-bold text-[16px] text-black">
+                Bourse d'Innovation Africaine : Des Solutions Locales pour les
+                Défis Mondiaux
+              </p>
+              <a href="#" class="text-[14px] hover:text-gray-900">
+                Publié à 8h03 <span>|</span> Mis à jour à 9h10
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                L’évolution de la littérature africaine Voix et perspectives
+              </p>
+              <a href="#" class="text-[14px] hover:text-gray-900">
+                Publié à 8h03
+              </a>
+
+              <p class="font-nobel font-bold text-[16px] text-black">
+                L’art contemporain africain Une scène en pleine ébullition
+              </p>
+              <a href="#" class="text-[14px] hover:text-gray-900">
+                Publié à 8h03
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- MONDE SECTION -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Hero -->
+          <article class="lg:col-span-2 space-y-6">
+            <!-- img card -->
+            <div class="flex gap-6">
+              <!-- img 1 -->
+              <div class="w-[300px] h-[199px] flex flex-col gap-2">
+                <button
+                  class="bg-[#4682B4] h-[30px] text-white font-semibold px-4 rounded self-start"
+                >
+                  MONDE
+                </button>
+                <img
+                  src="images/MONDE.png"
+                  alt=""
+                  class="w-full h-full object-cover rounded"
+                />
+              </div>
+              <!-- img 2 -->
+              <div class="w-[300px] h-[199px] flex flex-col gap-2">
+                <button
+                  class="bg-[#708090] h-[30px] text-white font-semibold px-4 rounded self-start"
+                >
+                  TECHNOLOGIE
+                </button>
+                <img
+                  src="images/Technologie.png"
+                  alt=""
+                  class="w-full h-full object-cover rounded"
+                />
+              </div>
+              <!-- img 3 -->
+              <div class="w-[300px] h-[199px] flex flex-col gap-2">
+                <button
+                  class="bg-[#FF6F61] h-[30px] text-white font-semibold px-4 rounded self-start"
+                >
+                  LIFESTYLE
+                </button>
+                <img
+                  src="images/Lifestyle.png"
+                  alt=""
+                  class="w-full h-full object-cover rounded"
+                />
+              </div>
+            </div>
+
+            <!-- text card -->
+            <div class="flex gap-6">
+              <!-- text 1 -->
+              <div
+                class="w-[300px] min-h-[199px] flex flex-col gap-3 p-4 bg-gray-50 rounded"
+              >
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  Changement climatique : Les mesures individuelles pour faire
+                  la différence
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  Les océans en danger : Comment protéger la biodiversité marine
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  L'économie circulaire : Vers une société sans déchets
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+              </div>
+
+              <!-- text 2 -->
+              <div
+                class="w-[300px] min-h-[199px] flex flex-col gap-3 p-4 bg-gray-50 rounded"
+              >
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  La révolution de l'IA : Comment l'apprentissage automatique
+                  change le monde
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  Exploration des profondeurs : Avancées en robotique
+                  sous-marine
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  L'avenir de l'informatique quantique : Avancées et défis
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+              </div>
+
+              <!-- text 3 -->
+              <div
+                class="w-[300px] min-h-[199px] flex flex-col gap-3 p-4 bg-gray-50 rounded"
+              >
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  Les bienfaits de la déconnexion numérique pour la santé
+                  mentale
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  Adopter un mode de vie minimaliste : Les clés pour une vie
+                  plus simple
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+
+                <p class="font-nobel font-bold text-[16px] text-black">
+                  Comment gérer le stress au quotidien : Conseils et techniques
+                </p>
+                <a
+                  href="#"
+                  class="text-[14px] text-[#FF0000] hover:text-gray-900"
+                >
+                  Publié à 7h03
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sidebar BOTOLA -->
+          <aside
+            class="w-[320px] bg-white shadow-lg rounded p-4 flex flex-col gap-4 items-center text-center"
+          >
+            <button
+              class="bg-[#8A2BE2] h-[30px] text-white font-semibold px-4 rounded"
+            >
+              AGENDA CULTUREL
+            </button>
+            <img
+              class="w-full h-auto rounded"
+              src="images/sideimg.png"
+              alt=""
+            />
+            <h2 class="text-lg font-bold text-black">Festival Sarouia :</h2>
+            <p class="text-lg text-black">
+              Les Secrets de l'Organisation du Festival Sarouia
+            </p>
+            <button
+              class="bg-black text-white text-xl font-bold px-4 py-2 rounded"
+            >
+              Du 15 au 20 mars 2024
+            </button>
+          </aside>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="bg-gray-50 border-t border-gray-200 mt-12">
+      <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Top Section: Logo, Description, Social, Newsletter -->
+        <div
+          class="flex flex-col lg:flex-row justify-between gap-10 border-b border-gray-300 pb-8 mb-6"
+        >
+          <!-- Left Column: Logo and Description -->
+          <div class="lg:w-1/3 space-y-4">
+            <div class="flex items-center">
+              <!-- Logo (Using the provided structure and fixing the text style) -->
+              <a href="#" class="flex items-center">
+                <img
+                  src="images/Logo.png"
+                  alt="SNRT Icon"
+                  class="w-[75px] mr-1"
+                />
+                <div
+                  class="leading-none text-black font-extrabold text-xl mt-10 -ml-1"
+                >
+                  SNRT<br />
+                  <span class="text-black tracking-wider text-xl font-extrabold"
+                    >NEWS</span
+                  >
+                </div>
+              </a>
+            </div>
+
+            <p class="text-gray-700 text-sm leading-relaxed">
+              SNRTEws est un site électronique marocain d'information, publié en
+              arabe et en français, par la Société nationale de radiodiffusion
+              et de télévision (SNRT).
+            </p>
+
+            <!-- Social Media Icons -->
+            <div class="flex space-x-4 pt-2">
+              <a href="#" class="text-gray-700 hover:text-red-600 transition">
+                <!-- Twitter/X SVG (First SVG provided) -->
+                <svg
+                  class="w-5 h-5"
+                  width="20"
+                  height="19"
+                  viewBox="0 0 20 19"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.5905 7.9908L18.7262 0H17.0617L10.8332 6.93416L5.83169 0H0L7.56905 10.5741L0 19H1.7738L8.33445 11.6463L13.5951 19H19.5362L11.5945 7.99468L11.5905 7.9908ZM14.4334 17.7103L2.58781 1.28972H5.07842L16.8309 17.7103H14.4334Z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-700 hover:text-red-600 transition">
+                <!-- Instagram SVG (Second SVG provided - Simplified for icon) -->
+                <svg
+                  class="w-5 h-5"
+                  width="21"
+                  height="19"
+                  viewBox="0 0 21 19"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.4382 4.60547C7.62496 4.60547 5.33398 6.80304 5.33398 9.50158C5.33398 12.2001 7.62496 14.3977 10.4382 14.3977C13.2514 14.3977 15.5424 12.2001 15.5424 9.50158C15.5424 6.80304 13.2514 4.60547 10.4382 4.60547ZM10.4382 12.7111C8.59287 12.7111 7.09225 11.2717 7.09225 9.50158C7.09225 7.7315 8.59287 6.29206 10.4382 6.29206C12.2835 6.29206 13.7841 7.7315 13.7841 9.50158C13.7841 11.2717 12.2835 12.7111 10.4382 12.7111Z"
+                  />
+                  <path
+                    d="M15.7582 3.17578C15.4205 3.17578 15.0862 3.30603 14.8495 3.53648C14.6092 3.76692 14.47 4.0842 14.47 4.4115C14.47 4.7388 14.6092 5.05608 14.8495 5.28652C15.0862 5.51697 15.4205 5.64722 15.7582 5.64722C16.0959 5.64722 16.4302 5.51363 16.6704 5.28652C16.9107 5.05608 17.0464 4.73546 17.0464 4.4115C17.0464 4.08754 16.9107 3.76692 16.6704 3.53648C16.4302 3.30603 16.0994 3.17578 15.7582 3.17578Z"
+                  />
+                  <path
+                    d="M14.8773 0H6.00243C2.98727 0 0.536133 2.3512 0.536133 5.24345V13.7565C0.536133 16.6488 2.98727 19 6.00243 19H14.8773C17.8925 19 20.3436 16.6488 20.3436 13.7565V5.24345C20.3436 2.3512 17.8925 0 14.8773 0ZM18.5854 13.7599C18.5854 15.7203 16.9211 17.3168 14.8773 17.3168H6.00243C3.95867 17.3168 2.2944 15.7203 2.2944 13.7599V5.24679C2.2944 3.28634 3.95867 1.68993 6.00243 1.68993H14.8773C16.9246 1.68993 18.5854 3.28634 18.5854 5.24679V13.7599Z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-700 hover:text-red-600 transition">
+                <!-- Facebook SVG (Third SVG provided) -->
+                <svg
+                  class="w-5 h-5"
+                  width="10"
+                  height="19"
+                  viewBox="0 0 10 19"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.2465 9.49833H6.53076V19H2.81925V9.49833H0.34375V6.22535H2.81925L2.81577 4.30163C2.81577 1.62313 3.5713 0 6.85456 0H9.5912V3.27966H7.88167C6.60736 3.27966 6.53425 3.74389 6.53425 4.58552V6.22201H9.61209L9.24999 9.50167L9.2465 9.49833Z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-700 hover:text-red-600 transition">
+                <!-- YouTube SVG (Fourth SVG provided) -->
+                <svg
+                  class="w-5 h-5"
+                  width="30"
+                  height="19"
+                  viewBox="0 0 30 19"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24.6655 0H5.47191C2.7867 0 0.612061 2.08599 0.612061 4.66173V14.0396C0.612061 16.6153 2.7867 18.7013 5.47191 18.7013H24.6655C27.3507 18.7013 29.5253 16.6153 29.5253 14.0396V4.66173C29.5253 2.08599 27.3507 0 24.6655 0ZM12.3551 13.3186V5.36915L19.21 9.34159L12.3551 13.314V13.3186Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Navigation Links and Newsletter -->
+          <div class="lg:w-2/3 flex flex-col md:flex-row justify-end gap-8">
+            <!-- Main Link Groups (ACTITIVÉS ROYALES, ÉCONOMIE, etc.) -->
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 gap-x-12 gap-y-3 text-sm font-medium"
+            >
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >ACTITIVÉS ROYALES</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >ÉCONOMIE</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >SOCIÉTÉ</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >ACTITIVÉS PRINCIÈRES</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >TECHNOLOGIE</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >LIFESTYLE</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600">SPORT</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600">MONDE</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >VRAI OU FAKE</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >POLITIQUE</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >AFRICA</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >AGENDA CULTUREL</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Newsletter Button -->
+            <div class="flex items-center justify-end">
+              <button
+                class="bg-black text-[#FF0000] px-6 py-3 text-sm font-semibold rounded-lg hover:bg-gray-300 transition tracking-wider uppercase"
+              >
+                Newsletter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer Links and Copyright -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500"
+        >
+          <div class="mb-2 md:mb-0">
+            Copyrights by <span class="font-bold text-gray-700">SNRT</span>
+          </div>
+          <nav
+            class="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-1"
+          >
+            <a href="#" class="hover:text-red-600">Qui sommes-nous ?</a>
+            <a href="#" class="hover:text-red-600">Contact</a>
+            <a href="#" class="hover:text-red-600">Charte éditoriale</a>
+            <a href="#" class="hover:text-red-600"
+              >Politique de confidentialité</a
+            >
+            <a href="#" class="hover:text-red-600">Plan du site</a>
+            <a href="#" class="hover:text-red-600">Toutes les actualités</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        var navBtn = document.getElementById("theme-toggle-nav");
+        var root = document.documentElement;
+
+        function updateButtonsLabel(t) {
+          var label = t === "dark" ? "Light" : "Dark";
+          if (btn) btn.textContent = label;
+          if (navBtn) navBtn.textContent = label;
+        }
+
+        function applyTheme(t) {
+          if (t === "dark") root.classList.add("dark");
+          else root.classList.remove("dark");
+          root.classList.add("user-selected");
+          updateButtonsLabel(t);
+        }
+
+        var saved = localStorage.getItem("snrt-theme");
+        if (saved) applyTheme(saved);
+        else {
+          var prefers =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          applyTheme(prefers);
+        }
+
+        function toggleFrom(el) {
+          var isDark = document.documentElement.classList.contains("dark");
+          var next = isDark ? "light" : "dark";
+          applyTheme(next);
+          localStorage.setItem("snrt-theme", next);
+        }
+
+        if (btn)
+          btn.addEventListener("click", function () {
+            toggleFrom(btn);
+          });
+        if (navBtn)
+          navBtn.addEventListener("click", function () {
+            toggleFrom(navBtn);
+          });
+      })();
+    </script>
+  </body>
+</html>
