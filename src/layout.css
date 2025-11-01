@@ -1,7 +1,7 @@
 /* Layout helpers: site container with a consistent max width and centered layout
    This enforces a global content width (1440px) and avoids future layout drift.
 */
-.site-container{
+.site-container {
   box-sizing: border-box;
   width: 100%;
   max-width: 1440px !important; /* enforce even if Tailwind classes also set max-width */
@@ -14,57 +14,89 @@
 
 @media (min-width: 768px) {
   /* md */
-  .site-container { padding-left: 2rem; padding-right: 2rem; }
+  .site-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
   /* lg */
-  .site-container { padding-left: 3rem; padding-right: 3rem; }
+  .site-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 /* Utility to keep inner content aligned and prevent overflow */
-.site-inner{ max-width: 100%; margin: 0 auto; }
+.site-inner {
+  max-width: 100%;
+  margin: 0 auto;
+}
 
 /* Color system (light & dark) - use CSS variables so CDN Tailwind utilities still work
    Light mode values (defaults)
 */
-:root{
-  --bg: rgba(255,255,255,1);
-  --text-primary: rgba(0,0,0,1);
-  --text-secondary: rgba(0,0,0,0.5);
-  --surface: rgba(238,238,238,1);
-  --accent: rgba(0,0,0,0.08);
+:root {
+  --bg: rgba(255, 255, 255, 1);
+  --text-primary: rgba(0, 0, 0, 1);
+  --text-secondary: rgba(0, 0, 0, 0.5);
+  --surface: rgba(238, 238, 238, 1);
+  --accent: rgba(0, 0, 0, 0.08);
 }
 
 /* Dark mode override when .dark is present on <html> */
 .dark {
-  --bg: rgba(0,0,0,1);
-  --text-primary: rgba(255,255,255,1);
-  --text-secondary: rgba(37,37,37,1);
-  --surface: rgba(255,255,255,0.07);
-  --accent: rgba(255,255,255,0.07);
+  --bg: rgba(0, 0, 0, 1);
+  --text-primary: rgba(255, 255, 255, 1);
+  --text-secondary: rgba(37, 37, 37, 1);
+  --surface: rgba(255, 255, 255, 0.07);
+  --accent: rgba(255, 255, 255, 0.07);
 }
 
-/* Respect system preference on first load if user hasn't chosen */
-@media (prefers-color-scheme: dark) {
-  :root:not(.user-selected) {
-    --bg: rgba(0,0,0,1);
-    --text-primary: rgba(255,255,255,1);
-    --text-secondary: rgba(37,37,37,1);
-    --surface: rgba(255,255,255,0.07);
-    --accent: rgba(255,255,255,0.07);
-  }
+/* Apply theme to body/html only - don't override specific colors */
+html {
+  background-color: var(--bg);
 }
 
-/* Map variables to common elements to work with CDN/Tailwind utilities */
-html, body { background-color: var(--bg); color: var(--text-primary); }
+body {
+  color: var(--text-primary);
+}
 
-header, footer { background-color: var(--bg); color: var(--text-primary); }
+.article-card {
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
 
-.article-card { background-color: var(--surface); color: var(--text-primary); }
-.site-container a, .site-container a:hover { color: var(--text-primary); }
-.text-muted { color: var(--text-secondary); }
+.text-muted {
+  color: var(--text-secondary);
+}
 
 /* small accent utility */
-.border-accent { border-color: var(--accent); }
+.border-accent {
+  border-color: var(--accent);
+}
 
+/* Theme toggle icon styles */
+.theme-toggle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+.theme-toggle-button .icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+.theme-toggle-button .icon-hidden {
+  display: none;
+}
+.theme-toggle-button svg {
+  width: 18px;
+  height: 18px;
+}
