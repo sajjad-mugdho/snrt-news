@@ -25,20 +25,47 @@
       <!-- Top bar -->
       <div class="bg-white text-sm">
         <div
-          class="site-container mx-auto px-2 grid grid-cols-2 items-center text-gray-600"
+          class="site-container mx-auto px-2 flex items-center justify-between text-gray-600 lg:grid lg:grid-cols-2"
         >
-          <!-- Left: date + location -->
+          <!-- Mobile Logo (shown only on mobile) -->
+          <div class="lg:hidden flex items-center mt-5">
+            <img src="./images/logo-fr.svg" alt="SNRT News" class="h-8" />
+          </div>
+
+          <!-- Left: date + location (hidden on mobile) -->
           <div
-            class="text-left inline-flex items-center gap-x-10 mt-5 font-medium text-sm text-black"
+            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm text-black"
           >
             <span>Lun, 03 Sep, 2024</span>
             <span>Casablanca 24°C</span>
           </div>
 
-          <!-- Right: lang + theme -->
+          <!-- Right: hamburger (mobile) + lang + theme -->
           <div
             class="flex justify-end items-center space-x-4 mt-5 font-semibold"
           >
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button
+              id="mobile-menu-toggle"
+              aria-label="Open navigation menu"
+              class="lg:hidden flex items-center justify-center w-8 h-8"
+              type="button"
+            >
+              <svg
+                class="w-6 h-6 text-black"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
             <span
               class="text-black text-medium flex items-center gap-2 justify-center cursor-pointer"
               >FR
@@ -105,7 +132,7 @@
         </div>
 
         <div
-          class="w-full max-w-[1440px] mx-auto px-4 -mt-6 pb-6 flex justify-center items-center"
+          class="w-full max-w-[1440px] mx-auto px-4 pb-6 hidden lg:flex lg:-mt-6 justify-center items-center"
         >
           <!-- Center: Logo -->
           <div class="flex items-center justify-center w-[200px] h-24">
@@ -118,8 +145,8 @@
         </div>
       </div>
 
-      <!-- Main nav -->
-      <div class="bg-white">
+      <!-- Main nav (Desktop Only) -->
+      <div class="bg-white hidden lg:block">
         <div class="site-container mx-auto px-4 py-3 flex justify-center">
           <!-- Use Tailwind utilities for size/weight/spacing and divide-x for separators.
                A small inline style sets the Nobel Uno font-family (uses -- variable).
@@ -173,8 +200,10 @@
         </div>
       </div>
 
-      <!-- Red sub nav -->
-      <div class="bg-[#FF0000] shadow-md flex items-center justify-center h-16">
+      <!-- Red sub nav (Desktop Only) -->
+      <div
+        class="bg-[#FF0000] shadow-md hidden lg:flex items-center justify-center h-16"
+      >
         <div class="site-container mx-auto px-4 py-2">
           <nav
             class="flex overflow-x-auto space-x-6 text-sm text-white font-semibold items-center justify-center whitespace-nowrap"
@@ -213,21 +242,265 @@
           class="max-w-full h-auto"
         />
       </div>
+
+      <!-- Mobile Sidebar Navigation -->
+      <div
+        id="mobile-sidebar"
+        class="fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto"
+      >
+        <!-- Sidebar Header -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-gray-200"
+        >
+          <div class="flex items-center gap-2">
+            <img src="./images/logo-fr.svg" alt="SNRT News" class="h-8" />
+          </div>
+          <button
+            id="mobile-menu-close"
+            aria-label="Close navigation menu"
+            class="p-2"
+            type="button"
+          >
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="p-4 border-b border-gray-200">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="RECHERCHER UN ARTICLE"
+              class="w-full px-4 py-2 pr-10 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <svg
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <nav class="py-2">
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ACTUALITÉS
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            VRAI OU FAKE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            DOSSIER
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ESPACE PARTENAIRES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            VIDÉOS
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            IMAGES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            LIVE
+          </a>
+        </nav>
+
+        <!-- Red Section Links -->
+        <div class="border-t border-gray-200 py-2">
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ACTIVITÉS ROYALES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ACTIVITÉS PRINCIÈRES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            POLITIQUE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            SPORT
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            SOCIÉTÉ
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ÉCONOMIE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            AFRICA
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            MONDE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            LIFESTYLE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            TECHNOLOGIE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            AGENDA CULTUREL
+          </a>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="border-t border-gray-200 p-6">
+          <button
+            class="w-full bg-red-600 text-white font-bold py-3 px-4 uppercase text-sm hover:bg-red-700 transition-colors"
+          >
+            NEWSLETTER
+          </button>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="border-t border-gray-200 p-6">
+          <div class="flex justify-center gap-6">
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="text-gray-600 hover:text-red-600"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="text-gray-600 hover:text-red-600"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="text-gray-600 hover:text-red-600"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="YouTube"
+              class="text-gray-600 hover:text-red-600"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay (when sidebar is open) -->
+      <div
+        id="mobile-sidebar-overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"
+      ></div>
     </header>
 
     <!-- Main -->
     <main>
-      <div class="site-container py-8">
+      <div class="site-container py-4 md:py-6 lg:py-8">
         <!-- Hero + Sidebar -->
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <!-- Hero -->
           <article class="lg:col-span-2">
-            <h3 class="text-black size-5 font-semibold">ACTUALITÉS</h3>
+            <h3 class="text-black text-base md:text-lg font-semibold mb-4">
+              ACTUALITÉS
+            </h3>
             <div class="relative hero-bg rounded-lg overflow-hidden">
               <!-- Content container -->
-              <div class="relative flex flex-col md:flex-row items-start my-6">
+              <div
+                class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
+              >
                 <div
-                  class="flex flex-col gap-y-8 justify-start max-w-[330px] w-full px-8 py-10 h-[420px] bg-[#EEEEEE]"
+                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] bg-[#EEEEEE]"
                 >
                   <div
                     class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
@@ -236,7 +509,7 @@
                   </div>
 
                   <h4
-                    class="text-xl text-black font-bold w-[270px] leading-[100%]"
+                    class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
                   >
                     Aventures en Altitude, Une Femme et son Chien Conquièrent
                     les Sommets
@@ -262,7 +535,7 @@
 
                 <!-- Image column -->
                 <div
-                  class="max-w-[630px] relative w-full min-w-[400px] h-[420px]"
+                  class="w-full lg:max-w-[630px] relative lg:min-w-[400px] h-[250px] md:h-[350px] lg:h-[420px]"
                 >
                   <img
                     src="images/banner1.jpg"
@@ -279,24 +552,26 @@
               </div>
             </div>
             <!-- img card -->
-            <div class="grid grid-cols-3 gap-x-6">
-              <div class="flex flex-col gap-y-6">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6"
+            >
+              <div class="flex flex-col gap-y-4 md:gap-y-6">
                 <img
                   src="./images/img-card/card1.jpg"
                   alt=""
-                  class="max-w-[300px] w-full object-cover"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
                 />
                 <!-- badge -->
                 <div
-                  class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                  class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-auto lg:mx-0"
                 >
                   <span class="mt-2">MONDE</span>
                 </div>
 
                 <!-- Text -->
-                <div class="">
+                <div class="px-4 md:px-0">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                     rues parsemées de taxis jaunes
@@ -309,14 +584,14 @@
                   </a>
                 </div>
               </div>
-              <div class="flex flex-col gap-y-6">
+              <div class="flex flex-col gap-y-4 md:gap-y-6">
                 <img
                   src="./images/img-card/card-2.jpg"
                   alt=""
-                  class="max-w-[300px] w-full object-cover"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
                 />
                 <!-- badge -->
-                <div class="flex items-center justify-start">
+                <div class="flex items-center justify-center lg:justify-start">
                   <div
                     class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
                   >
@@ -336,9 +611,9 @@
                 </div>
 
                 <!-- Text -->
-                <div class="">
+                <div class="px-4 md:px-0">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     une plateforme dynamique dédiée à la recherche et à la
                     promotion de solutions locales
@@ -351,23 +626,23 @@
                   </a>
                 </div>
               </div>
-              <div class="flex flex-col gap-y-6">
+              <div class="flex flex-col gap-y-4 md:gap-y-6">
                 <img
                   src="./images/img-card/card-3.jpg"
                   alt=""
-                  class="max-w-[300px] w-full object-cover"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
                 />
 
                 <!-- badge -->
                 <div
-                  class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                  class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-auto lg:mx-0"
                 >
                   <span class="mt-2 uppercase">société</span>
                 </div>
                 <!-- Text -->
-                <div class="">
+                <div class="px-4 md:px-0">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Une alerte importante a été lancée sur les marchés après la
                     découverte de produits alimentaires contaminés
@@ -384,13 +659,17 @@
           </article>
 
           <!-- Sidebar -->
-          <aside>
-            <h3 class="text-black size-5 font-semibold w-full">Flash NEWS</h3>
+          <aside class="mt-8 lg:mt-0">
+            <h3
+              class="text-black text-base md:text-lg font-semibold w-full mb-4"
+            >
+              Flash NEWS
+            </h3>
             <div class="bg-white my-5.5">
               <img
                 src="images/BG2.jpg"
                 alt="Background"
-                class="w-[300px] h-[250px] object-cover opacity-100"
+                class="w-full max-w-[300px] mx-auto lg:mx-0 h-[250px] object-cover opacity-100"
               />
               <!-- text section -->
               <ul class="space-y-2 text-sm text-gray-700 mt-3">
@@ -473,19 +752,21 @@
       <!-- 
       Video section can be use re use 
       -->
-      <section class="bg-[#EEE] py-5">
-        <div
-          class="site-container grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-[30px] h-[420px]"
-        >
-          <h1 class="text-2xl font-bold mb-6 uppercase">Vidéos</h1>
+      <section class="bg-[#EEE] py-6 md:py-8 lg:py-10">
+        <div class="site-container">
+          <h1 class="text-xl md:text-2xl font-bold mb-6 uppercase px-4 md:px-0">
+            Vidéos
+          </h1>
 
-          <div class="grid grid-cols-4 gap-x-6">
-            <div class="flex flex-col gap-y-6">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
+          >
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
               <div class="relative">
                 <img
                   src="./images/videos/videos1.png"
                   alt=""
-                  class="max-w-[300px] w-full object-cover"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
                 />
 
                 <div
@@ -508,7 +789,7 @@
               </div>
 
               <!-- badge -->
-              <div class="flex items-center justify-start">
+              <div class="flex items-center justify-center lg:justify-start">
                 <div
                   class="bg-yellow-500 h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
                 >
@@ -522,9 +803,9 @@
               </div>
 
               <!-- Text -->
-              <div class="">
+              <div class="px-4 md:px-0">
                 <p
-                  class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                   rues parsemées de taxis jaunes
@@ -537,12 +818,12 @@
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6">
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
               <div class="relative">
                 <img
                   src="./images/videos/videos2.png"
                   alt=""
-                  class="max-w-[300px] w-full object-cover"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
                 />
 
                 <div
@@ -689,24 +970,26 @@
       </section>
 
       <!-- ACTIVITES ROYALES -->
-      <section class="site-container py-8">
+      <section class="site-container py-6 md:py-8">
         <button
-          class="px-4 py-1 text-sm bg-[#FF0000] flex items-center justify-center text-white font-bold"
+          class="px-4 py-1 text-sm bg-[#FF0000] flex items-center justify-center text-white font-bold mb-6"
         >
           <span class="mt-1 uppercase">Activités Royales</span>
         </button>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <!-- Hero -->
           <article class="lg:col-span-2">
             <div class="relative hero-bg rounded-lg overflow-hidden">
               <!-- Content container -->
-              <div class="relative flex flex-col md:flex-row items-start my-6">
+              <div
+                class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
+              >
                 <div
-                  class="flex flex-col gap-y-8 items-start justify-between max-w-[330px] w-full px-8 py-10 h-[420px] bg-[#EEEEEE]"
+                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 items-start justify-between w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] bg-[#EEEEEE]"
                 >
                   <h4
-                    class="text-xl text-black font-bold w-[270px] leading-[100%]"
+                    class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
                   >
                     Aventures en Altitude, Une Femme et son Chien Conquièrent
                     les Sommets
@@ -813,15 +1096,17 @@
       </section>
 
       <!-- ACTIVITES PRINCIERES -->
-      <section class="site-container py-8">
+      <section class="site-container py-6 md:py-8">
         <button
-          class="bg-[#FF0000] mb-8 text-white font-semibold text-sm px-4 py-2"
+          class="bg-[#FF0000] mb-6 md:mb-8 text-white font-semibold text-sm px-4 py-2"
         >
           <span class="mt-2">ACTIVITES PRINCIERES</span>
         </button>
 
-        <div class="grid grid-cols-4 gap-x-7.5">
-          <div class="flex flex-col gap-y-6">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-x-7.5"
+        >
+          <div class="flex flex-col gap-y-4 md:gap-y-6">
             <img
               src="./images/ACTIVITES PRINCIERES/ACTIVITES PRINCIERES1.png"
               alt=""
@@ -917,19 +1202,23 @@
       </section>
 
       <!-- SPORT SECTION-->
-      <section class="site-container py-8">
+      <section class="site-container py-6 md:py-8">
         <button
           class="bg-[#24D5CC] h-[30px] text-white font-semibold px-4 py-2 mb-6"
         >
           SPORT
         </button>
 
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <!-- Hero -->
           <article class="lg:col-span-2">
             <!-- img card -->
-            <div class="flex gap-[30px]">
-              <div class="w-[300px] h-[199px] overflow-hidden">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+            >
+              <div
+                class="w-full max-w-[300px] mx-auto lg:mx-0 h-[199px] overflow-hidden"
+              >
                 <img
                   src="images/SPORT1.png"
                   alt=""
@@ -937,7 +1226,9 @@
                 />
               </div>
               <!-- img 2 -->
-              <div class="w-[300px] h-[199px] overflow-hidden">
+              <div
+                class="w-full max-w-[300px] mx-auto lg:mx-0 h-[199px] overflow-hidden"
+              >
                 <img
                   src="images/SPORT2.png"
                   alt=""
@@ -945,7 +1236,9 @@
                 />
               </div>
               <!-- img 3 -->
-              <div class="relative w-[300px] h-[199px] overflow-hidden">
+              <div
+                class="relative w-full max-w-[300px] mx-auto lg:mx-0 h-[199px] overflow-hidden"
+              >
                 <!-- Sport image -->
                 <img
                   src="images/SPORT3.png"
@@ -963,8 +1256,12 @@
             </div>
             <!-- text card -->
 
-            <div class="flex gap-[30px] my-5">
-              <div class="w-[300px] h-[199px] overflow-hidden">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 my-5"
+            >
+              <div
+                class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden px-4 md:px-0"
+              >
                 <button
                   class="bg-[#4682B4] h-[30px] text-white font-semibold px-4 py-2"
                 >
@@ -980,7 +1277,9 @@
                 </a>
               </div>
               <!-- text 2 -->
-              <div class="w-[300px] h-[199px] overflow-hidden">
+              <div
+                class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden px-4 md:px-0"
+              >
                 <button
                   class="bg-[#FF4500] h-[30px] text-white font-semibold px-4 py-2"
                 >
@@ -1004,7 +1303,9 @@
                 </a>
               </div>
               <!-- text 3 -->
-              <div class="w-[300px] h-[199px] overflow-hidden">
+              <div
+                class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden px-4 md:px-0"
+              >
                 <button
                   class="bg-[#32CD32] h-[30px] text-white font-semibold px-4 py-2"
                 >
@@ -1021,7 +1322,9 @@
             </div>
           </article>
           <!-- Sidebar BOTOLA -->
-          <aside class="w-[320px] bg-white -mt-14.5 overflow-hidden">
+          <aside
+            class="w-full lg:w-[320px] bg-white lg:-mt-14.5 overflow-hidden mx-auto"
+          >
             <!-- Header -->
             <div
               class="bg-[#24D5CC] px-4 py-3 mx-auto flex items-center justify-center"
@@ -1168,18 +1471,18 @@
       </section>
 
       <!-- ESPACE PARTENAIRES SECTION-->
-      <section class="site-container py-5">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[30px]">
+      <section class="site-container py-5 md:py-6 px-4 md:px-0">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-[30px]"
+        >
           <div class="">
             <div
               class="bg-black text-white text-sm font-bold uppercase leading-[100%] px-2 py-2 mb-6 w-[150px] mt-2"
             >
               Espace Partenaires
             </div>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[30px]"
-            >
-              <div class="flex flex-col gap-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div class="flex flex-col gap-y-4 md:gap-y-6">
                 <img
                   src="./images/ESPACE/ESPACE1.png"
                   alt=""
@@ -1292,11 +1595,13 @@
       <!--  -->
 
       <!-- IMAGES SECTION-->
-      <section class="bg-[#eee] py-6">
-        <div class="site-container">
-          <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
-            <h3 class="text-2xl font-bold mb-6 uppercase">IMAGES</h3>
-            <div class="grid grid-cols-4 gap-x-6">
+      <section class="bg-[#eee] py-6 md:py-8">
+        <div class="site-container px-4 md:px-0">
+          <div class="">
+            <h3 class="text-xl md:text-2xl font-bold mb-6 uppercase">IMAGES</h3>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+            >
               <div class="flex flex-col gap-y-6">
                 <div class="relative">
                   <img
@@ -1434,13 +1739,15 @@
         </div>
       </section>
       <!-- PolitiQUE SECTION -->
-      <section class="site-container mt-12">
-        <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+      <section class="site-container mt-8 md:mt-10 lg:mt-12 px-4 md:px-0">
+        <div class="">
           <!-- 4 cards in a row -->
           <div class="">
             <!-- img-1 -->
-            <div class="flex gap-[30px]">
-              <div class="w-[300px]">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+            >
+              <div class="w-full max-w-[300px] mx-auto lg:mx-0">
                 <!-- button -->
                 <div class="mb-4">
                   <button
@@ -1460,7 +1767,7 @@
                 </div>
               </div>
 
-              <div class="w-[300px]">
+              <div class="w-full max-w-[300px] mx-auto lg:mx-0">
                 <!-- button -->
                 <div class="mb-3">
                   <button
@@ -1480,7 +1787,7 @@
               </div>
 
               <!-- img 3 -->
-              <div class="w-[300px]">
+              <div class="w-full max-w-[300px] mx-auto lg:mx-0">
                 <!-- button -->
                 <div class="mb-3">
                   <button
@@ -1499,7 +1806,7 @@
                 </div>
               </div>
               <!-- img 4 -->
-              <div class="w-[300px]">
+              <div class="w-full max-w-[300px] mx-auto lg:mx-0">
                 <!-- button -->
                 <div class="mb-3">
                   <button
@@ -1520,10 +1827,12 @@
             </div>
           </div>
           <!-- text card-1 -->
-          <div class="flex gap-[30px] flex-wrap col-span-full mt-6">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-6"
+          >
             <!-- text 1 -->
             <div
-              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+              class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
               <p class="font-bold text-[16px] text-black">
                 La gouvernance mondiale face aux crises sanitaires et
@@ -1560,7 +1869,7 @@
 
             <!-- text 2 -->
             <div
-              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+              class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
               <p class="font-bold text-[16px] text-black">
                 Les politiques d'inclusion : Vers une société plus équitable
@@ -1596,7 +1905,7 @@
 
             <!-- text 3 -->
             <div
-              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+              class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
               <p class="font-bold text-[16px] text-black">
                 Les défis économiques post-pandémie : Perspectives et stratégies
@@ -1632,7 +1941,7 @@
 
             <!-- text 4 -->
             <div
-              class="w-[300px] min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
+              class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
               <p class="font-bold text-[16px] text-black">
                 Les défis économiques post-pandémie : Perspectives et stratégies
@@ -1670,12 +1979,14 @@
         <hr class="max-w-[1440px] my-5" />
       </section>
       <!-- MONDE SECTION -->
-      <div class="site-container py-6">
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="site-container py-6 px-4 md:px-0">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <!-- Hero -->
           <article class="lg:col-span-2">
             <!-- img card -->
-            <div class="grid grid-cols-3 gap-x-6">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+            >
               <div class="flex flex-col gap-y-4">
                 <div
                   class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 uppercase"
@@ -1898,14 +2209,16 @@
 
     <!-- Footer -->
 
-    <footer class="bg-gray-50 border-t border-gray-200 mt-12">
-      <div class="max-w-7xl mx-auto px-4 py-8">
+    <footer
+      class="bg-[#EEEEEE] border-t border-gray-200 mt-8 md:mt-10 lg:mt-12"
+    >
+      <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
         <!-- Top Section: Logo, Description, Social, Newsletter -->
         <div
-          class="flex flex-col lg:flex-row justify-between gap-10 border-b border-gray-300 pb-8 mb-6"
+          class="flex flex-col lg:flex-row justify-between gap-6 md:gap-8 lg:gap-10 border-b border-gray-300 pb-6 md:pb-8 mb-4 md:mb-6"
         >
           <!-- Left Column: Logo and Description -->
-          <div class="lg:w-1/3 space-y-4">
+          <div class="space-y-4">
             <div class="flex items-center">
               <!-- Logo (Using the provided structure and fixing the text style) -->
               <a href="#" class="flex items-center">
@@ -1925,90 +2238,106 @@
               </a>
             </div>
 
-            <p class="text-gray-700 text-sm leading-relaxed">
+            <p
+              class="text-gray-700 text-sm leading-relaxed max-w-[300px] w-full"
+            >
               SNRTEws est un site électronique marocain d'information, publié en
               arabe et en français, par la Société nationale de radiodiffusion
               et de télévision (SNRT).
             </p>
 
             <!-- Social Media Icons -->
-            <div class="flex space-x-4 pt-2">
-              <a href="#" class="text-gray-700 hover:text-red-600 transition">
-                <!-- Twitter/X SVG (First SVG provided) -->
-                <svg
-                  class="w-5 h-5"
-                  width="20"
-                  height="19"
-                  viewBox="0 0 20 19"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.5905 7.9908L18.7262 0H17.0617L10.8332 6.93416L5.83169 0H0L7.56905 10.5741L0 19H1.7738L8.33445 11.6463L13.5951 19H19.5362L11.5945 7.99468L11.5905 7.9908ZM14.4334 17.7103L2.58781 1.28972H5.07842L16.8309 17.7103H14.4334Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-gray-700 hover:text-red-600 transition">
-                <!-- Instagram SVG (Second SVG provided - Simplified for icon) -->
-                <svg
-                  class="w-5 h-5"
-                  width="21"
-                  height="19"
-                  viewBox="0 0 21 19"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.4382 4.60547C7.62496 4.60547 5.33398 6.80304 5.33398 9.50158C5.33398 12.2001 7.62496 14.3977 10.4382 14.3977C13.2514 14.3977 15.5424 12.2001 15.5424 9.50158C15.5424 6.80304 13.2514 4.60547 10.4382 4.60547ZM10.4382 12.7111C8.59287 12.7111 7.09225 11.2717 7.09225 9.50158C7.09225 7.7315 8.59287 6.29206 10.4382 6.29206C12.2835 6.29206 13.7841 7.7315 13.7841 9.50158C13.7841 11.2717 12.2835 12.7111 10.4382 12.7111Z"
-                  />
-                  <path
-                    d="M15.7582 3.17578C15.4205 3.17578 15.0862 3.30603 14.8495 3.53648C14.6092 3.76692 14.47 4.0842 14.47 4.4115C14.47 4.7388 14.6092 5.05608 14.8495 5.28652C15.0862 5.51697 15.4205 5.64722 15.7582 5.64722C16.0959 5.64722 16.4302 5.51363 16.6704 5.28652C16.9107 5.05608 17.0464 4.73546 17.0464 4.4115C17.0464 4.08754 16.9107 3.76692 16.6704 3.53648C16.4302 3.30603 16.0994 3.17578 15.7582 3.17578Z"
-                  />
-                  <path
-                    d="M14.8773 0H6.00243C2.98727 0 0.536133 2.3512 0.536133 5.24345V13.7565C0.536133 16.6488 2.98727 19 6.00243 19H14.8773C17.8925 19 20.3436 16.6488 20.3436 13.7565V5.24345C20.3436 2.3512 17.8925 0 14.8773 0ZM18.5854 13.7599C18.5854 15.7203 16.9211 17.3168 14.8773 17.3168H6.00243C3.95867 17.3168 2.2944 15.7203 2.2944 13.7599V5.24679C2.2944 3.28634 3.95867 1.68993 6.00243 1.68993H14.8773C16.9246 1.68993 18.5854 3.28634 18.5854 5.24679V13.7599Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-gray-700 hover:text-red-600 transition">
-                <!-- Facebook SVG (Third SVG provided) -->
-                <svg
-                  class="w-5 h-5"
-                  width="10"
-                  height="19"
-                  viewBox="0 0 10 19"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.2465 9.49833H6.53076V19H2.81925V9.49833H0.34375V6.22535H2.81925L2.81577 4.30163C2.81577 1.62313 3.5713 0 6.85456 0H9.5912V3.27966H7.88167C6.60736 3.27966 6.53425 3.74389 6.53425 4.58552V6.22201H9.61209L9.24999 9.50167L9.2465 9.49833Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-gray-700 hover:text-red-600 transition">
-                <!-- YouTube SVG (Fourth SVG provided) -->
-                <svg
-                  class="w-5 h-5"
-                  width="30"
-                  height="19"
-                  viewBox="0 0 30 19"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24.6655 0H5.47191C2.7867 0 0.612061 2.08599 0.612061 4.66173V14.0396C0.612061 16.6153 2.7867 18.7013 5.47191 18.7013H24.6655C27.3507 18.7013 29.5253 16.6153 29.5253 14.0396V4.66173C29.5253 2.08599 27.3507 0 24.6655 0ZM12.3551 13.3186V5.36915L19.21 9.34159L12.3551 13.314V13.3186Z"
-                  />
-                </svg>
-              </a>
-            </div>
           </div>
 
           <!-- Right Column: Navigation Links and Newsletter -->
-          <div class="lg:w-2/3 flex flex-col md:flex-row justify-end gap-8">
+          <div class="lg:w-2/3 flex flex-col">
             <!-- Main Link Groups (ACTITIVÉS ROYALES, ÉCONOMIE, etc.) -->
             <div
-              class="grid grid-cols-2 sm:grid-cols-3 gap-x-12 gap-y-3 text-sm font-medium"
+              class="grid grid-cols-2 lg:grid-cols-4 text-sm font-medium gap-6 md:gap-12 lg:gap-28"
             >
               <ul class="space-y-2">
+                <li>
+                  <div class="flex gap-12 pt-2">
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- Twitter/X SVG (First SVG provided) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="20"
+                        height="19"
+                        viewBox="0 0 20 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.5905 7.9908L18.7262 0H17.0617L10.8332 6.93416L5.83169 0H0L7.56905 10.5741L0 19H1.7738L8.33445 11.6463L13.5951 19H19.5362L11.5945 7.99468L11.5905 7.9908ZM14.4334 17.7103L2.58781 1.28972H5.07842L16.8309 17.7103H14.4334Z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- Instagram SVG (Second SVG provided - Simplified for icon) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="21"
+                        height="19"
+                        viewBox="0 0 21 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.4382 4.60547C7.62496 4.60547 5.33398 6.80304 5.33398 9.50158C5.33398 12.2001 7.62496 14.3977 10.4382 14.3977C13.2514 14.3977 15.5424 12.2001 15.5424 9.50158C15.5424 6.80304 13.2514 4.60547 10.4382 4.60547ZM10.4382 12.7111C8.59287 12.7111 7.09225 11.2717 7.09225 9.50158C7.09225 7.7315 8.59287 6.29206 10.4382 6.29206C12.2835 6.29206 13.7841 7.7315 13.7841 9.50158C13.7841 11.2717 12.2835 12.7111 10.4382 12.7111Z"
+                        />
+                        <path
+                          d="M15.7582 3.17578C15.4205 3.17578 15.0862 3.30603 14.8495 3.53648C14.6092 3.76692 14.47 4.0842 14.47 4.4115C14.47 4.7388 14.6092 5.05608 14.8495 5.28652C15.0862 5.51697 15.4205 5.64722 15.7582 5.64722C16.0959 5.64722 16.4302 5.51363 16.6704 5.28652C16.9107 5.05608 17.0464 4.73546 17.0464 4.4115C17.0464 4.08754 16.9107 3.76692 16.6704 3.53648C16.4302 3.30603 16.0994 3.17578 15.7582 3.17578Z"
+                        />
+                        <path
+                          d="M14.8773 0H6.00243C2.98727 0 0.536133 2.3512 0.536133 5.24345V13.7565C0.536133 16.6488 2.98727 19 6.00243 19H14.8773C17.8925 19 20.3436 16.6488 20.3436 13.7565V5.24345C20.3436 2.3512 17.8925 0 14.8773 0ZM18.5854 13.7599C18.5854 15.7203 16.9211 17.3168 14.8773 17.3168H6.00243C3.95867 17.3168 2.2944 15.7203 2.2944 13.7599V5.24679C2.2944 3.28634 3.95867 1.68993 6.00243 1.68993H14.8773C16.9246 1.68993 18.5854 3.28634 18.5854 5.24679V13.7599Z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- Facebook SVG (Third SVG provided) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="10"
+                        height="19"
+                        viewBox="0 0 10 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.2465 9.49833H6.53076V19H2.81925V9.49833H0.34375V6.22535H2.81925L2.81577 4.30163C2.81577 1.62313 3.5713 0 6.85456 0H9.5912V3.27966H7.88167C6.60736 3.27966 6.53425 3.74389 6.53425 4.58552V6.22201H9.61209L9.24999 9.50167L9.2465 9.49833Z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- YouTube SVG (Fourth SVG provided) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="30"
+                        height="19"
+                        viewBox="0 0 30 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.6655 0H5.47191C2.7867 0 0.612061 2.08599 0.612061 4.66173V14.0396C0.612061 16.6153 2.7867 18.7013 5.47191 18.7013H24.6655C27.3507 18.7013 29.5253 16.6153 29.5253 14.0396V4.66173C29.5253 2.08599 27.3507 0 24.6655 0ZM12.3551 13.3186V5.36915L19.21 9.34159L12.3551 13.314V13.3186Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </li>
                 <li>
                   <a href="#" class="text-gray-700 hover:text-red-600"
                     >ACTITIVÉS ROYALES</a
@@ -2057,6 +2386,13 @@
               </ul>
               <ul class="space-y-2">
                 <li>
+                  <button
+                    class="bg-black text-[#FF0000] px-6 py-3 text-sm font-semibold rounded-lg hover:bg-gray-300 transition tracking-wider uppercase"
+                  >
+                    Newsletter
+                  </button>
+                </li>
+                <li>
                   <a href="#" class="text-gray-700 hover:text-red-600"
                     >POLITIQUE</a
                   >
@@ -2075,13 +2411,6 @@
             </div>
 
             <!-- Newsletter Button -->
-            <div class="flex items-center justify-end">
-              <button
-                class="bg-black text-[#FF0000] px-6 py-3 text-sm font-semibold rounded-lg hover:bg-gray-300 transition tracking-wider uppercase"
-              >
-                Newsletter
-              </button>
-            </div>
           </div>
         </div>
 
@@ -2157,6 +2486,56 @@
 
         if (btn) btn.addEventListener("click", toggle);
         if (navBtn) navBtn.addEventListener("click", toggle);
+      })();
+
+      // Mobile Sidebar Menu
+      (function () {
+        var toggleBtn = document.getElementById("mobile-menu-toggle");
+        var closeBtn = document.getElementById("mobile-menu-close");
+        var sidebar = document.getElementById("mobile-sidebar");
+        var overlay = document.getElementById("mobile-sidebar-overlay");
+
+        console.log("Mobile menu initialized:", {
+          toggleBtn: !!toggleBtn,
+          closeBtn: !!closeBtn,
+          sidebar: !!sidebar,
+          overlay: !!overlay,
+        });
+
+        function openSidebar() {
+          console.log("Opening sidebar");
+          if (sidebar && overlay) {
+            sidebar.classList.remove("-translate-x-full");
+            sidebar.classList.add("translate-x-0");
+            overlay.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          }
+        }
+
+        function closeSidebar() {
+          console.log("Closing sidebar");
+          if (sidebar && overlay) {
+            sidebar.classList.add("-translate-x-full");
+            sidebar.classList.remove("translate-x-0");
+            overlay.classList.add("hidden");
+            document.body.style.overflow = "";
+          }
+        }
+
+        if (toggleBtn) {
+          toggleBtn.addEventListener("click", function (e) {
+            console.log("Toggle button clicked", e);
+            openSidebar();
+          });
+        }
+        if (closeBtn) closeBtn.addEventListener("click", closeSidebar);
+        if (overlay) overlay.addEventListener("click", closeSidebar);
+
+        // Close sidebar on link click
+        var sidebarLinks = sidebar ? sidebar.querySelectorAll("a") : [];
+        sidebarLinks.forEach(function (link) {
+          link.addEventListener("click", closeSidebar);
+        });
       })();
     </script>
   </body>
