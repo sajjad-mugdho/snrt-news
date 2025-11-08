@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SNRT News — Template</title>
+    <meta
+      name="description"
+      content="News site template built with Tailwind CSS"
+    />
+    <!-- Preload Tajawal from Google for better CLS (kept as-is) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Local fonts stylesheet (self-host Nobel Uno) -->
+    <link rel="stylesheet" href="/src/fonts.css" />
+    <!-- Layout helpers: enforce max-width 1440px and centered alignment -->
+    <link rel="stylesheet" href="/src/layout.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-white font-sans">
+    <header class="w-full mt-5">
+      <!-- Top bar -->
+      <div class="bg-white text-sm">
+        <div
+          class="site-container mx-auto px-2 flex items-center justify-between text-gray-600 lg:grid lg:grid-cols-2"
+        >
+          <!-- Mobile Logo (shown only on mobile) -->
+          <div class="lg:hidden flex items-center mt-5">
+            <img src="./images/logo-fr.svg" alt="SNRT News" class="h-8" />
+          </div>
+
+          <!-- Left: date + location (hidden on mobile) -->
+          <div
+            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm text-black"
+          >
+            <span>Lun, 03 Sep, 2024</span>
+            <span>Casablanca 24°C</span>
+          </div>
+
+          <!-- Right: hamburger (mobile) + lang + theme -->
+          <div
+            class="flex justify-end items-center space-x-4 mt-5 font-semibold"
+          >
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button
+              id="mobile-menu-toggle"
+              aria-label="Open navigation menu"
+              class="lg:hidden flex items-center justify-center w-8 h-8"
+              type="button"
+            >
+              <svg
+                class="w-6 h-6 text-black"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
+            <span
+              class="text-black text-medium flex items-center gap-2 justify-center cursor-pointer"
+              >FR
+              <svg
+                width="8"
+                height="6"
+                viewBox="0 0 8 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M-6.81992e-08 1.74807L0 1.14097e-05L4 4.08111L8 3.39792e-07L8 1.74807L4 5.83015L-6.81992e-08 1.74807Z"
+                  fill="black"
+                />
+              </svg>
+            </span>
+            <button
+              id="theme-toggle-nav"
+              aria-label="Toggle dark mode"
+              class="theme-toggle-button"
+              type="button"
+            >
+              <!-- Sun (light) -->
+              <svg
+                class="icon icon-sun"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 4V2M12 22v-2M4.93 4.93L3.51 3.51M20.49 20.49l-1.42-1.42M2 12H4M20 12h2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+              <!-- Moon (dark) -->
+              <svg
+                class="icon icon-moon icon-hidden"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="w-full max-w-[1440px] mx-auto px-4 pb-6 hidden lg:flex lg:-mt-6 justify-center items-center"
+        >
+          <!-- Center: Logo -->
+          <div class="flex items-center justify-center w-[200px] h-24">
+            <img
+              src="../images/logo-fr.svg"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Main nav (Desktop Only) -->
+      <div class="bg-white hidden lg:block">
+        <div class="site-container mx-auto px-4 py-3 flex justify-center">
+          <!-- Use Tailwind utilities for size/weight/spacing and divide-x for separators.
+               A small inline style sets the Nobel Uno font-family (uses -- variable).
+          -->
+          <nav
+            class="flex text-sm text-gray-800 font-black divide-x divide-gray-200"
+          >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+              style="font-style: normal; font-weight: 900; line-height: 1"
+              >ACTUALITÉS</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+              style="font-style: normal; font-weight: 900; line-height: 1"
+              >VRAI OU FAKE</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+              style="font-style: normal; font-weight: 900; line-height: 1"
+              >DOSSIER</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+              style="font-style: normal; font-weight: 900; line-height: 1"
+              >ESPACE PARTENAIRES</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+              style="font-style: normal; font-weight: 900; line-height: 1"
+              >VIDÉOS</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+              style="font-style: normal; font-weight: 900; line-height: 1"
+              >IMAGES</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+              style="font-style: normal; font-weight: 900; line-height: 1"
+              >LIVE</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <!-- Red sub nav (Desktop Only) -->
+      <div
+        class="bg-[#FF0000] shadow-md hidden lg:flex items-center justify-center h-16"
+      >
+        <div class="site-container mx-auto px-4 py-2">
+          <nav
+            class="flex overflow-x-auto space-x-6 text-sm text-white font-semibold items-center justify-center whitespace-nowrap"
+          >
+            <a href="#" class="hover:text-black">ACTIVITÉS ROYALES</a>
+            <a href="#" class="hover:text-black">ACTIVITÉS PRINCIÈRES</a>
+            <a href="#" class="hover:text-black">POLITIQUE</a>
+            <a href="#" class="hover:text-black">SPORT</a>
+            <a href="#" class="hover:text-black">SOCIÉTÉ</a>
+            <a href="#" class="hover:text-black">ÉCONOMIE</a>
+            <a href="#" class="hover:text-black">AFRICA</a>
+            <a href="#" class="hover:text-black">MONDE</a>
+            <a href="#" class="hover:text-black">LIFESTYLE</a>
+            <a href="#" class="hover:text-black">TECHNOLOGIE</a>
+            <a href="#" class="hover:text-black">AGENDA CULTUREL</a>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </nav>
+        </div>
+      </div>
+      <!-- <div class="flex items-center justify-center p-4 m-4">
+        <img
+          src="images/bg3.png"
+          alt="Background Image"
+          class="max-w-full h-auto"
+        />
+      </div> -->
+
+      <!-- Mobile Sidebar Navigation -->
+      <div
+        id="mobile-sidebar"
+        class="fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto"
+      >
+        <!-- Sidebar Header -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-gray-200"
+        >
+          <!-- <div class="flex items-center gap-2">
+            <img src="./images/logo-fr.svg" alt="SNRT News" class="h-8" />
+          </div> -->
+          <button
+            id="mobile-menu-close"
+            aria-label="Close navigation menu"
+            class="p-2"
+            type="button"
+          >
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="p-4 border-b border-gray-200">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="RECHERCHER UN ARTICLE"
+              class="w-full px-4 py-2 pr-10 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <svg
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <nav class="py-2">
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ACTUALITÉS
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            VRAI OU FAKE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            DOSSIER
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ESPACE PARTENAIRES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            VIDÉOS
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            IMAGES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            LIVE
+          </a>
+        </nav>
+
+        <!-- Red Section Links -->
+        <div class="border-t border-gray-200 py-2">
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ACTIVITÉS ROYALES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ACTIVITÉS PRINCIÈRES
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            POLITIQUE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            SPORT
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            SOCIÉTÉ
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            ÉCONOMIE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            AFRICA
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            MONDE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            LIFESTYLE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            TECHNOLOGIE
+          </a>
+          <a
+            href="#"
+            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+          >
+            AGENDA CULTUREL
+          </a>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="border-t border-gray-200 p-6">
+          <button
+            class="w-full bg-red-600 text-white font-bold py-3 px-4 uppercase text-sm hover:bg-red-700 transition-colors"
+          >
+            NEWSLETTER
+          </button>
+        </div>
+
+        <div class="flex justify-center gap-6">
+          <a
+            href="#"
+            aria-label="Twitter"
+            class="text-gray-600 hover:text-red-600"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="Instagram"
+            class="text-gray-600 hover:text-red-600"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="Facebook"
+            class="text-gray-600 hover:text-red-600"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="YouTube"
+            class="text-gray-600 hover:text-red-600"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div class="site-container py-4 md:py-6 lg:py-8">
+        <!-- Hero + Sidebar -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+          <!-- Hero -->
+          <article class="lg:col-span-2">
+            <h3 class="text-black text-base md:text-lg font-semibold mb-4">
+              ACTUALITÉS
+            </h3>
+            <div class="relative hero-bg rounded-lg overflow-hidden">
+              <!-- Content container -->
+              <div
+                class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
+              >
+                <div
+                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] bg-[#EEEEEE]"
+                >
+                  <div
+                    class="bg-black h-[30px] flex items-center justify-center text-white max-w-[170px] font-nobelUno font-black text-[14px]"
+                  >
+                    <span class="mt-2">ESPACE PARTENAIRES</span>
+                  </div>
+
+                  <h4
+                    class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
+                  >
+                    Des Solutions de Gestion d'Entreprise
+                  </h4>
+
+                  <p
+                    class="w-[270px] text-base font-medium text-black leading-[150%] capitalize"
+                  >
+                    En tant qu'entrepreneur ou gestionnaire d'entreprise, vous
+                    savez combien il est crucial de maximiser votre efficacité
+                    tout en réduisant les coûts.
+                  </p>
+
+                  <div class="">
+                    <a
+                      href="#"
+                      class="text-black text-sm font-bold leading-[100%]"
+                      >Lire la suite</a
+                    >
+                  </div>
+                </div>
+
+                <!-- Image column -->
+                <div
+                  class="w-full lg:max-w-[630px] relative lg:min-w-[400px] h-[250px] md:h-[350px] lg:h-[420px]"
+                >
+                  <img
+                    src="Photo-Espace/Espace-banner.jpg"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+
+                  <div
+                    class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- img card -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6"
+            >
+              <div class="flex flex-col gap-y-4 md:gap-y-6 relative">
+                <img
+                  src="Photo-Espace/space1.1.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <!-- badge -->
+                <div
+                  class="bg-black h-[30px] flex items-center justify-center text-white max-w-[170px] font-nobelUno font-black text-[14px]"
+                >
+                  <span class="mt-2">ESPACE PARTENAIRES</span>
+                </div>
+
+                <!-- Text -->
+                <div class="px-4 md:px-0">
+                  <p
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  >
+                    Plongez dans un monde de saveurs exotiques avec le nouveau
+                    Fanta Mangue-Ananas!
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 09h15
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col gap-y-4 md:gap-y-6 relative">
+                <img
+                  src="Photo-Espace/space1.2.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <!-- badge -->
+
+                <div
+                  class="bg-black h-[30px] flex items-center justify-center text-white max-w-[170px] font-nobelUno font-black text-[14px]"
+                >
+                  <span class="mt-2">ESPACE PARTENAIRES</span>
+                </div>
+
+                <!-- Text -->
+                <div class="px-4 md:px-0">
+                  <p
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  >
+                    Explorez les derniers modèles de smartphones Huawei.
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 7h45
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col gap-y-4 md:gap-y-6 relative">
+                <img
+                  src="Photo-Espace/space1.3.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+
+                <!-- badge -->
+                <div
+                  class="bg-black h-[30px] flex items-center justify-center text-white max-w-[170px] font-nobelUno font-black text-[14px]"
+                >
+                  <span class="mt-2">ESPACE PARTENAIRES</span>
+                </div>
+                <!-- Text -->
+                <div class="px-4 md:px-0">
+                  <p
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  >
+                    vous savez combien il est crucial de maximiser votre
+                    efficacité tout en réduisant les coûts.
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 7h45
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sidebar -->
+          <aside class="mt-8 lg:mt-0">
+            <h3
+              class="text-black text-base md:text-lg font-semibold w-full mb-4"
+            >
+              Flash NEWS
+            </h3>
+            <div class="bg-white my-5.5 mt-10">
+              <img
+                src="../images/BG2.jpg"
+                alt="Background"
+                class="w-full max-w-[300px] mx-auto lg:mx-0 h-[250px] object-cover opacity-100"
+              />
+              <!-- text section -->
+              <ul class="space-y-2 text-sm text-gray-700 mt-3">
+                <li class="">
+                  <p
+                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                  >
+                    Soufiane el-Bakkali distingué du grade de commandeur de
+                    l’ordre du Ouissam alaouite
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
+                  </a>
+                </li>
+                <li class="">
+                  <p
+                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                  >
+                    Une réforme judiciaire controversée en voie d’être adoptée
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 16h03 <span class="mx-2">|</span> Politique
+                  </a>
+                </li>
+                <li class="">
+                  <p
+                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                  >
+                    SM le Roi félicite le président ouzbek à l’occasion de la
+                    fête nationale de son pays
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
+                  </a>
+                </li>
+                <li class="">
+                  <p
+                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                  >
+                    Le monde produit annuellement 57 millions de tonnes de
+                    pollution plastique
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 16h03 <span class="mx-2">|</span> monde
+                  </a>
+                </li>
+                <li class="">
+                  <p
+                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                  >
+                    une plateforme dynamique dédiée à la recherche et à la
+                    promotion de solutions locales
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 16h03 <span class="mx-2">|</span> africa
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+      </div>
+
+      <!-- 
+      Video section can be use re use 
+      -->
+      <section class="bg-[#EEE] py-6 md:py-8 lg:py-10">
+        <div class="site-container">
+          <h1 class="text-xl md:text-2xl font-bold mb-6 uppercase px-4 md:px-0">
+            VIDéos partenaires
+          </h1>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
+          >
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
+              <div class="relative">
+                <img
+                  src="Photo-Espace/espace2.1.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+
+                <div
+                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" fill="#FF0000" />
+                    <path
+                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="px-4 md:px-0">
+                <p
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Prenez Soin de Votre Peau avec les Produits de Cosmétiques
+                  Yves Rocher
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
+                >
+                  Publié à 09h15
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
+              <div class="relative">
+                <img
+                  src="Photo-Espace/espace2.2.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+
+                <div
+                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" fill="#FF0000" />
+                    <path
+                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Voyagez Confortablement avec Royal Air Maroc : Découvrez Nos
+                  Offres Exclusives
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
+                >
+                  Publié à 09h15
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative">
+                <img
+                  src="Photo-Espace/espace2.3.png"
+                  alt=""
+                  class="max-w-[300px] w-full object-cover"
+                />
+
+                <div
+                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" fill="#FF0000" />
+                    <path
+                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Les Avantages de la Nouvelle Application Mobile de Banque
+                  Populaire
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
+                >
+                  Publié à 09h15
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative">
+                <img
+                  src="../Thématiques-Africa/Africa-img/VIDEOS1.4.png"
+                  alt=""
+                  class="max-w-[300px] w-full object-cover"
+                />
+
+                <div
+                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" fill="#FF0000" />
+                    <path
+                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Explorez la douceur de la nature et les plantes en africa park
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
+                  >Publié à 09h15
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section-Space-3 -->
+      <section class="py-6 md:py-8 lg:py-10">
+        <div class="site-container">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
+          >
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
+              <div class="relative relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace3.1.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="px-4 md:px-0">
+                <p
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Profitez d'une expérience de voyage inégalée avec Royal Air
+                  Maroc
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
+              <div class="relative relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace3.2.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Boostez Votre Énergie avec les Nouveaux Produits d'Afriquia
+                  Gaz
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace3.3.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Marjane, votre destination préférée pour les courses et le
+                  shopping dévoile sa nouvelle collection
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace3.4.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Innovation Technologique : Les Dernières Nouvelles de Huawei
+                  Maroc
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section-Space-4 -->
+      <section class="py-6 md:py-8 lg:py-10">
+        <div class="site-container">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
+          >
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
+              <div class="relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace3.1.png"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover h-[200px]"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="px-4 md:px-0">
+                <p
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  Pepsi avec une édition artistique les couleurs sont toujours
+                  aussi vibrantes
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
+              <div class="relative relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/eapsce4.2.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  venez voir le nouveau branding de la marque orange tree
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative relative w-fit">
+                <img
+                  src="Photo-Espace/espace4.3.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover h-[200px]"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[19px] capitalize mb-3"
+                >
+                  Centrale Danone vous invite à découvrir ses produits laitiers
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative relative w-fit">
+                <img
+                  src="Photo-Espace/espace4.4.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover h-[200px]"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[19px] capitalize mb-3"
+                >
+                  IKEA Casablanca vous invite à redécorer votre maison avec un
+                  design en jaune
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section-Fake-5 -->
+      <section class="py-6 md:py-8 lg:py-10">
+        <div class="site-container">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
+          >
+            <div class="flex flex-col gap-y-4 md:gap-y-6 relative">
+              <div class="relative relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace51.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="px-4 md:px-0">
+                <p
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  motivation au top les places vip pour un super cadeau
+                  gratuitement
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-4 md:gap-y-6">
+              <div class="relative inline-block">
+                <img
+                  src="Photo-Espace/Espace5.2.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover h-[200px]"
+                />
+                <div
+                  class="absolute top-0 right-5 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  un designer une artiste et une exposition au marocain
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace5.3.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover h-[200px]"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  la beauté et les tendances de cet année 2024
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-6">
+              <div class="relative inline-block w-fit">
+                <img
+                  src="Photo-Espace/Espace5.4.jpg"
+                  alt=""
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover h-[200px]"
+                />
+                <div
+                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.9466 16.1246C17.8916 15.9646 17.7387 15.9206 17.607 16.0263L16.2192 17.1385C16.1574 17.1879 16.0711 17.2306 15.9787 17.2611C15.8734 17.2964 15.762 17.3153 15.6717 17.3086L11.7053 17.0158C11.6659 17.0131 11.6361 17.0151 11.6123 17.0199C11.6021 17.0171 11.5919 17.0138 11.581 17.011C11.5899 17.0144 11.5994 17.0171 11.6082 17.0205C11.5342 17.0388 11.545 17.0958 11.6503 17.1689L20.1346 23.0672C20.1869 23.1038 20.229 23.118 20.2582 23.1146C20.2738 23.1126 20.2867 23.1044 20.2942 23.0916C20.3098 23.0651 20.3092 23.0191 20.2867 22.9526L17.9452 16.1253L17.9466 16.1246Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M6.299 12.9418L6.79012 11.2346C6.81729 11.1398 6.8825 11.0313 6.9613 10.9392C7.017 10.8741 7.07881 10.8172 7.13927 10.7806L10.5493 8.73859C10.6946 8.65184 10.6749 8.58136 10.5051 8.58204L0.164387 8.64303C0.0842312 8.64303 0.0373606 8.66269 0.0230956 8.69251C0.0149442 8.71013 0.0183407 8.73181 0.0332849 8.75553C0.0224164 8.7535 0.0108685 8.75147 0 8.74943C0.0115478 8.75214 0.0230956 8.75553 0.0346435 8.75824C0.0489084 8.77925 0.0713248 8.80162 0.10461 8.82602L5.96275 13.057C6.09997 13.156 6.25077 13.1045 6.29696 12.9418H6.299Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M10.9779 18.4706L9.53853 17.4249C9.45294 17.3626 9.36667 17.2541 9.30622 17.1409C9.27021 17.0732 9.24304 17.004 9.2315 16.9424L8.47749 13.0461C8.44556 12.8801 8.3722 12.8747 8.31514 13.0339L4.82838 22.7464C4.80121 22.8223 4.80325 22.8731 4.82702 22.8962C4.83449 22.9036 4.84468 22.9077 4.85691 22.909C4.85419 22.9131 4.85147 22.9172 4.84876 22.9212C4.85215 22.9172 4.85487 22.9131 4.85759 22.909C4.8868 22.9124 4.92823 22.8982 4.97918 22.8636L10.9711 18.8231C11.1118 18.7282 11.1145 18.5696 10.9773 18.47L10.9779 18.4706Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M23.8921 8.70603C23.8711 8.64436 23.8052 8.54066 23.598 8.54066C23.596 8.54066 23.5946 8.54066 23.5926 8.54066L16.8289 8.54676C16.7923 8.54676 16.7563 8.54676 16.7203 8.54676C16.0552 8.54676 15.4595 8.5244 14.9222 8.48374L12.3484 0.235848C12.2852 0.0332084 12.1643 0.000677723 12.0984 0C12.0298 0 11.9109 0.0277866 11.8416 0.228393L9.89075 5.89619L9.8792 5.9355C9.8792 5.9355 9.8792 5.93821 9.87852 5.93889L9.83573 6.08527C9.77867 6.28046 9.73655 6.44921 9.761 6.69726C9.761 6.69861 9.77323 6.82196 9.78002 6.85246L9.78206 6.85991C9.90365 7.31805 10.3635 7.79585 11.0109 8.1381C11.9395 8.62809 13.4128 8.86936 14.5289 8.98661L14.7171 9.53285C14.6349 9.6318 14.5887 9.75582 14.5887 9.8873C14.5887 10.1943 14.8386 10.4437 15.1464 10.4437C15.4541 10.4437 15.7041 10.1943 15.7041 9.8873C15.7041 9.58029 15.4745 9.35258 15.1851 9.33225L15.0941 9.03947C15.8956 9.10656 16.5667 9.13638 16.5749 9.13638L22.0812 9.3336L15.7733 14.3284C15.7149 14.3081 15.6524 14.2972 15.5899 14.2972C15.2822 14.2972 15.0322 14.5466 15.0322 14.8537C15.0322 15.1607 15.2822 15.4101 15.5899 15.4101C15.8977 15.4101 16.1476 15.1607 16.1476 14.8537C16.1476 14.8008 16.1402 14.7486 16.1252 14.6985L23.7515 9.01914C23.922 8.89173 23.9125 8.76838 23.8915 8.70535L23.8921 8.70603ZM10.7752 7.25435C10.5245 7.01308 10.3989 6.7447 10.4104 6.47293V6.46344C10.4335 6.31299 10.4668 6.18761 10.5198 6.05478L12.0909 1.91525L14.338 8.4302C12.3565 8.21536 11.3166 7.73282 10.7759 7.25367L10.7752 7.25435Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div class="">
+                <p
+                  class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                >
+                  nathan’s restaurent est ouvert finallement venez
+                </p>
+                <a
+                  href="#"
+                  class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                >
+                  Publié le 3 juin
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-[#EEEEEE] h-[60px] mx-auto flex items-center justify-center text-black max-w-[630px] text-xl font-semibold my-[90px] hover:bg-gray-600 hover:text-white transition-all duration-200 cursor-pointer"
+        >
+          <span>VOIR PLUS</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+
+    <footer
+      class="bg-[#EEEEEE] border-t border-gray-200 mt-8 md:mt-10 lg:mt-12"
+    >
+      <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+        <!-- Top Section: Logo, Description, Social, Newsletter -->
+        <div
+          class="flex flex-col lg:flex-row justify-between gap-6 md:gap-8 lg:gap-10 border-b border-gray-300 pb-6 md:pb-8 mb-4 md:mb-6"
+        >
+          <!-- Left Column: Logo and Description -->
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <!-- Logo (Using the provided structure and fixing the text style) -->
+              <a href="#" class="flex items-center">
+                <img
+                  src="../images/Logo.png"
+                  alt="SNRT Icon"
+                  class="w-[75px] mr-1"
+                />
+                <div
+                  class="leading-none text-black font-extrabold text-xl mt-10 -ml-1"
+                >
+                  SNRT<br />
+                  <span class="text-black tracking-wider text-xl font-extrabold"
+                    >NEWS</span
+                  >
+                </div>
+              </a>
+            </div>
+
+            <p
+              class="text-gray-700 text-sm leading-relaxed max-w-[300px] w-full"
+            >
+              SNRTEws est un site électronique marocain d'information, publié en
+              arabe et en français, par la Société nationale de radiodiffusion
+              et de télévision (SNRT).
+            </p>
+
+            <!-- Social Media Icons -->
+          </div>
+
+          <!-- Right Column: Navigation Links and Newsletter -->
+          <div class="lg:w-2/3 flex flex-col">
+            <!-- Main Link Groups (ACTITIVÉS ROYALES, ÉCONOMIE, etc.) -->
+            <div
+              class="grid grid-cols-2 lg:grid-cols-4 text-sm font-medium gap-6 md:gap-12 lg:gap-28"
+            >
+              <ul class="space-y-2">
+                <li>
+                  <div class="flex gap-12 pt-2">
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- Twitter/X SVG (First SVG provided) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="20"
+                        height="19"
+                        viewBox="0 0 20 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.5905 7.9908L18.7262 0H17.0617L10.8332 6.93416L5.83169 0H0L7.56905 10.5741L0 19H1.7738L8.33445 11.6463L13.5951 19H19.5362L11.5945 7.99468L11.5905 7.9908ZM14.4334 17.7103L2.58781 1.28972H5.07842L16.8309 17.7103H14.4334Z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- Instagram SVG (Second SVG provided - Simplified for icon) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="21"
+                        height="19"
+                        viewBox="0 0 21 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.4382 4.60547C7.62496 4.60547 5.33398 6.80304 5.33398 9.50158C5.33398 12.2001 7.62496 14.3977 10.4382 14.3977C13.2514 14.3977 15.5424 12.2001 15.5424 9.50158C15.5424 6.80304 13.2514 4.60547 10.4382 4.60547ZM10.4382 12.7111C8.59287 12.7111 7.09225 11.2717 7.09225 9.50158C7.09225 7.7315 8.59287 6.29206 10.4382 6.29206C12.2835 6.29206 13.7841 7.7315 13.7841 9.50158C13.7841 11.2717 12.2835 12.7111 10.4382 12.7111Z"
+                        />
+                        <path
+                          d="M15.7582 3.17578C15.4205 3.17578 15.0862 3.30603 14.8495 3.53648C14.6092 3.76692 14.47 4.0842 14.47 4.4115C14.47 4.7388 14.6092 5.05608 14.8495 5.28652C15.0862 5.51697 15.4205 5.64722 15.7582 5.64722C16.0959 5.64722 16.4302 5.51363 16.6704 5.28652C16.9107 5.05608 17.0464 4.73546 17.0464 4.4115C17.0464 4.08754 16.9107 3.76692 16.6704 3.53648C16.4302 3.30603 16.0994 3.17578 15.7582 3.17578Z"
+                        />
+                        <path
+                          d="M14.8773 0H6.00243C2.98727 0 0.536133 2.3512 0.536133 5.24345V13.7565C0.536133 16.6488 2.98727 19 6.00243 19H14.8773C17.8925 19 20.3436 16.6488 20.3436 13.7565V5.24345C20.3436 2.3512 17.8925 0 14.8773 0ZM18.5854 13.7599C18.5854 15.7203 16.9211 17.3168 14.8773 17.3168H6.00243C3.95867 17.3168 2.2944 15.7203 2.2944 13.7599V5.24679C2.2944 3.28634 3.95867 1.68993 6.00243 1.68993H14.8773C16.9246 1.68993 18.5854 3.28634 18.5854 5.24679V13.7599Z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- Facebook SVG (Third SVG provided) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="10"
+                        height="19"
+                        viewBox="0 0 10 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.2465 9.49833H6.53076V19H2.81925V9.49833H0.34375V6.22535H2.81925L2.81577 4.30163C2.81577 1.62313 3.5713 0 6.85456 0H9.5912V3.27966H7.88167C6.60736 3.27966 6.53425 3.74389 6.53425 4.58552V6.22201H9.61209L9.24999 9.50167L9.2465 9.49833Z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-gray-700 hover:text-red-600 transition"
+                    >
+                      <!-- YouTube SVG (Fourth SVG provided) -->
+                      <svg
+                        class="w-5 h-5"
+                        width="30"
+                        height="19"
+                        viewBox="0 0 30 19"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.6655 0H5.47191C2.7867 0 0.612061 2.08599 0.612061 4.66173V14.0396C0.612061 16.6153 2.7867 18.7013 5.47191 18.7013H24.6655C27.3507 18.7013 29.5253 16.6153 29.5253 14.0396V4.66173C29.5253 2.08599 27.3507 0 24.6655 0ZM12.3551 13.3186V5.36915L19.21 9.34159L12.3551 13.314V13.3186Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >ACTITIVÉS ROYALES</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >ÉCONOMIE</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >SOCIÉTÉ</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >ACTITIVÉS PRINCIÈRES</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >TECHNOLOGIE</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >LIFESTYLE</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600">SPORT</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600">MONDE</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >VRAI OU FAKE</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <button
+                    class="bg-black text-[#FF0000] px-6 py-3 text-sm font-semibold rounded-lg hover:bg-gray-300 transition tracking-wider uppercase"
+                  >
+                    Newsletter
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >POLITIQUE</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >AFRICA</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-700 hover:text-red-600"
+                    >AGENDA CULTUREL</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Newsletter Button -->
+          </div>
+        </div>
+
+        <!-- Bottom Footer Links and Copyright -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500"
+        >
+          <div class="mb-2 md:mb-0">
+            Copyrights by <span class="font-bold text-gray-700">SNRT</span>
+          </div>
+          <nav
+            class="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-1"
+          >
+            <a href="#" class="hover:text-red-600">Qui sommes-nous ?</a>
+            <a href="#" class="hover:text-red-600">Contact</a>
+            <a href="#" class="hover:text-red-600">Charte éditoriale</a>
+            <a href="#" class="hover:text-red-600"
+              >Politique de confidentialité</a
+            >
+            <a href="#" class="hover:text-red-600">Plan du site</a>
+            <a href="#" class="hover:text-red-600">Toutes les actualités</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        var navBtn = document.getElementById("theme-toggle-nav");
+        var root = document.documentElement;
+
+        function setIconFor(el, t) {
+          if (!el) return;
+          var sun = el.querySelector(".icon-sun");
+          var moon = el.querySelector(".icon-moon");
+          if (t === "dark") {
+            if (sun) sun.classList.add("icon-hidden");
+            if (moon) moon.classList.remove("icon-hidden");
+            el.setAttribute("aria-label", "Switch to light mode");
+          } else {
+            if (sun) sun.classList.remove("icon-hidden");
+            if (moon) moon.classList.add("icon-hidden");
+            el.setAttribute("aria-label", "Switch to dark mode");
+          }
+        }
+
+        function applyTheme(t) {
+          if (t === "dark") root.classList.add("dark");
+          else root.classList.remove("dark");
+          root.classList.add("user-selected");
+          setIconFor(btn, t);
+          setIconFor(navBtn, t);
+        }
+
+        var saved = localStorage.getItem("snrt-theme");
+        if (saved) applyTheme(saved);
+        else {
+          var prefers =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          applyTheme(prefers);
+        }
+
+        function toggle() {
+          var isDark = document.documentElement.classList.contains("dark");
+          var next = isDark ? "light" : "dark";
+          applyTheme(next);
+          localStorage.setItem("snrt-theme", next);
+        }
+
+        if (btn) btn.addEventListener("click", toggle);
+        if (navBtn) navBtn.addEventListener("click", toggle);
+      })();
+
+      // Mobile Sidebar Menu
+      (function () {
+        var toggleBtn = document.getElementById("mobile-menu-toggle");
+        var closeBtn = document.getElementById("mobile-menu-close");
+        var sidebar = document.getElementById("mobile-sidebar");
+        var overlay = document.getElementById("mobile-sidebar-overlay");
+
+        console.log("Mobile menu initialized:", {
+          toggleBtn: !!toggleBtn,
+          closeBtn: !!closeBtn,
+          sidebar: !!sidebar,
+          overlay: !!overlay,
+        });
+
+        function openSidebar() {
+          console.log("Opening sidebar");
+          if (sidebar && overlay) {
+            sidebar.classList.remove("-translate-x-full");
+            sidebar.classList.add("translate-x-0");
+            overlay.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          }
+        }
+
+        function closeSidebar() {
+          console.log("Closing sidebar");
+          if (sidebar && overlay) {
+            sidebar.classList.add("-translate-x-full");
+            sidebar.classList.remove("translate-x-0");
+            overlay.classList.add("hidden");
+            document.body.style.overflow = "";
+          }
+        }
+
+        if (toggleBtn) {
+          toggleBtn.addEventListener("click", function (e) {
+            console.log("Toggle button clicked", e);
+            openSidebar();
+          });
+        }
+        if (closeBtn) closeBtn.addEventListener("click", closeSidebar);
+        if (overlay) overlay.addEventListener("click", closeSidebar);
+
+        // Close sidebar on link click
+        var sidebarLinks = sidebar ? sidebar.querySelectorAll("a") : [];
+        sidebarLinks.forEach(function (link) {
+          link.addEventListener("click", closeSidebar);
+        });
+      })();
+    </script>
+  </body>
+</html>
