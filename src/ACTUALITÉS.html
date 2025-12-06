@@ -20,21 +20,30 @@
     <link rel="stylesheet" href="/src/layout.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-white font-sans">
+  <body class="theme-bg font-sans">
     <header class="w-full mt-5">
       <!-- Top bar -->
-      <div class="bg-white text-sm">
+      <div class="theme-bg text-sm">
         <div
           class="site-container mx-auto px-2 flex items-center justify-between text-gray-600 lg:grid lg:grid-cols-2"
         >
           <!-- Mobile Logo (shown only on mobile) -->
           <div class="lg:hidden flex items-center mt-5">
-            <img src="./images/logo-fr.svg" alt="SNRT News" class="h-8" />
+            <img
+              src="./images/logo-fr.svg"
+              alt="SNRT News"
+              class="h-8 logo-light"
+            />
+            <img
+              src="./images/logo_darkmode.png"
+              alt="SNRT News"
+              class="h-8 logo-dark"
+            />
           </div>
 
           <!-- Left: date + location (hidden on mobile) -->
           <div
-            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm text-black"
+            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm theme-text"
           >
             <span>Lun, 03 Sep, 2024</span>
             <span>Casablanca 24°C</span>
@@ -52,7 +61,7 @@
               type="button"
             >
               <svg
-                class="w-6 h-6 text-black"
+                class="w-6 h-6 theme-text"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -67,7 +76,7 @@
             </button>
 
             <span
-              class="text-black text-medium flex items-center gap-2 justify-center cursor-pointer"
+              class="theme-text text-medium flex items-center gap-2 justify-center cursor-pointer"
               >FR
               <svg
                 width="8"
@@ -75,10 +84,11 @@
                 viewBox="0 0 8 6"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                class="theme-icon-fill"
               >
                 <path
                   d="M-6.81992e-08 1.74807L0 1.14097e-05L4 4.08111L8 3.39792e-07L8 1.74807L4 5.83015L-6.81992e-08 1.74807Z"
-                  fill="black"
+                  fill="currentColor"
                 />
               </svg>
             </span>
@@ -132,28 +142,31 @@
         </div>
 
         <div
-          class="w-full max-w-[1440px] mx-auto px-4 pb-6 hidden lg:flex lg:-mt-6 justify-center items-center"
+          class="w-full max-w-[1440px] mx-auto px-4 pb-6 hidden lg:flex lg:-mt-6 justify-center items-center theme-bg"
         >
           <!-- Center: Logo -->
           <div class="flex items-center justify-center w-[200px] h-24">
             <img
               src="./images/logo-fr.svg"
-              alt=""
-              class="w-full h-full object-cover"
+              alt="SNRT News"
+              class="w-full h-full object-cover logo-light"
+            />
+            <img
+              src="./images/logo_darkmode.png"
+              alt="SNRT News"
+              class="w-full h-full object-cover logo-dark"
             />
           </div>
         </div>
       </div>
 
       <!-- Main nav (Desktop Only) -->
-      <div class="bg-white hidden lg:block">
+      <div class="theme-bg hidden lg:block">
         <div class="site-container mx-auto px-4 py-3 flex justify-center">
           <!-- Use Tailwind utilities for size/weight/spacing and divide-x for separators.
                A small inline style sets the Nobel Uno font-family (uses -- variable).
           -->
-          <nav
-            class="flex text-sm text-gray-800 font-black divide-x divide-gray-200"
-          >
+          <nav class="flex text-sm theme-text font-black divide-x theme-border">
             <a
               href="#"
               class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
@@ -246,14 +259,23 @@
       <!-- Mobile Sidebar Navigation -->
       <div
         id="mobile-sidebar"
-        class="fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto"
+        class="fixed inset-y-0 left-0 z-50 w-80 theme-bg-sidebar shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto"
       >
         <!-- Sidebar Header -->
         <div
-          class="flex items-center justify-between p-4 border-b border-gray-200"
+          class="flex items-center justify-between p-4 border-b theme-border"
         >
           <div class="flex items-center gap-2">
-            <img src="./images/logo-fr.svg" alt="SNRT News" class="h-8" />
+            <img
+              src="./images/logo-fr.svg"
+              alt="SNRT News"
+              class="h-8 logo-light"
+            />
+            <img
+              src="./images/logo_darkmode.png"
+              alt="SNRT News"
+              class="h-8 logo-dark"
+            />
           </div>
           <button
             id="mobile-menu-close"
@@ -262,7 +284,7 @@
             type="button"
           >
             <svg
-              class="w-6 h-6 text-gray-600"
+              class="w-6 h-6 theme-text-secondary"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -278,12 +300,12 @@
         </div>
 
         <!-- Search Bar -->
-        <div class="p-4 border-b border-gray-200">
+        <div class="p-4 border-b theme-border">
           <div class="relative">
             <input
               type="text"
               placeholder="RECHERCHER UN ARTICLE"
-              class="w-full px-4 py-2 pr-10 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-2 pr-10 text-sm theme-border-input theme-bg-input theme-text rounded focus:outline-none focus:ring-2 focus:ring-red-500"
             />
             <svg
               class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -305,120 +327,120 @@
         <nav class="py-2">
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-black uppercase theme-text theme-hover-bg hover:text-red-600 transition-colors"
           >
             ACTUALITÉS
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-black uppercase theme-text theme-hover-bg hover:text-red-600 transition-colors"
           >
             VRAI OU FAKE
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-black uppercase theme-text theme-hover-bg hover:text-red-600 transition-colors"
           >
             DOSSIER
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-black uppercase theme-text theme-hover-bg hover:text-red-600 transition-colors"
           >
             ESPACE PARTENAIRES
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-black uppercase theme-text theme-hover-bg hover:text-red-600 transition-colors"
           >
             VIDÉOS
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-black uppercase theme-text theme-hover-bg hover:text-red-600 transition-colors"
           >
             IMAGES
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-black uppercase text-gray-800 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-black uppercase theme-text theme-hover-bg hover:text-red-600 transition-colors"
           >
             LIVE
           </a>
         </nav>
 
         <!-- Red Section Links -->
-        <div class="border-t border-gray-200 py-2">
+        <div class="border-t theme-border py-2">
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             ACTIVITÉS ROYALES
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             ACTIVITÉS PRINCIÈRES
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             POLITIQUE
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             SPORT
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             SOCIÉTÉ
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             ÉCONOMIE
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             AFRICA
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             MONDE
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             LIFESTYLE
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             TECHNOLOGIE
           </a>
           <a
             href="#"
-            class="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+            class="block px-6 py-3 text-sm font-semibold theme-text-secondary theme-hover-bg hover:text-red-600 transition-colors"
           >
             AGENDA CULTUREL
           </a>
         </div>
 
         <!-- Newsletter Section -->
-        <div class="border-t border-gray-200 p-6">
+        <div class="border-t theme-border p-6">
           <button
             class="w-full bg-red-600 text-white font-bold py-3 px-4 uppercase text-sm hover:bg-red-700 transition-colors"
           >
@@ -427,12 +449,12 @@
         </div>
 
         <!-- Social Media Icons -->
-        <div class="border-t border-gray-200 p-6">
+        <div class="border-t theme-border p-6">
           <div class="flex justify-center gap-6">
             <a
               href="#"
               aria-label="Twitter"
-              class="text-gray-600 hover:text-red-600"
+              class="theme-text-secondary hover:text-red-600"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -443,7 +465,7 @@
             <a
               href="#"
               aria-label="Instagram"
-              class="text-gray-600 hover:text-red-600"
+              class="theme-text-secondary hover:text-red-600"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -454,7 +476,7 @@
             <a
               href="#"
               aria-label="Facebook"
-              class="text-gray-600 hover:text-red-600"
+              class="theme-text-secondary hover:text-red-600"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -465,7 +487,7 @@
             <a
               href="#"
               aria-label="YouTube"
-              class="text-gray-600 hover:text-red-600"
+              class="theme-text-secondary hover:text-red-600"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -491,7 +513,7 @@
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <!-- Hero -->
           <article class="lg:col-span-2">
-            <h3 class="text-black text-base md:text-lg font-semibold mb-4">
+            <h3 class="theme-text text-base md:text-lg font-semibold mb-4">
               ACTUALITÉS
             </h3>
             <div class="relative hero-bg rounded-lg overflow-hidden">
@@ -500,7 +522,7 @@
                 class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
               >
                 <div
-                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] bg-[#EEEEEE]"
+                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] theme-bg-surface"
                 >
                   <div
                     class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
@@ -661,11 +683,11 @@
           <!-- Sidebar -->
           <aside class="mt-8 lg:mt-0">
             <h3
-              class="text-black text-base md:text-lg font-semibold w-full mb-4"
+              class="theme-text text-base md:text-lg font-semibold w-full mb-4"
             >
               Flash NEWS
             </h3>
-            <div class="bg-white my-5.5">
+            <div class="theme-bg my-5.5">
               <img
                 src="images/BG2.jpg"
                 alt="Background"
@@ -752,7 +774,7 @@
       <!-- 
       Video section can be use re use 
       -->
-      <section class="bg-[#EEE] py-6 md:py-8 lg:py-10">
+      <section class="theme-bg-surface py-6 md:py-8 lg:py-10">
         <div class="site-container">
           <h1 class="text-xl md:text-2xl font-bold mb-6 uppercase px-4 md:px-0">
             Vidéos
@@ -986,7 +1008,7 @@
                 class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
               >
                 <div
-                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 items-start justify-between w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] bg-[#EEEEEE]"
+                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 items-start justify-between w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] theme-bg-surface"
                 >
                   <h4
                     class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
@@ -1629,7 +1651,7 @@
       <!--  -->
 
       <!-- IMAGES SECTION-->
-      <section class="bg-[#eee] py-6 md:py-8">
+      <section class="theme-bg-surface py-6 md:py-8">
         <div class="site-container px-4 md:px-0">
           <div class="">
             <h3 class="text-xl md:text-2xl font-bold mb-6 uppercase">IMAGES</h3>
@@ -2210,7 +2232,7 @@
               <span class="mt-2">Agenda culturel</span>
             </div>
             <div
-              class="bg-[#eeeeee] my-5.5 h-[532px] p-6 w-[300px] flex flex-col items-center justify-center gap-y-6"
+              class="theme-bg-surface my-5.5 h-[532px] p-6 w-[300px] flex flex-col items-center justify-center gap-y-6"
             >
               <img
                 src="images/sideimg.png"
@@ -2242,7 +2264,7 @@
     <!-- Footer -->
 
     <footer
-      class="bg-[#EEEEEE] border-t border-gray-200 mt-8 md:mt-10 lg:mt-12"
+      class="theme-bg-surface border-t theme-border mt-8 md:mt-10 lg:mt-12"
     >
       <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
         <!-- Top Section: Logo, Description, Social, Newsletter -->

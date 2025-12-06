@@ -34,50 +34,187 @@
   margin: 0 auto;
 }
 
-/* Color system (light & dark) - use CSS variables so CDN Tailwind utilities still work
-   Light mode values (defaults)
-*/
+/* ============================================
+   THEME SYSTEM - CSS Variables for Dark/Light Mode
+   Works with Tailwind CSS v4 CDN
+   ============================================ */
+
+/* Light mode values (defaults) */
 :root {
-  --bg: rgba(255, 255, 255, 1);
-  --text-primary: rgba(0, 0, 0, 1);
-  --text-secondary: rgba(0, 0, 0, 0.5);
-  --surface: rgba(238, 238, 238, 1);
+  /* Background colors */
+  --color-bg-primary: 255 255 255; /* white */
+  --color-bg-secondary: 249 250 251; /* gray-50 */
+  --color-bg-surface: 243 244 246; /* gray-100 */
+  --color-bg-surface-hover: 229 231 235; /* gray-200 */
+
+  /* Text colors */
+  --color-text-primary: 0 0 0; /* black */
+  --color-text-secondary: 75 85 99; /* gray-600 */
+  --color-text-muted: 107 114 128; /* gray-500 */
+  --color-text-inverted: 255 255 255; /* white */
+
+  /* Border colors */
+  --color-border: 229 231 235; /* gray-200 */
+  --color-border-light: 243 244 246; /* gray-100 */
+
+  /* Card & Surface */
+  --color-card-bg: 255 255 255; /* white */
+  --color-card-hover: 249 250 251; /* gray-50 */
+
+  /* Input colors */
+  --color-input-bg: 255 255 255; /* white */
+  --color-input-border: 209 213 219; /* gray-300 */
+
+  /* Sidebar */
+  --color-sidebar-bg: 255 255 255; /* white */
+
+  /* Legacy variables for backwards compatibility */
+  --bg: rgb(var(--color-bg-primary));
+  --text-primary: rgb(var(--color-text-primary));
+  --text-secondary: rgb(var(--color-text-secondary));
+  --surface: rgb(var(--color-bg-surface));
   --accent: rgba(0, 0, 0, 0.08);
 }
 
 /* Dark mode override when .dark is present on <html> */
 .dark {
-  --bg: rgba(0, 0, 0, 1);
-  --text-primary: rgba(255, 255, 255, 1);
-  --text-secondary: rgba(37, 37, 37, 1);
-  --surface: rgba(255, 255, 255, 0.07);
+  /* Background colors */
+  --color-bg-primary: 0 0 0; /* black */
+  --color-bg-secondary: 17 17 17; /* near-black */
+  --color-bg-surface: 31 41 55; /* gray-800 */
+  --color-bg-surface-hover: 55 65 81; /* gray-700 */
+
+  /* Text colors */
+  --color-text-primary: 255 255 255; /* white */
+  --color-text-secondary: 209 213 219; /* gray-300 */
+  --color-text-muted: 156 163 175; /* gray-400 */
+  --color-text-inverted: 0 0 0; /* black */
+
+  /* Border colors */
+  --color-border: 55 65 81; /* gray-700 */
+  --color-border-light: 31 41 55; /* gray-800 */
+
+  /* Card & Surface */
+  --color-card-bg: 17 24 39; /* gray-900 */
+  --color-card-hover: 31 41 55; /* gray-800 */
+
+  /* Input colors */
+  --color-input-bg: 31 41 55; /* gray-800 */
+  --color-input-border: 75 85 99; /* gray-600 */
+
+  /* Sidebar */
+  --color-sidebar-bg: 17 24 39; /* gray-900 */
+
+  /* Legacy variables */
+  --bg: rgb(var(--color-bg-primary));
+  --text-primary: rgb(var(--color-text-primary));
+  --text-secondary: rgb(var(--color-text-secondary));
+  --surface: rgb(var(--color-bg-surface));
   --accent: rgba(255, 255, 255, 0.07);
 }
 
-/* Apply theme to body/html only - don't override specific colors */
+/* ============================================
+   THEME-AWARE UTILITY CLASSES
+   These classes automatically switch between light/dark
+   ============================================ */
+
+/* Background utilities */
+.theme-bg {
+  background-color: rgb(var(--color-bg-primary)) !important;
+}
+.theme-bg-secondary {
+  background-color: rgb(var(--color-bg-secondary)) !important;
+}
+.theme-bg-surface {
+  background-color: rgb(var(--color-bg-surface)) !important;
+}
+.theme-bg-card {
+  background-color: rgb(var(--color-card-bg)) !important;
+}
+.theme-bg-sidebar {
+  background-color: rgb(var(--color-sidebar-bg)) !important;
+}
+.theme-bg-input {
+  background-color: rgb(var(--color-input-bg)) !important;
+}
+
+/* Text utilities */
+.theme-text {
+  color: rgb(var(--color-text-primary)) !important;
+}
+.theme-text-secondary {
+  color: rgb(var(--color-text-secondary)) !important;
+}
+.theme-text-muted {
+  color: rgb(var(--color-text-muted)) !important;
+}
+
+/* Border utilities */
+.theme-border {
+  border-color: rgb(var(--color-border)) !important;
+}
+.theme-border-light {
+  border-color: rgb(var(--color-border-light)) !important;
+}
+.theme-border-input {
+  border-color: rgb(var(--color-input-border)) !important;
+}
+
+/* Hover states */
+.theme-hover-bg:hover {
+  background-color: rgb(var(--color-bg-surface-hover)) !important;
+}
+.theme-hover-card:hover {
+  background-color: rgb(var(--color-card-hover)) !important;
+}
+
+/* SVG/Icon color utilities */
+.theme-icon {
+  color: rgb(var(--color-text-primary));
+}
+.theme-icon path,
+.theme-icon circle {
+  stroke: currentColor;
+}
+.theme-icon-fill path {
+  fill: rgb(var(--color-text-primary));
+}
+
+/* ============================================
+   APPLY THEME TO HTML/BODY
+   ============================================ */
+
 html {
-  background-color: var(--bg);
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body {
-  color: var(--text-primary);
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
 }
 
+/* Article card styling */
 .article-card {
-  background-color: var(--surface);
-  color: var(--text-primary);
+  background-color: rgb(var(--color-card-bg));
+  color: rgb(var(--color-text-primary));
 }
 
+/* Legacy text-muted class */
 .text-muted {
-  color: var(--text-secondary);
+  color: rgb(var(--color-text-muted));
 }
 
-/* small accent utility */
+/* Small accent utility */
 .border-accent {
   border-color: var(--accent);
 }
 
-/* Theme toggle icon styles */
+/* ============================================
+   THEME TOGGLE BUTTON STYLES
+   ============================================ */
+
 .theme-toggle-button {
   display: inline-flex;
   align-items: center;
@@ -87,6 +224,7 @@ body {
   border: none;
   padding: 0.25rem;
   cursor: pointer;
+  color: rgb(var(--color-text-primary));
 }
 .theme-toggle-button .icon {
   width: 18px;
@@ -99,4 +237,104 @@ body {
 .theme-toggle-button svg {
   width: 18px;
   height: 18px;
+  color: rgb(var(--color-text-primary));
+}
+
+/* ============================================
+   LOGO HANDLING FOR DARK MODE
+   ============================================ */
+
+.logo-light {
+  display: block;
+}
+.logo-dark {
+  display: none;
+}
+.dark .logo-light {
+  display: none;
+}
+.dark .logo-dark {
+  display: block;
+}
+
+/* ============================================
+   AUTOMATIC DARK MODE COLOR OVERRIDES
+   These automatically transform standard Tailwind classes
+   when .dark is applied to <html>
+   ============================================ */
+
+/* Background overrides */
+.dark .bg-white {
+  background-color: rgb(var(--color-bg-primary)) !important;
+}
+.dark .bg-gray-50 {
+  background-color: rgb(var(--color-bg-secondary)) !important;
+}
+.dark .bg-gray-100,
+.dark .bg-\[\#EEE\],
+.dark .bg-\[\#EEEEEE\] {
+  background-color: rgb(var(--color-bg-surface)) !important;
+}
+.dark .bg-gray-200 {
+  background-color: rgb(var(--color-bg-surface-hover)) !important;
+}
+
+/* Text color overrides */
+.dark .text-black {
+  color: rgb(var(--color-text-primary)) !important;
+}
+.dark .text-gray-900 {
+  color: rgb(var(--color-text-primary)) !important;
+}
+.dark .text-gray-800 {
+  color: rgb(var(--color-text-primary)) !important;
+}
+.dark .text-gray-700 {
+  color: rgb(var(--color-text-secondary)) !important;
+}
+.dark .text-gray-600 {
+  color: rgb(var(--color-text-secondary)) !important;
+}
+.dark .text-gray-500 {
+  color: rgb(var(--color-text-muted)) !important;
+}
+.dark .text-gray-400 {
+  color: rgb(var(--color-text-muted)) !important;
+}
+
+/* Border overrides */
+.dark .border-gray-200 {
+  border-color: rgb(var(--color-border)) !important;
+}
+.dark .border-gray-300 {
+  border-color: rgb(var(--color-border)) !important;
+}
+.dark .divide-gray-200 > * + * {
+  border-color: rgb(var(--color-border)) !important;
+}
+
+/* Hover state overrides */
+.dark .hover\:bg-gray-100:hover {
+  background-color: rgb(var(--color-bg-surface-hover)) !important;
+}
+.dark .hover\:text-gray-900:hover {
+  color: rgb(var(--color-text-primary)) !important;
+}
+
+/* Ring/Focus overrides */
+.dark .ring-gray-200 {
+  --tw-ring-color: rgb(var(--color-border)) !important;
+}
+.dark .focus\:ring-gray-200:focus {
+  --tw-ring-color: rgb(var(--color-border)) !important;
+}
+
+/* Shadow adjustments for dark mode */
+.dark .shadow-sm,
+.dark .shadow,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5);
 }
