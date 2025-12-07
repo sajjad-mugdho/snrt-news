@@ -537,10 +537,10 @@ body {
 
 /* Position the prev & next on edges */
 .sport-carousel .swiper-button-prev {
-  left: 12px;
+  left: 0;
 }
 .sport-carousel .swiper-button-next {
-  right: 12px;
+  right: 0;
   transform: translateY(-50%) scaleX(-1);
 }
 
