@@ -400,6 +400,25 @@ body {
   background-color: rgb(var(--color-bg-surface-hover)) !important;
 }
 
+/* Footer-specific theme overrides: ensure SVG shapes inside footer use text color */
+footer[role="contentinfo"] {
+  color: inherit; /* follow text color assigned via utility classes */
+}
+
+footer[role="contentinfo"] svg path,
+footer[role="contentinfo"] svg rect,
+footer[role="contentinfo"] svg circle,
+footer[role="contentinfo"] svg polygon,
+footer[role="contentinfo"] svg line {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* In case of missing utility classes, fall back to text color variables in dark mode */
+.dark footer[role="contentinfo"] {
+  color: rgb(var(--color-text-primary));
+}
+
 /* Text color overrides */
 .dark .text-black {
   color: rgb(var(--color-text-primary)) !important;
@@ -529,11 +548,7 @@ body {
   opacity: 0.7;
 }
 
-/* Dark mode adjustments */
-.dark .sport-carousel .swiper-button-prev,
-.dark .sport-carousel .swiper-button-next {
-  /* keep the SVG's style - no color override as arrow is baked into SVG */
-}
+/* Dark mode adjustments - handled by inline SVG icons, no CSS overrides needed */
 
 /* Position the prev & next on edges */
 .sport-carousel .swiper-button-prev {
@@ -571,6 +586,12 @@ body {
   width: 226px !important;
   height: 380px;
   flex-shrink: 0;
+}
+
+.videos-carousel .swiper-slide:focus {
+  outline: 2px solid rgba(255, 0, 0, 0.45);
+  outline-offset: -4px;
+  border-radius: 8px;
 }
 
 /* Videos Navigation Arrows */
@@ -619,13 +640,31 @@ body {
   top: 0;
   width: 28px;
   height: 100%;
-  background: #d3d3d3; /* Matches provided SVG */
+  /* Use theme surface color so dark mode matches other sections */
+  background: rgb(var(--color-bg-surface));
   z-index: 5; /* below buttons, above slides */
   pointer-events: none; /* Let clicks go to buttons */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
 }
 .videos-nav-bg.videos-nav-left {
   left: 0;
 }
 .videos-nav-bg.videos-nav-right {
   right: 0;
+}
+
+/* overlay style that works in light and dark */
+.videos-carousel .videos-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  ) !important;
+}
+.dark .videos-carousel .videos-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  ) !important;
 }
