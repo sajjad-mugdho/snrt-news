@@ -619,9 +619,13 @@ body {
   top: 0;
   width: 28px;
   height: 100%;
-  background: #D3D3D3; /* Matches provided SVG */
+  background: #d3d3d3; /* Matches provided SVG */
   z-index: 5; /* below buttons, above slides */
   pointer-events: none; /* Let clicks go to buttons */
 }
-.videos-nav-bg.videos-nav-left { left: 0; }
-.videos-nav-bg.videos-nav-right { right: 0; }
+.videos-nav-bg.videos-nav-left {
+  left: 0;
+}
+.videos-nav-bg.videos-nav-right {
+  right: 0;
+}
