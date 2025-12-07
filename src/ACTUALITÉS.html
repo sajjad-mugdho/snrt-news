@@ -867,221 +867,443 @@
       </section>
 
       <!-- 
-      Video section can be use re use 
+      Video section with carousel - 8 cards
       -->
-      <section class="theme-bg-surface py-6 md:py-8 lg:py-10">
-        <div class="site-container">
+      <section class="w-full bg-[#F3F3F3]">
+        <div class="site-container py-6 md:py-8 lg:py-10">
           <h1 class="text-xl md:text-2xl font-bold mb-6 uppercase px-4 md:px-0">
             Vidéos
           </h1>
 
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
-          >
-            <div class="flex flex-col gap-y-4 md:gap-y-6">
-              <div class="relative">
-                <img
-                  src="./images/videos/videos1.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-
+          <!-- Video Carousel -->
+          <div class="swiper videos-carousel relative px-4 md:px-0">
+            <!-- Vertical nav backgrounds (left/right) -->
+            <div class="videos-nav-bg videos-nav-left" aria-hidden="true"></div>
+            <div class="videos-nav-bg videos-nav-right" aria-hidden="true"></div>
+            <div class="swiper-wrapper">
+              <!-- Video Card 1 -->
+              <div class="swiper-slide">
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <img
+                    src="./images/videos/videos1.png"
+                    alt="Video 1"
+                    class="w-full h-full object-cover"
+                  />
+
+                  <!-- Play Button -->
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
                   >
-                    <rect width="40" height="40" fill="#FF0000" />
-                    <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
-                      fill="white"
-                    />
-                  </svg>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+
+                  <!-- Gradient Overlay + Text Section -->
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#FFB800] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >économie</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      Impacts Sur L'économie Mondiale La Crise Des Matières
+                      Premières
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
+              <!-- Video Card 2 -->
+              <div class="swiper-slide">
                 <div
-                  class="bg-yellow-500 h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
                 >
-                  <span class="mt-2">économie</span>
-                </div>
-                <div
-                  class="bg-black h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 uppercase"
-                >
-                  <span class="mt-2">Dossier</span>
+                  <img
+                    src="./images/videos/videos2.png"
+                    alt="Video 2"
+                    class="w-full h-full object-cover"
+                  />
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#FF6B9D] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >Lifestyle</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      15 Salades Healthy Merveilleusement Bonnes À Tester
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
-                <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
+              <!-- Video Card 3 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
                 >
-                  La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
-                  rues parsemées de taxis jaunes
-                </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
+                  <img
+                    src="./images/videos/videos3.png"
+                    alt="Video 3"
+                    class="w-full h-full object-cover"
+                  />
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#32CD32] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >société</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      Une Alerte Importante Sur Les Marchés Alimentaires
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video Card 4 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
                 >
-                  Publié à Publié le 3 juin
-                </a>
+                  <img
+                    src="./images/videos/videos4.png"
+                    alt="Video 4"
+                    class="w-full h-full object-cover"
+                  />
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#24D5CC] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >Sport</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      Homme Escalade Des Murs D'escalade Trop Fort
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video Card 5 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
+                >
+                  <img
+                    src="./images/videos/videos1.png"
+                    alt="Video 5"
+                    class="w-full h-full object-cover"
+                  />
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#FFC300] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >Technologie</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      Innovation Technologique Pour L'avenir
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video Card 6 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
+                >
+                  <img
+                    src="./images/videos/videos2.png"
+                    alt="Video 6"
+                    class="w-full h-full object-cover"
+                  />
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#007BFF] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >Politique</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      Gouvernance Et Politique Mondiale
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video Card 7 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
+                >
+                  <img
+                    src="./images/videos/videos3.png"
+                    alt="Video 7"
+                    class="w-full h-full object-cover"
+                  />
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#FF4500] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >Africa</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      Nouvelles D'Afrique Et Du Monde
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video Card 8 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[226px] h-[380px] bg-[#D9D9D9] relative group cursor-pointer"
+                >
+                  <img
+                    src="./images/videos/videos4.png"
+                    alt="Video 8"
+                    class="w-full h-full object-cover"
+                  />
+                  <div
+                    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center"
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="40" height="40" fill="#FF0000" />
+                      <path
+                        d="M27.7778 19.4447L15.2778 26.6615L15.2778 12.2278L27.7778 19.4447Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="absolute bottom-0 w-full h-[183px] bg-gradient-to-b from-transparent to-[#0E0E0E] p-5 flex flex-col justify-end"
+                  >
+                    <div class="bg-[#8A2BE2] inline-block px-3 py-1 mb-3 w-fit">
+                      <span class="text-white text-xs font-black uppercase"
+                        >Culture</span
+                      >
+                    </div>
+                    <p
+                      class="text-white text-sm font-bold leading-tight mb-3 line-clamp-2"
+                    >
+                      Agenda Culturel Et Événements
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6">
-              <div class="relative">
-                <img
-                  src="./images/videos/videos2.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
 
-                <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="40" height="40" fill="#FF0000" />
-                    <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <!-- badge -->
-              <div class="flex items-center justify-start">
-                <div
-                  class="bg-rose-400 h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-                >
-                  <span class="mt-2">Lifestyle</span>
-                </div>
-              </div>
-
-              <!-- Text -->
-              <div class="">
-                <p
-                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
-                >
-                  15 salades healthy merveilleusement bonnes à tester
-                </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
-                  Publié à 8h03 | Mis à jour à 9h10
-                </a>
-              </div>
-            </div>
-            <div class="flex flex-col gap-y-6">
-              <div class="relative">
-                <img
-                  src="./images/videos/videos3.png"
-                  alt=""
-                  class="max-w-[300px] w-full object-cover"
-                />
-
-                <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="40" height="40" fill="#FF0000" />
-                    <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <!-- badge -->
-              <div
-                class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+            <!-- Navigation arrows -->
+            <button
+              aria-label="Previous video"
+              class="videos-button-prev"
+              role="button"
+            >
+              <svg
+                width="27"
+                height="53"
+                viewBox="0 0 27 53"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <span class="mt-2 uppercase">société</span>
-              </div>
-              <!-- Text -->
-              <div class="">
-                <p
-                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
-                >
-                  Une alerte importante a été lancée sur les marchés après la
-                  découverte de produits alimentaires contaminés
-                </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
-                  Publié à 7h45
-                </a>
-              </div>
-            </div>
-            <div class="flex flex-col gap-y-6">
-              <div class="relative">
-                <img
-                  src="./images/videos/videos4.png"
-                  alt=""
-                  class="max-w-[300px] w-full object-cover"
+                <rect
+                  width="27"
+                  height="52.7842"
+                  fill="black"
+                  fill-opacity="0.1"
                 />
-
-                <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="40" height="40" fill="#FF0000" />
-                    <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <!-- badge -->
-              <div
-                class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                <path
+                  d="M16.75 18.001L8 24.1968L16.75 18.001ZM8 24.1968L16.75 30.3926L8 24.1968Z"
+                  fill="#D3D3D3"
+                  fill-opacity="0.7"
+                />
+                <path
+                  d="M16.75 18.001L8 24.1968L16.75 30.3926"
+                  stroke="black"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Next video"
+              class="videos-button-next"
+              role="button"
+            >
+              <svg
+                width="27"
+                height="53"
+                viewBox="0 0 27 53"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <span class="mt-2 uppercase">Sport</span>
-              </div>
-              <!-- Text -->
-              <div class="">
-                <p
-                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
-                >
-                  Homme Escalade Des Murs D'escalade trop fort
-                </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
-                  Publié à 7h45
-                </a>
-              </div>
-            </div>
+                <rect
+                  width="27"
+                  height="52.7842"
+                  fill="black"
+                  fill-opacity="0.1"
+                />
+                <path
+                  d="M16.75 18.001L8 24.1968L16.75 18.001ZM8 24.1968L16.75 30.3926L8 24.1968Z"
+                  fill="#D3D3D3"
+                  fill-opacity="0.7"
+                />
+                <path
+                  d="M16.75 18.001L8 24.1968L16.75 30.3926"
+                  stroke="black"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -2742,6 +2964,37 @@
           clickable: true,
         },
         speed: 600,
+      });
+
+      // Initialize Videos Carousel
+      const videosCarousel = new Swiper(".videos-carousel", {
+        loop: true,
+        loopFillGroupWithBlank: true,
+        autoplay: {
+          delay: 6000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".videos-button-next",
+          prevEl: ".videos-button-prev",
+        },
+        slidesPerView: 4,
+        spaceBetween: 16,
+        speed: 600,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 12,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
+        },
       });
     </script>
   </body>
