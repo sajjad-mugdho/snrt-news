@@ -10,9 +10,9 @@
     />
     <!-- Preload Tajawal from Google for better CLS (kept as-is) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700;800&display=swap"
-      rel="stylesheet"
+                  <p
+                    class="w-[270px] text-base font-medium theme-text leading-[150%] capitalize"
+                  >
     />
     <!-- Local fonts stylesheet (self-host Nobel Uno) -->
     <link rel="stylesheet" href="/src/fonts.css" />
@@ -25,7 +25,7 @@
       <!-- Top bar -->
       <div class="theme-bg text-sm">
         <div
-          class="site-container mx-auto px-2 flex items-center justify-between text-gray-600 lg:grid lg:grid-cols-2"
+          class="site-container mx-auto px-2 flex items-center justify-between theme-text-secondary lg:grid lg:grid-cols-2"
         >
           <!-- Mobile Logo (shown only on mobile) -->
           <div class="lg:hidden flex items-center mt-5">
@@ -43,7 +43,7 @@
 
           <!-- Left: date + location (hidden on mobile) -->
           <div
-            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm text-black"
+            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm theme-text"
           >
             <span>Lun, 03 Sep, 2024</span>
             <span>Casablanca 24°C</span>
@@ -61,7 +61,7 @@
               type="button"
             >
               <svg
-                class="w-6 h-6 text-black"
+                class="w-6 h-6 theme-text"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -76,7 +76,7 @@
             </button>
 
             <span
-              class="text-black text-medium flex items-center gap-2 justify-center cursor-pointer"
+              class="theme-text text-medium flex items-center gap-2 justify-center cursor-pointer"
               >FR
               <svg
                 width="8"
@@ -166,7 +166,7 @@
                A small inline style sets the Nobel Uno font-family (uses -- variable).
           -->
           <nav
-            class="flex text-sm text-gray-800 font-black divide-x divide-gray-200"
+            class="flex text-sm theme-text font-black divide-x theme-border overflow-x-auto no-scrollbar whitespace-nowrap flex-1 min-w-0"
           >
             <a
               href="#"
@@ -455,7 +455,7 @@
             <a
               href="#"
               aria-label="Twitter"
-              class="text-gray-600 hover:text-red-600"
+              class="theme-text-secondary hover:text-[#FF0000]"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -514,7 +514,7 @@
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <!-- Hero -->
           <article class="lg:col-span-2">
-            <h3 class="text-black text-base md:text-lg font-semibold mb-4">
+            <h3 class="theme-text text-base md:text-lg font-semibold mb-4">
               ACTUALITÉS
             </h3>
             <div class="relative hero-bg rounded-lg overflow-hidden">
@@ -532,14 +532,14 @@
                   </div>
 
                   <h4
-                    class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
+                    class="text-lg md:text-xl theme-text font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
                   >
                     Aventures en Altitude, Une Femme et son Chien Conquièrent
                     les Sommets
                   </h4>
 
                   <p
-                    class="w-[270px] text-base font-medium text-black leading-[150%] capitalize"
+                    class="w-[270px] text-base font-medium theme-text leading-[150%] capitalize"
                   >
                     Dans une quête de liberté et de connexion avec la nature,
                     Sophie Martin, une passionnée de randonnée de 32 ans, a
@@ -550,7 +550,7 @@
                   <div class="">
                     <a
                       href="#"
-                      class="text-black text-sm font-bold leading-[100%]"
+                      class="theme-text text-sm font-bold leading-[100%]"
                       >En ce moment</a
                     >
                   </div>
@@ -594,7 +594,7 @@
                 <!-- Text -->
                 <div class="px-4 md:px-0">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                     rues parsemées de taxis jaunes
@@ -627,7 +627,7 @@
                   </div>
 
                   <div
-                    class="bg-white h-[30px] min-w-[80px] border-2 border-black flex items-center justify-center text-black max-w-16 text-sm font-semibold"
+                    class="bg-white h-[30px] min-w-[80px] border-2 border-black flex items-center justify-center theme-text max-w-16 text-sm font-semibold"
                   >
                     <span class="mt-2">3 articles</span>
                   </div>
@@ -636,7 +636,7 @@
                 <!-- Text -->
                 <div class="px-4 md:px-0">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     une plateforme dynamique dédiée à la recherche et à la
                     promotion de solutions locales
@@ -665,7 +665,7 @@
                 <!-- Text -->
                 <div class="px-4 md:px-0">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Une alerte importante a été lancée sur les marchés après la
                     découverte de produits alimentaires contaminés
@@ -684,7 +684,7 @@
           <!-- Sidebar -->
           <aside class="mt-8 lg:mt-0">
             <h3
-              class="text-black text-base md:text-lg font-semibold w-full mb-4"
+              class="theme-text text-base md:text-lg font-semibold w-full mb-4"
             >
               Flash NEWS
             </h3>
@@ -698,7 +698,7 @@
               <ul class="space-y-2 text-sm text-gray-700 mt-3">
                 <li class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold capitalize mb-3"
                   >
                     Soufiane el-Bakkali distingué du grade de commandeur de
                     l’ordre du Ouissam alaouite
@@ -712,7 +712,7 @@
                 </li>
                 <li class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold capitalize mb-3"
                   >
                     Soufiane el-Bakkali distingué du grade de commandeur de
                     l’ordre du Ouissam alaouite
@@ -726,7 +726,7 @@
                 </li>
                 <li class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold capitalize mb-3"
                   >
                     Soufiane el-Bakkali distingué du grade de commandeur de
                     l’ordre du Ouissam alaouite
@@ -740,7 +740,7 @@
                 </li>
                 <li class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold capitalize mb-3"
                   >
                     Soufiane el-Bakkali distingué du grade de commandeur de
                     l’ordre du Ouissam alaouite
@@ -754,7 +754,7 @@
                 </li>
                 <li class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold capitalize mb-3"
                   >
                     Soufiane el-Bakkali distingué du grade de commandeur de
                     l’ordre du Ouissam alaouite
@@ -828,7 +828,7 @@
               <!-- Text -->
               <div class="px-4 md:px-0">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                   rues parsemées de taxis jaunes
@@ -879,7 +879,7 @@
               <!-- Text -->
               <div class="">
                 <p
-                  class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   15 salades healthy merveilleusement bonnes à tester
                 </p>
@@ -927,7 +927,7 @@
               <!-- Text -->
               <div class="">
                 <p
-                  class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   Une alerte importante a été lancée sur les marchés après la
                   découverte de produits alimentaires contaminés
@@ -976,7 +976,7 @@
               <!-- Text -->
               <div class="">
                 <p
-                  class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   Homme Escalade Des Murs D'escalade trop fort
                 </p>
@@ -1012,14 +1012,14 @@
                   class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 items-start justify-between w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] theme-bg-surface"
                 >
                   <h4
-                    class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
+                    class="text-lg md:text-xl theme-text font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
                   >
                     Aventures en Altitude, Une Femme et son Chien Conquièrent
                     les Sommets
                   </h4>
 
                   <p
-                    class="w-[270px] text-base font-medium text-black leading-[150%] capitalize"
+                    class="w-[270px] text-base font-medium theme-text leading-[150%] capitalize"
                   >
                     Dans une quête de liberté et de connexion avec la nature,
                     Sophie Martin, une passionnée de randonnée de 32 ans, a
@@ -1030,16 +1030,12 @@
                   <div class="">
                     <a
                       href="#"
-                      class="text-black text-sm font-bold leading-[100%]"
+                      class="theme-text text-sm font-bold leading-[100%]"
                       >En ce moment</a
-                    >
                   </div>
                 </div>
-
                 <!-- Image column -->
-                <div
-                  class="max-w-[630px] relative w-full min-w-[400px] h-[420px]"
-                >
+                <div class="max-w-[630px] relative w-full min-w-[400px] h-[420px]">
                   <img
                     src="images/Activités Royales.png"
                     alt=""
@@ -1055,8 +1051,20 @@
             <div class="bg-white my-5.5">
               <ul class="space-y-2 text-sm text-gray-700 mt-3">
                 <li class="">
+                  <p class="w-[300px] theme-text text-base font-bold capitalize mb-3">
+                    Soufiane el-Bakkali distingué du grade de commandeur de
+                    l’ordre du Ouissam alaouite
+                  </p>
+                  <a
+                    href="#"
+                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
+                  >
+                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
+                  </a>
+                </li>
+                <li class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold capitalize mb-3"
                   >
                     Soufiane el-Bakkali distingué du grade de commandeur de
                     l’ordre du Ouissam alaouite
@@ -1070,35 +1078,7 @@
                 </li>
                 <li class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
-                  >
-                    Soufiane el-Bakkali distingué du grade de commandeur de
-                    l’ordre du Ouissam alaouite
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
-                  </a>
-                </li>
-                <li class="">
-                  <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
-                  >
-                    Soufiane el-Bakkali distingué du grade de commandeur de
-                    l’ordre du Ouissam alaouite
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
-                  </a>
-                </li>
-                <li class="">
-                  <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold capitalize mb-3"
                   >
                     Soufiane el-Bakkali distingué du grade de commandeur de
                     l’ordre du Ouissam alaouite
@@ -1139,7 +1119,7 @@
             <!-- Text -->
             <div class="">
               <p
-                class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
               >
                 Sur Très Haute Instruction de SM le Roi, les Princesses Lalla
                 Meryem, Lalla Asmae et Lalla Hasnaa reçues à déjeuner au Palais
@@ -1163,8 +1143,8 @@
             <!-- Text -->
             <div class="">
               <p
-                class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
-              >
+                class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                >
                 Le prince Moulay El Hassan lance la construction de la station
                 de dessalement de Casablanca
               </p>
@@ -1185,7 +1165,7 @@
             <!-- Text -->
             <div class="">
               <p
-                class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
               >
                 La Princesse Lalla Meryem préside le conseil d'administration
                 des œuvres sociales des FAR
@@ -1207,7 +1187,7 @@
             <!-- Text -->
             <div class="">
               <p
-                class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
               >
                 SAR le Prince Héritier Moulay El Hassan préside à Tétouan un
                 déjeuner offert par le Chef du gouvernement
@@ -1291,7 +1271,7 @@
                   MONDE
                 </button>
 
-                <p class="font-bold text-[16px] text-black my-10">
+                <p class="font-bold text-[16px] theme-text my-10">
                   La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                   rues parsemées de taxis jaunes
                 </p>
@@ -1313,11 +1293,11 @@
                   Dossier
                 </button>
                 <button
-                  class="bg-white text-black border border-black h-[30px] font-semibold px-4 py-2"
+                  class="bg-white theme-text border border-black h-[30px] font-semibold px-4 py-2"
                 >
                   3 articles
                 </button>
-                <p class="font-bold text-[16px] text-black my-10">
+                <p class="font-bold text-[16px] theme-text my-10">
                   une plateforme dynamique dédiée à la recherche et à la
                   promotion de solutions locales
                 </p>
@@ -1334,7 +1314,7 @@
                 >
                   SOCIETE
                 </button>
-                <p class="font-bold text-[16px] text-black my-10">
+                <p class="font-bold text-[16px] theme-text my-10">
                   La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                   rues parsemées de taxis jaunes
                 </p>
@@ -1515,7 +1495,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[19px] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[19px] capitalize mb-3"
                   >
                     Plongez dans un monde de saveurs exotiques avec le nouveau
                     Fanta Mangue-Ananas Ce mélange rafraîchissant !
@@ -1538,7 +1518,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[19px] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[19px] capitalize mb-3"
                   >
                     entrepreneur ou gestionnaire d'entreprise, vous savez
                     combien il est crucial de maximiser votre efficacité tout en
@@ -1591,7 +1571,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[18px] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[18px] capitalize mb-3"
                   >
                     L'oxygène est le gaz le plus abondant dans l'atmosphère
                     terrestre ?
@@ -1631,7 +1611,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[18px] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[18px] capitalize mb-3"
                   >
                     L'intelligence artificielle peut apprendre seule sans
                     intervention humaine?
@@ -1685,7 +1665,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                     rues parsemées de taxis jaunes
@@ -1718,7 +1698,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     15 salades healthy merveilleusement bonnes à tester
                   </p>
@@ -1748,7 +1728,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Une alerte importante a été lancée sur les marchés après la
                     découverte de produits alimentaires contaminés
@@ -1779,7 +1759,7 @@
                 <!-- Text -->
                 <div class="">
                   <p
-                    class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Homme Escalade Des Murs D'escalade trop fort
                   </p>
@@ -1891,7 +1871,7 @@
             <div
               class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
-              <p class="font-bold text-[16px] text-black">
+                <p class="font-bold text-[16px] theme-text">
                 La gouvernance mondiale face aux crises sanitaires et
                 climatiques
               </p>
@@ -1902,7 +1882,7 @@
                 Publié à 7h03
               </a>
 
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Promouvoir l'inclusion et la diversité au travail permet, grâce
                 à plus de bien-être et d'engagement
               </p>
@@ -1913,7 +1893,7 @@
                 Publié à 7h03
               </a>
 
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Les politiques d'inclusion : Vers une société plus équitable
               </p>
               <a
@@ -1928,7 +1908,7 @@
             <div
               class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Les politiques d'inclusion : Vers une société plus équitable
               </p>
               <a
@@ -1938,7 +1918,7 @@
                 Publié à 7h03
               </a>
 
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Les migrations : Défis et opportunités pour les sociétés
                 d'accueil
               </p>
@@ -1949,7 +1929,7 @@
                 Publié à 7h03
               </a>
 
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Les mouvements sociaux : Nouveaux acteurs du changement sociétal
               </p>
               <a
@@ -1964,7 +1944,7 @@
             <div
               class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Les défis économiques post-pandémie : Perspectives et stratégies
               </p>
               <a
@@ -1974,7 +1954,7 @@
                 Publié à 7h03
               </a>
 
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Les startups : Acteurs clés de la croissance économique moderne
               </p>
               <a
@@ -1984,7 +1964,7 @@
                 Publié à 7h03
               </a>
 
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 La crise des matières premières : Impacts sur l'économie
                 mondiale
               </p>
@@ -2000,7 +1980,7 @@
             <div
               class="w-full max-w-[300px] mx-auto lg:mx-0 min-h-[199px] overflow-hidden flex flex-col gap-3 p-2"
             >
-              <p class="font-bold text-[16px] text-black">
+              <p class="font-bold text-[16px] theme-text">
                 Les défis économiques post-pandémie : Perspectives et stratégies
               </p>
               <a
@@ -2061,7 +2041,7 @@
                   <div class="flex flex-col space-y-10">
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         Changement climatique : Les mesures individuelles pour
                         faire la différence
@@ -2075,7 +2055,7 @@
                     </div>
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         La Ville qui Ne Dort Jamais Une Vue Nocturne de New York
                         Les rues parsemées de taxis jaunes
@@ -2089,7 +2069,7 @@
                     </div>
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         L'économie circulaire : Vers une société sans déchets
                       </p>
@@ -2120,7 +2100,7 @@
                   <div class="flex flex-col space-y-10">
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         La révolution de l'IA : Comment l'apprentissage
                         automatique change le monde
@@ -2134,7 +2114,7 @@
                     </div>
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         Exploration des profondeurs : Avancées en robotique
                         sous-marine
@@ -2148,7 +2128,7 @@
                     </div>
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         L'avenir de l'informatique quantique : Avancées et défis
                       </p>
@@ -2179,7 +2159,7 @@
                   <div class="flex flex-col space-y-10">
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         Les bienfaits de la déconnexion numérique pour la santé
                         mentale
@@ -2193,7 +2173,7 @@
                     </div>
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         Adopter un mode de vie minimaliste : Les clés pour une
                         vie plus simple
@@ -2207,7 +2187,7 @@
                     </div>
                     <div class="">
                       <p
-                        class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                        class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                       >
                         Comment gérer le stress au quotidien : Conseils et
                         techniques

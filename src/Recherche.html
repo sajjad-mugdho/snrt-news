@@ -10,22 +10,24 @@
     />
     <!-- Preload Tajawal from Google for better CLS (kept as-is) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Local fonts stylesheet (self-host Nobel Uno) -->
-    <link rel="stylesheet" href="/src/fonts.css" />
-    <!-- Layout helpers: enforce max-width 1440px and centered alignment -->
-    <link rel="stylesheet" href="/src/layout.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <p
+      class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
+    >
+      />
+      <!-- Local fonts stylesheet (self-host Nobel Uno) -->
+      <link rel="stylesheet" href="/src/fonts.css" />
+      <!-- Layout helpers: enforce max-width 1440px and centered alignment -->
+      <link rel="stylesheet" href="/src/layout.css" />
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </p>
   </head>
+
   <body class="theme-bg font-sans">
     <header class="w-full mt-5">
       <!-- Top bar -->
       <div class="theme-bg text-sm">
         <div
-          class="site-container mx-auto px-2 flex items-center justify-between text-gray-600 lg:grid lg:grid-cols-2"
+          class="site-container mx-auto px-2 flex items-center justify-between theme-text-secondary lg:grid lg:grid-cols-2"
         >
           <!-- Mobile Logo (shown only on mobile) -->
           <div class="lg:hidden flex items-center mt-5">
@@ -43,7 +45,7 @@
 
           <!-- Left: date + location (hidden on mobile) -->
           <div
-            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm text-black"
+            class="bg-white h-[30px] min-w-[80px] border-2 border-black flex items-center justify-center theme-text max-w-16 text-sm font-semibold"
           >
             <span>Lun, 03 Sep, 2024</span>
             <span>Casablanca 24°C</span>
@@ -61,7 +63,7 @@
               type="button"
             >
               <svg
-                class="w-6 h-6 text-black"
+                class="w-6 h-6 theme-text"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -166,7 +168,7 @@
                A small inline style sets the Nobel Uno font-family (uses -- variable).
           -->
           <nav
-            class="flex text-sm text-gray-800 font-black divide-x divide-gray-200"
+            class="flex text-sm text-gray-800 font-black divide-x divide-gray-200 overflow-x-auto no-scrollbar whitespace-nowrap"
           >
             <a
               href="#"
@@ -448,7 +450,7 @@
             <a
               href="#"
               aria-label="Twitter"
-              class="text-gray-600 hover:text-red-600"
+              class="theme-text-secondary hover:text-[#FF0000]"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -502,7 +504,7 @@
           <!-- Hero -->
           <article class="lg:col-span-2">
             <h3
-              class="text-black text-base md:text-lg font-semibold w-full mb-4 uppercase"
+              class="theme-text text-base md:text-lg font-semibold w-full mb-4 uppercase"
             >
               Recherche
             </h3>
@@ -566,7 +568,7 @@
                 <!-- Text -->
                 <div class="px-4 md:px-0">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                     rues parsemées de taxis jaunes
@@ -599,7 +601,7 @@
                   </div>
 
                   <div
-                    class="bg-white h-[30px] min-w-[80px] border-2 border-black flex items-center justify-center text-black max-w-16 text-sm font-semibold"
+                    class="bg-white h-[30px] min-w-[80px] border-2 border-black flex items-center justify-center theme-text max-w-16 text-sm font-semibold"
                   >
                     <span class="mt-2">3 articles</span>
                   </div>
@@ -608,7 +610,7 @@
                 <!-- Text -->
                 <div class="px-4 md:px-0">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     une plateforme dynamique dédiée à la recherche et à la
                     promotion de solutions locales
@@ -638,6 +640,7 @@
                 <div class="px-4 md:px-0">
                   <p
                     class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Une alerte importante a été lancée sur les marchés après la
                     découverte de produits alimentaires contaminés
@@ -690,6 +693,7 @@
                 <div class="">
                   <p
                     class="w-[300px] text-black text-base font-bold leading-[20px] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[20px] capitalize mb-3"
                   >
                     Donald Trump critique Kamala Harris sur ses positions quant
                     au Moyen-Orient
@@ -738,6 +742,7 @@
                 <div class="px-4 md:px-0">
                   <p
                     class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[20px] capitalize mb-3"
                   >
                     Céline Dion était en mode « checkez-moi ben aller ! », selon
                     Scott Price
@@ -773,6 +778,7 @@
                 <div class="px-4 md:px-0">
                   <p
                     class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Les Meilleures Plages Propres du Maroc : Où Aller cet Été
                   </p>
@@ -814,6 +820,7 @@
                 <div class="">
                   <p
                     class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Jean-Claude Naimro de Kassav une résonance chez Aya
                     Nakamura, Maître Gims et bien d'autres
@@ -863,6 +870,7 @@
                 <div class="">
                   <p
                     class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Une alerte importante a été lancée sur les marchés après la
                     découverte de produits alimentaires contaminés
@@ -912,6 +920,7 @@
                 <div class="">
                   <p
                     class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Homme Escalade Des Murs D'escalade trop fort
                   </p>

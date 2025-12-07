@@ -68,6 +68,9 @@
   /* Sidebar */
   --color-sidebar-bg: 255 255 255; /* white */
 
+  /* Flash News specific accent color (can be adjusted if needed) */
+  --color-flash-red: 255 0 0;
+
   /* Legacy variables for backwards compatibility */
   --bg: rgb(var(--color-bg-primary));
   --text-primary: rgb(var(--color-text-primary));
@@ -81,7 +84,7 @@
   /* Background colors */
   --color-bg-primary: 0 0 0; /* black */
   --color-bg-secondary: 17 17 17; /* near-black */
-  --color-bg-surface: 31 41 55; /* gray-800 */
+  --color-bg-surface: 37 37 37; /* gray-800 */
   --color-bg-surface-hover: 55 65 81; /* gray-700 */
 
   /* Text colors */
@@ -104,6 +107,9 @@
 
   /* Sidebar */
   --color-sidebar-bg: 17 24 39; /* gray-900 */
+
+  /* Keep flash red in dark mode as well (brand) */
+  --color-flash-red: 255 0 0;
 
   /* Legacy variables */
   --bg: rgb(var(--color-bg-primary));
@@ -209,6 +215,121 @@ body {
 /* Small accent utility */
 .border-accent {
   border-color: var(--accent);
+}
+
+/* Horizontal scrollbar hidden utility */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Flash news widget styles (theme-aware) */
+.flash-news {
+  background-color: rgb(var(--color-bg-surface));
+  border-bottom: 1px solid rgb(var(--color-border));
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.flash-news .flash-bar {
+  background-color: rgb(var(--color-flash-red));
+  width: 5px;
+}
+.flash-news .flash-label {
+  background-color: #000; /* remains black per design */
+  color: #fff;
+  width: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flash-news .flash-divider {
+  background-color: rgb(var(--color-bg-surface-hover));
+  width: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* center button absolutely */
+  overflow: visible; /* allow the control to overflow on either side */
+}
+.flash-news .flash-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* exact 20px gap requested */
+  padding: 0; /* remove left/right padding so main background lines up with dividers */
+}
+.flash-news .flash-items {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* exact 20px spacing for items */
+  padding: 0 10px; /* add small inner padding so items don't clash with dividers */
+  overflow: hidden;
+}
+
+/* center prev/next buttons on the small divider columns */
+.flash-divider .flash-prev,
+.flash-divider .flash-next {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  padding: 0.125rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.flash-divider .flash-prev svg,
+.flash-divider .flash-next svg {
+  width: 20px;
+  height: 20px;
+}
+.flash-news .flash-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 240px; /* prevent collapsing too small */
+}
+
+/* Use an absolute divider inside each flash item so it appears between items without affecting the gap size */
+.flash-news .flash-item {
+  position: relative;
+}
+.flash-news .flash-item-divider {
+  position: absolute;
+  right: -10px; /* center the line in the 20px gap (gap/2) */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 1px;
+}
+.flash-news .flash-item-divider svg {
+  display: block;
+  width: 1px;
+  height: 40px;
+}
+.flash-news .flash-item-divider svg line {
+  stroke: rgb(var(--color-border));
+}
+.flash-news .flash-item:last-child .flash-item-divider {
+  display: none; /* hide the trailing divider */
+}
+.flash-news .flash-count {
+  background-color: rgb(var(--color-flash-red));
+  color: rgb(var(--color-text-inverted));
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
 }
 
 /* ============================================
@@ -317,8 +438,17 @@ body {
 .dark .hover\:bg-gray-100:hover {
   background-color: rgb(var(--color-bg-surface-hover)) !important;
 }
+.dark .hover\:bg-gray-200:hover {
+  background-color: rgb(var(--color-bg-surface-hover)) !important;
+}
 .dark .hover\:text-gray-900:hover {
   color: rgb(var(--color-text-primary)) !important;
+}
+.dark .hover\:text-black:hover {
+  color: rgb(var(--color-text-primary)) !important;
+}
+.dark .hover\:text-white:hover {
+  color: rgb(var(--color-text-inverted)) !important;
 }
 
 /* Ring/Focus overrides */
@@ -337,4 +467,87 @@ body {
 .dark .shadow-xl,
 .dark .shadow-2xl {
   --tw-shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   SWIPER CAROUSEL CUSTOM STYLES
+   Pixel-perfect styling for navigation and pagination
+   ============================================ */
+
+/* Sport Carousel Container */
+.sport-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navigation Arrows - Black with bold appearance */
+.sport-carousel .swiper-button-prev,
+.sport-carousel .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 27px; /* provided svg width */
+  height: 53px; /* provided svg height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+/* Remove default Swiper pseudo icons since we use inline SVG */
+.sport-carousel .swiper-button-prev:after,
+.sport-carousel .swiper-button-next:after {
+  content: none;
+}
+
+/* Pagination Bullets - White inactive, Red active */
+.sport-carousel .swiper-pagination {
+  bottom: 10px !important;
+  z-index: 10;
+}
+
+.sport-carousel .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  opacity: 1 !important;
+  margin: 0 4px !important;
+}
+
+.sport-carousel .swiper-pagination-bullet-active {
+  background-color: #ff0000;
+}
+
+/* Hover effects for navigation */
+.sport-carousel .swiper-button-prev:hover,
+.sport-carousel .swiper-button-next:hover {
+  opacity: 0.7;
+}
+
+/* Dark mode adjustments */
+.dark .sport-carousel .swiper-button-prev,
+.dark .sport-carousel .swiper-button-next {
+  /* keep the SVG's style - no color override as arrow is baked into SVG */
+}
+
+/* Position the prev & next on edges */
+.sport-carousel .swiper-button-prev {
+  left: 12px;
+}
+.sport-carousel .swiper-button-next {
+  right: 12px;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Make sure the svg fits exactly */
+.sport-carousel .swiper-button-prev svg,
+.sport-carousel .swiper-button-next svg {
+  width: 27px;
+  height: 53px;
+  display: block;
 }

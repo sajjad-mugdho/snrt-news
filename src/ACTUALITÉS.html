@@ -18,15 +18,67 @@
     <link rel="stylesheet" href="/src/fonts.css" />
     <!-- Layout helpers: enforce max-width 1440px and centered alignment -->
     <link rel="stylesheet" href="/src/layout.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="theme-bg font-sans">
     <header class="w-full mt-5">
       <!-- Top bar -->
-      <div class="theme-bg text-sm">
+      <div
+        class="theme-bg text-sm flex items-center site-container justify-between"
+      >
         <div
-          class="site-container mx-auto px-2 flex items-center justify-between text-gray-600 lg:grid lg:grid-cols-2"
+          class="w-full max-w-[1440px] mx-auto px-4 pb-6 hidden lg:flex justify-start items-center theme-bg"
         >
+          <!-- Logo -->
+          <div class="flex items-center justify-center w-[140px] h-14">
+            <img
+              src="./images/logo-fr.svg"
+              alt="SNRT News"
+              class="max-w-full max-h-14 object-contain logo-light"
+            />
+            <img
+              src="./images/logo_darkmode.png"
+              alt="SNRT News"
+              class="max-w-full max-h-14 object-contain logo-dark hidden"
+            />
+          </div>
+        </div>
+        <div
+          class="mx-auto px-2 flex items-end justify-between gap-x-10 theme-text-secondary"
+        >
+          <div class="hidden lg:flex mx-auto justify-start flex-1 min-w-0">
+            <!-- Use Tailwind utilities for size/weight/spacing and divide-x for separators.
+               A small inline style sets the Nobel Uno font-family (uses -- variable).
+          -->
+            <nav
+              class="flex text-sm theme-text font-black divide-x theme-border overflow-x-auto no-scrollbar whitespace-nowrap flex-1"
+            >
+              <a
+                href="#"
+                class="text-sm px-4 py-2 font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000] whitespace-nowrap"
+                style="font-style: normal; font-weight: 900; line-height: 1"
+                >VRAI OU FAKE</a
+              >
+
+              <a
+                href="#"
+                class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
+                style="font-style: normal; font-weight: 900; line-height: 1"
+                >VIDÉOS</a
+              >
+              <a
+                href="#"
+                class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 text-[#FF0000]"
+                style="font-style: normal; font-weight: 900; line-height: 1"
+                >LIVE</a
+              >
+            </nav>
+          </div>
           <!-- Mobile Logo (shown only on mobile) -->
           <div class="lg:hidden flex items-center mt-5">
             <img
@@ -41,17 +93,9 @@
             />
           </div>
 
-          <!-- Left: date + location (hidden on mobile) -->
-          <div
-            class="text-left hidden lg:inline-flex items-center gap-x-10 mt-5 font-medium text-sm theme-text"
-          >
-            <span>Lun, 03 Sep, 2024</span>
-            <span>Casablanca 24°C</span>
-          </div>
-
           <!-- Right: hamburger (mobile) + lang + theme -->
           <div
-            class="flex justify-end items-center space-x-4 mt-5 font-semibold"
+            class="flex justify-center items-center space-x-4 mt-5 font-semibold"
           >
             <!-- Hamburger Menu Button (Mobile Only) -->
             <button
@@ -74,24 +118,27 @@
                 />
               </svg>
             </button>
+            <!-- Search Icon -->
 
-            <span
-              class="theme-text text-medium flex items-center gap-2 justify-center cursor-pointer"
-              >FR
+            <button
+              class="theme-text p-2 rounded transition-colors duration-150 hover:text-[#FF0000]"
+            >
               <svg
-                width="8"
-                height="6"
-                viewBox="0 0 8 6"
+                width="20"
+                height="19"
+                viewBox="0 0 20 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="theme-icon-fill"
+                class="icon"
               >
                 <path
-                  d="M-6.81992e-08 1.74807L0 1.14097e-05L4 4.08111L8 3.39792e-07L8 1.74807L4 5.83015L-6.81992e-08 1.74807Z"
+                  d="M8.29032 15.2151C10.1774 15.2151 11.9194 14.5753 13.2742 13.5242L17.4839 17.5L18.5 16.5403L14.2903 12.5645C15.4032 11.2849 16.0806 9.63979 16.0806 7.85753C16.0806 3.79032 12.5726 0.5 8.29032 0.5C4.00806 0.5 0.5 3.79032 0.5 7.85753C0.5 11.9247 3.98387 15.2151 8.29032 15.2151ZM8.29032 1.84812C11.7984 1.84812 14.6532 4.54436 14.6532 7.85753C14.6532 11.1707 11.7984 13.8669 8.29032 13.8669C4.78226 13.8669 1.92742 11.1707 1.92742 7.85753C1.92742 4.54436 4.78226 1.84812 8.29032 1.84812Z"
                   fill="currentColor"
+                  stroke="currentColor"
                 />
               </svg>
-            </span>
+            </button>
+
             <button
               id="theme-toggle-nav"
               aria-label="Toggle dark mode"
@@ -138,78 +185,25 @@
                 />
               </svg>
             </button>
-          </div>
-        </div>
 
-        <div
-          class="w-full max-w-[1440px] mx-auto px-4 pb-6 hidden lg:flex lg:-mt-6 justify-center items-center theme-bg"
-        >
-          <!-- Center: Logo -->
-          <div class="flex items-center justify-center w-[200px] h-24">
-            <img
-              src="./images/logo-fr.svg"
-              alt="SNRT News"
-              class="w-full h-full object-cover logo-light"
-            />
-            <img
-              src="./images/logo_darkmode.png"
-              alt="SNRT News"
-              class="w-full h-full object-cover logo-dark"
-            />
+            <span
+              class="theme-text text-medium flex items-center gap-2 justify-center cursor-pointer"
+              >FR
+              <svg
+                width="8"
+                height="6"
+                viewBox="0 0 8 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="theme-icon-fill"
+              >
+                <path
+                  d="M-6.81992e-08 1.74807L0 1.14097e-05L4 4.08111L8 3.39792e-07L8 1.74807L4 5.83015L-6.81992e-08 1.74807Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
           </div>
-        </div>
-      </div>
-
-      <!-- Main nav (Desktop Only) -->
-      <div class="theme-bg hidden lg:block">
-        <div class="site-container mx-auto px-4 py-3 flex justify-center">
-          <!-- Use Tailwind utilities for size/weight/spacing and divide-x for separators.
-               A small inline style sets the Nobel Uno font-family (uses -- variable).
-          -->
-          <nav class="flex text-sm theme-text font-black divide-x theme-border">
-            <a
-              href="#"
-              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
-              style="font-style: normal; font-weight: 900; line-height: 1"
-              >ACTUALITÉS</a
-            >
-            <a
-              href="#"
-              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
-              style="font-style: normal; font-weight: 900; line-height: 1"
-              >VRAI OU FAKE</a
-            >
-            <a
-              href="#"
-              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
-              style="font-style: normal; font-weight: 900; line-height: 1"
-              >DOSSIER</a
-            >
-            <a
-              href="#"
-              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
-              style="font-style: normal; font-weight: 900; line-height: 1"
-              >ESPACE PARTENAIRES</a
-            >
-            <a
-              href="#"
-              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
-              style="font-style: normal; font-weight: 900; line-height: 1"
-              >VIDÉOS</a
-            >
-            <a
-              href="#"
-              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
-              style="font-style: normal; font-weight: 900; line-height: 1"
-              >IMAGES</a
-            >
-            <a
-              href="#"
-              class="px-4 py-2 text-sm font-black leading-none tracking-normal uppercase transition-colors duration-150 hover:text-[#FF0000]"
-              style="font-style: normal; font-weight: 900; line-height: 1"
-              >LIVE</a
-            >
-          </nav>
         </div>
       </div>
 
@@ -217,43 +211,205 @@
       <div
         class="bg-[#FF0000] shadow-md hidden lg:flex items-center justify-center h-16"
       >
-        <div class="site-container mx-auto px-4 py-2">
+        <div class="site-container mx-auto px-4 py-2 w-full">
           <nav
-            class="flex overflow-x-auto space-x-6 text-sm text-white font-semibold items-center justify-center whitespace-nowrap"
+            class="flex items-center justify-between text-sm text-white font-semibold"
           >
-            <a href="#" class="hover:text-black">ACTIVITÉS ROYALES</a>
-            <a href="#" class="hover:text-black">ACTIVITÉS PRINCIÈRES</a>
-            <a href="#" class="hover:text-black">POLITIQUE</a>
-            <a href="#" class="hover:text-black">SPORT</a>
-            <a href="#" class="hover:text-black">SOCIÉTÉ</a>
-            <a href="#" class="hover:text-black">ÉCONOMIE</a>
-            <a href="#" class="hover:text-black">AFRICA</a>
-            <a href="#" class="hover:text-black">MONDE</a>
-            <a href="#" class="hover:text-black">LIFESTYLE</a>
-            <a href="#" class="hover:text-black">TECHNOLOGIE</a>
-            <a href="#" class="hover:text-black">AGENDA CULTUREL</a>
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <div class="flex items-center space-x-6 whitespace-nowrap">
+              <a href="#" class="hover:text-black transition-colors mb-2">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="transition-colors"
+                >
+                  <path
+                    d="M11.6668 23.3333V16.3333H16.3335V23.3333H22.1668V14H25.6668L14.0002 3.5L2.3335 14H5.8335V23.3333H11.6668Z"
+                    fill="currentColor"
+                    class="transition-colors"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="hover:text-black transition-colors"
+                >ACTIVITÉS ROYALES</a
+              >
+              <a href="#" class="hover:text-black transition-colors"
+                >ACTIVITÉS PRINCIÈRES</a
+              >
+              <a href="#" class="hover:text-black transition-colors"
+                >POLITIQUE</a
+              >
+              <a href="#" class="hover:text-black transition-colors">SPORT</a>
+              <a href="#" class="hover:text-black transition-colors">SOCIÉTÉ</a>
+              <a href="#" class="hover:text-black transition-colors"
+                >ÉCONOMIE</a
+              >
+              <a href="#" class="hover:text-black transition-colors">AFRICA</a>
+              <a href="#" class="hover:text-black transition-colors">MONDE</a>
+              <a href="#" class="hover:text-black transition-colors"
+                >LIFESTYLE</a
+              >
+              <a href="#" class="hover:text-black transition-colors"
+                >TECHNOLOGIE</a
+              >
+              <a href="#" class="hover:text-black transition-colors"
+                >AGENDA CULTUREL</a
+              >
+            </div>
+
+            <button
+              class="bg-black text-white font-bold py-2 px-4 uppercase text-sm hover:bg-gray-800 transition-colors"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+              intelligence artificielle
+            </button>
+
+            <div class="flex items-center space-x-4"></div>
           </nav>
         </div>
       </div>
-      <div class="flex items-center justify-center p-4 m-4">
-        <img
-          src="images/bg3.png"
-          alt="Background Image"
-          class="max-w-full h-auto"
-        />
+
+      <!-- Flash News Section - Exact Match to SVG -->
+      <div class="flash-news mx-auto my-4 hidden lg:block">
+        <div class="flex h-[55px] items-stretch">
+          <!-- Red vertical bar (5px) -->
+          <div class="flash-bar"></div>
+
+          <!-- Black section (99px) -->
+          <div class="flash-label mr-5">
+            <span class="text-white font-bold text-sm">FLASH NEWS</span>
+          </div>
+
+          <!-- Gray divider line (19px) -->
+          <div class="flash-divider">
+            <button
+              class="p-2 hover:bg-gray-200 rounded transition-colors flash-prev theme-text"
+              aria-label="Previous Flash"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Main content area -->
+          <div class="flex-1 flash-main theme-bg-surface">
+            <!-- News items -->
+            <div
+              class="flex items-center overflow-hidden flash-items"
+              aria-live="polite"
+            >
+              <!-- Tab 1 -->
+              <div class="flex items-center ml-5 flash-item">
+                <div class="flash-count text-white px-3 py-1 text-sm font-bold">
+                  15h25
+                </div>
+                <div class="ml-3 text-xs font-semibold theme-text">
+                  Soufiane El - Bakkali Distingué Du Grade De Commandeur De
+                  L'ordre Du Ouissam Alaouite
+                </div>
+                <div class="flash-item-divider" aria-hidden="true">
+                  <svg
+                    width="1"
+                    height="40"
+                    viewBox="0 0 1 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="0.5"
+                      y1="2.18557e-08"
+                      x2="0.499998"
+                      y2="40"
+                      stroke="#B1B1B1"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Tab 2 -->
+              <div class="flex items-center flash-item">
+                <div class="flash-count text-white px-3 py-1 text-sm font-bold">
+                  15h25
+                </div>
+                <div class="ml-3 text-xs font-semibold theme-text">
+                  Soufiane El - Bakkali Distingué Du Grade De Commandeur De
+                  L'ordre Du Ouissam Alaouite
+                </div>
+                <div class="flash-item-divider" aria-hidden="true">
+                  <svg
+                    width="1"
+                    height="40"
+                    viewBox="0 0 1 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="0.5"
+                      y1="2.18557e-08"
+                      x2="0.499998"
+                      y2="40"
+                      stroke="#B1B1B1"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Tab 3 -->
+              <div class="flex items-center flash-item">
+                <div class="flash-count text-white px-3 py-1 text-sm font-bold">
+                  15h25
+                </div>
+                <div class="ml-3 text-xs font-semibold theme-text">
+                  Soufiane El - Bakkali Distingué Du Grade De Commandeur De
+                  L'ordre Du Ouissam Alaouite
+                </div>
+                <div class="flash-item-divider" aria-hidden="true">
+                  <svg
+                    width="1"
+                    height="40"
+                    viewBox="0 0 1 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="0.5"
+                      y1="2.18557e-08"
+                      x2="0.499998"
+                      y2="40"
+                      stroke="#B1B1B1"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right gray divider line (19px) -->
+          <div class="flash-divider">
+            <button
+              class="p-2 hover:bg-gray-200 rounded transition-colors flash-next theme-text"
+              aria-label="Next Flash"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Mobile Sidebar Navigation -->
@@ -508,268 +664,207 @@
 
     <!-- Main -->
     <main>
-      <div class="site-container py-4 md:py-6 lg:py-8">
-        <!-- Hero + Sidebar -->
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
-          <!-- Hero -->
-          <article class="lg:col-span-2">
+      <section class="site-container py-4 md:py-6 lg:py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+          <div class="lg:col-span-2">
             <h3 class="theme-text text-base md:text-lg font-semibold mb-4">
               ACTUALITÉS
             </h3>
-            <div class="relative hero-bg rounded-lg overflow-hidden">
-              <!-- Content container -->
-              <div
-                class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
-              >
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+              <div class="col-span-1 flex flex-col gap-4">
                 <div
-                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] theme-bg-surface"
+                  class="w-[191px] h-[210px] bg-[#EEEEEE] flex flex-col px-4 py-5 gap-5 justify-between items-start"
                 >
                   <div
-                    class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                    class="w-16 h-6 bg-[#0084FF] font-[800] text-xs uppercase flex items-center justify-center text-center text-white"
                   >
-                    <span class="mt-2">SPORT</span>
+                    Monde
                   </div>
-
-                  <h4
-                    class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
-                  >
-                    Aventures en Altitude, Une Femme et son Chien Conquièrent
-                    les Sommets
-                  </h4>
-
-                  <p
-                    class="w-[270px] text-base font-medium text-black leading-[150%] capitalize"
-                  >
-                    Dans une quête de liberté et de connexion avec la nature,
-                    Sophie Martin, une passionnée de randonnée de 32 ans, a
-                    entrepris une aventure extraordinaire avec son fidèle
-                    compagnon à quatre pattes, Max.
+                  <p class="font-bold text-base leading-4 text-black">
+                    Les Lions de l’Atlas retrouvent ce soir un Grand Stade A
+                    Tanger Grand Stade A Tanger
                   </p>
 
-                  <div class="">
-                    <a
-                      href="#"
-                      class="text-black text-sm font-bold leading-[100%]"
-                      >En ce moment</a
+                  <span class="font-bold text-xs text-black/50"
+                    >14/11/2025</span
+                  >
+                </div>
+                <div
+                  class="w-[191px] h-[210px] bg-[#EEEEEE] flex flex-col px-4 py-5 gap-5 justify-between items-start"
+                >
+                  <div
+                    class="w-16 h-6 bg-orange-600 font-[800] text-xs uppercase flex items-center justify-center text-center text-white"
+                  >
+                    AFRICA
+                  </div>
+                  <p class="font-bold text-base leading-4 text-black">
+                    Les Lions de l’Atlas retrouvent ce soir un Grand Stade A
+                    Tanger Grand Stade A Tanger
+                  </p>
+
+                  <span class="font-bold text-xs text-black/50"
+                    >14/11/2025</span
+                  >
+                </div>
+                <div
+                  class="w-[191px] h-[210px] bg-[#EEEEEE] flex flex-col px-4 py-5 gap-5 justify-between items-start"
+                >
+                  <div
+                    class="w-16 h-6 bg-green-600 font-[800] text-xs uppercase flex items-center justify-center text-center text-white"
+                  >
+                    société
+                  </div>
+                  <p class="font-bold text-base leading-4 text-black">
+                    Les Lions de l’Atlas retrouvent ce soir un Grand Stade A
+                    Tanger Grand Stade A Tanger
+                  </p>
+
+                  <span class="font-bold text-xs text-black/50"
+                    >14/11/2025</span
+                  >
+                </div>
+              </div>
+              <div class="col-span-3 flex flex-col gap-4">
+                <!-- carousel section -->
+                <div class="swiper sport-carousel w-[736px] h-[439px] relative">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="./images/hero-carosoule.png"
+                        alt="Sport 1"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./images/hero-carosoule.png"
+                        alt="Sport 2"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./images/hero-carosoule.png"
+                        alt="Sport 3"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <!-- Navigation arrows -->
+                  <button
+                    aria-label="Previous slide"
+                    class="swiper-button-prev"
+                    role="button"
+                  >
+                    <svg
+                      width="27"
+                      height="53"
+                      viewBox="0 0 27 53"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                  </div>
-                </div>
-
-                <!-- Image column -->
-                <div
-                  class="w-full lg:max-w-[630px] relative lg:min-w-[400px] h-[250px] md:h-[350px] lg:h-[420px]"
-                >
-                  <img
-                    src="images/banner1.jpg"
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
-
-                  <div
-                    class="bg-[#FF0000] absolute top-0 right-0 px-2 py-1 text-white font-bold"
+                      <rect
+                        width="27"
+                        height="52.7842"
+                        fill="black"
+                        fill-opacity="0.1"
+                      />
+                      <path
+                        d="M16.75 18.001L8 24.1968L16.75 18.001ZM8 24.1968L16.75 30.3926L8 24.1968Z"
+                        fill="#D3D3D3"
+                        fill-opacity="0.7"
+                      />
+                      <path
+                        d="M16.75 18.001L8 24.1968L16.75 30.3926"
+                        stroke="black"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-label="Next slide"
+                    class="swiper-button-next"
+                    role="button"
                   >
-                    <span class="mt-2">LIVE</span>
+                    <svg
+                      width="27"
+                      height="53"
+                      viewBox="0 0 27 53"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        width="27"
+                        height="52.7842"
+                        fill="black"
+                        fill-opacity="0.1"
+                      />
+                      <path
+                        d="M16.75 18.001L8 24.1968L16.75 18.001ZM8 24.1968L16.75 30.3926L8 24.1968Z"
+                        fill="#D3D3D3"
+                        fill-opacity="0.7"
+                      />
+                      <path
+                        d="M16.75 18.001L8 24.1968L16.75 30.3926"
+                        stroke="black"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <!-- Pagination -->
+                  <div class="swiper-pagination"></div>
+                </div>
+                <div
+                  class="w-[736px] h-[210px] bg-[#EEEEEE] flex flex-col px-4 py-5 gap-5 justify-between items-start"
+                >
+                  <div
+                    class="w-24 h-7 bg-[#24D5CC] font-[800] text-sm uppercase flex items-center justify-center text-center text-white"
+                  >
+                    Sport
                   </div>
+                  <p class="font-bold text-[25px] leading-8 text-black">
+                    Sans Hakimi, les Lions de l’Atlas lancent leur préparation à
+                    la CAN face au Mozambique
+                  </p>
+
+                  <span class="font-bold text-sm text-black/50"
+                    >14/11/2025</span
+                  >
                 </div>
               </div>
             </div>
-            <!-- img card -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6"
-            >
-              <div class="flex flex-col gap-y-4 md:gap-y-6">
-                <img
-                  src="./images/img-card/card1.jpg"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-                <!-- badge -->
-                <div
-                  class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-auto lg:mx-0"
-                >
-                  <span class="mt-2">MONDE</span>
-                </div>
-
-                <!-- Text -->
-                <div class="px-4 md:px-0">
-                  <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
-                  >
-                    La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
-                    rues parsemées de taxis jaunes
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à Publié le 3 juin
-                  </a>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-4 md:gap-y-6">
-                <img
-                  src="./images/img-card/card-2.jpg"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-                <!-- badge -->
-                <div class="flex items-center justify-center lg:justify-start">
-                  <div
-                    class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-                  >
-                    <span class="mt-2">AFRICA</span>
-                  </div>
-                  <div
-                    class="bg-black h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-                  >
-                    <span class="mt-2">Dossier</span>
-                  </div>
-
-                  <div
-                    class="bg-white h-[30px] min-w-[80px] border-2 border-black flex items-center justify-center text-black max-w-16 text-sm font-semibold"
-                  >
-                    <span class="mt-2">3 articles</span>
-                  </div>
-                </div>
-
-                <!-- Text -->
-                <div class="px-4 md:px-0">
-                  <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
-                  >
-                    une plateforme dynamique dédiée à la recherche et à la
-                    promotion de solutions locales
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 8h03 | Mis à jour à 9h10
-                  </a>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-4 md:gap-y-6">
-                <img
-                  src="./images/img-card/card-3.jpg"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-
-                <!-- badge -->
-                <div
-                  class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-auto lg:mx-0"
-                >
-                  <span class="mt-2 uppercase">société</span>
-                </div>
-                <!-- Text -->
-                <div class="px-4 md:px-0">
-                  <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
-                  >
-                    Une alerte importante a été lancée sur les marchés après la
-                    découverte de produits alimentaires contaminés
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 7h45
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Sidebar -->
-          <aside class="mt-8 lg:mt-0">
+          </div>
+          <!-- Right side -->
+          <div class="col-span-1 ml-20">
             <h3
-              class="theme-text text-base md:text-lg font-semibold w-full mb-4"
+              class="theme-text text-base md:text-lg font-semibold mb-4 uppercase"
             >
-              Flash NEWS
+              Dossier du mois
             </h3>
-            <div class="theme-bg my-5.5">
+
+            <div class="">
+              <img
+                src="./images/sidebar-main.png"
+                alt="sidebar-main"
+                class="w-[300px] h-[440px] object-cover mb-4"
+              />
+            </div>
+
+            <div class="">
               <img
                 src="images/BG2.jpg"
                 alt="Background"
-                class="w-full max-w-[300px] mx-auto lg:mx-0 h-[250px] object-cover opacity-100"
+                class="w-full max-w-[250px] mx-auto lg:mx-0 h-[210px] object-cover opacity-100"
               />
-              <!-- text section -->
-              <ul class="space-y-2 text-sm text-gray-700 mt-3">
-                <li class="">
-                  <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
-                  >
-                    Soufiane el-Bakkali distingué du grade de commandeur de
-                    l’ordre du Ouissam alaouite
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
-                  </a>
-                </li>
-                <li class="">
-                  <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
-                  >
-                    Soufiane el-Bakkali distingué du grade de commandeur de
-                    l’ordre du Ouissam alaouite
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
-                  </a>
-                </li>
-                <li class="">
-                  <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
-                  >
-                    Soufiane el-Bakkali distingué du grade de commandeur de
-                    l’ordre du Ouissam alaouite
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
-                  </a>
-                </li>
-                <li class="">
-                  <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
-                  >
-                    Soufiane el-Bakkali distingué du grade de commandeur de
-                    l’ordre du Ouissam alaouite
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
-                  </a>
-                </li>
-                <li class="">
-                  <p
-                    class="w-[300px] text-black text-base font-bold capitalize mb-3"
-                  >
-                    Soufiane el-Bakkali distingué du grade de commandeur de
-                    l’ordre du Ouissam alaouite
-                  </p>
-                  <a
-                    href="#"
-                    class="text-xs text-gray-400 font-bold hover:text-gray-900"
-                  >
-                    Publié à 16h03 <span class="mx-2">|</span> Activités royales
-                  </a>
-                </li>
-              </ul>
             </div>
-          </aside>
-        </section>
-      </div>
+          </div>
+        </div>
+      </section>
 
       <!-- 
       Video section can be use re use 
@@ -827,7 +922,7 @@
               <!-- Text -->
               <div class="px-4 md:px-0">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                   rues parsemées de taxis jaunes
@@ -878,7 +973,7 @@
               <!-- Text -->
               <div class="">
                 <p
-                  class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   15 salades healthy merveilleusement bonnes à tester
                 </p>
@@ -926,7 +1021,7 @@
               <!-- Text -->
               <div class="">
                 <p
-                  class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   Une alerte importante a été lancée sur les marchés après la
                   découverte de produits alimentaires contaminés
@@ -975,7 +1070,7 @@
               <!-- Text -->
               <div class="">
                 <p
-                  class="w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[300px] theme-text text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   Homme Escalade Des Murs D'escalade trop fort
                 </p>
@@ -2591,6 +2686,63 @@
           link.addEventListener("click", closeSidebar);
         });
       })();
+
+      // Flash News controls: simple horizontal scroll and auto rotate for desktop
+      (function () {
+        var prev = document.querySelector(".flash-prev");
+        var next = document.querySelector(".flash-next");
+        var items = document.querySelector(".flash-items");
+        if (!items) return;
+        function scrollTo(delta) {
+          var amount = items.clientWidth
+            ? Math.floor(items.clientWidth * 0.6)
+            : 300;
+          items.scrollBy({ left: delta * amount, behavior: "smooth" });
+        }
+        if (prev)
+          prev.addEventListener("click", function () {
+            scrollTo(-1);
+          });
+        if (next)
+          next.addEventListener("click", function () {
+            scrollTo(1);
+          });
+
+        // small auto-rotate but pause on hover
+        var auto = setInterval(function () {
+          scrollTo(1);
+        }, 7000);
+        items.addEventListener("mouseenter", function () {
+          clearInterval(auto);
+        });
+        items.addEventListener("mouseleave", function () {
+          auto = setInterval(function () {
+            scrollTo(1);
+          }, 7000);
+        });
+      })();
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Initialize Sport Carousel
+      const sportCarousel = new Swiper(".sport-carousel", {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".sport-carousel .swiper-button-next",
+          prevEl: ".sport-carousel .swiper-button-prev",
+        },
+        pagination: {
+          el: ".sport-carousel .swiper-pagination",
+          clickable: true,
+        },
+        speed: 600,
+      });
     </script>
   </body>
 </html>
