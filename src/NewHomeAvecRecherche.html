@@ -46,12 +46,126 @@
           </div>
         </div>
         <div
-          class="mx-auto px-2 flex items-end justify-between gap-x-10 theme-text-secondary"
+          class="w-full px-2 flex items-center justify-between gap-x-10 theme-text-secondary lg:justify-between"
         >
+          <!-- Mobile Layout: Left hamburger, center logo, right theme toggle -->
+          <div class="lg:hidden flex items-center justify-start">
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button
+              id="mobile-menu-toggle"
+              aria-label="Open navigation menu"
+              class="flex items-center justify-center w-8 h-8"
+              type="button"
+            >
+              <svg
+                width="31"
+                height="17"
+                viewBox="0 0 31 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="theme-icon"
+              >
+                <path
+                  d="M20.9919 13.4839C22.5645 13.4839 24.0161 12.9194 25.1452 11.9919L28.6532 15.5L29.5 14.6532L25.9919 11.1452C26.9194 10.0161 27.4839 8.56452 27.4839 6.99194C27.4839 3.40323 24.5605 0.5 20.9919 0.5C17.4234 0.5 14.5 3.40323 14.5 6.99194C14.5 10.5806 17.4032 13.4839 20.9919 13.4839ZM20.9919 1.68952C23.9153 1.68952 26.2944 4.06855 26.2944 6.99194C26.2944 9.91532 23.9153 12.2944 20.9919 12.2944C18.0685 12.2944 15.6895 9.91532 15.6895 6.99194C15.6895 4.06855 18.0685 1.68952 20.9919 1.68952Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                />
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="10"
+                  height="1"
+                  fill="currentColor"
+                  stroke="currentColor"
+                />
+                <rect
+                  x="0.5"
+                  y="7.5"
+                  width="8"
+                  height="1"
+                  fill="currentColor"
+                  stroke="currentColor"
+                />
+                <rect
+                  x="0.5"
+                  y="14.5"
+                  width="10"
+                  height="1"
+                  fill="currentColor"
+                  stroke="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Logo Center (shown only on mobile) -->
+          <div class="lg:hidden flex items-center justify-center flex-1">
+            <img
+              src="/src/images/logo-fr.svg"
+              alt="SNRT News"
+              class="h-8 logo-light"
+            />
+            <img
+              src="/src/images/logo_darkmode.png"
+              alt="SNRT News"
+              class="h-8 logo-dark hidden"
+            />
+          </div>
+
+          <!-- Mobile Right Controls -->
+          <div
+            class="lg:hidden flex justify-end items-center space-x-2 font-semibold"
+          >
+            <button
+              id="theme-toggle-mobile"
+              aria-label="Toggle dark mode"
+              class="theme-toggle-button"
+              type="button"
+            >
+              <!-- Sun (light) -->
+              <svg
+                class="icon icon-sun w-6 h-6 theme-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 4V2M12 22v-2M4.93 4.93L3.51 3.51M20.49 20.49l-1.42-1.42M2 12H4M20 12h2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+              <!-- Moon (dark) -->
+              <svg
+                class="icon icon-moon icon-hidden w-6 h-6 theme-icon hidden"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Desktop Layout -->
           <div class="hidden lg:flex mx-auto justify-start flex-1 min-w-0">
-            <!-- Use Tailwind utilities for size/weight/spacing and divide-x for separators.
-               A small inline style sets the Nobel Uno font-family (uses -- variable).
-          -->
             <nav
               class="flex text-sm theme-text font-black divide-x theme-border overflow-x-auto no-scrollbar whitespace-nowrap flex-1"
             >
@@ -76,47 +190,12 @@
               >
             </nav>
           </div>
-          <!-- Mobile Logo (shown only on mobile) -->
-          <div class="lg:hidden flex items-center mt-5">
-            <img
-              src="/src/images/logo-fr.svg"
-              alt="SNRT News"
-              class="h-8 logo-light"
-            />
-            <img
-              src="/src/images/logo_darkmode.png"
-              alt="SNRT News"
-              class="h-8 logo-dark"
-            />
-          </div>
 
-          <!-- Right: hamburger (mobile) + lang + theme -->
+          <!-- Desktop Right Controls -->
           <div
-            class="flex justify-center items-center space-x-4 mt-5 font-semibold"
+            class="hidden lg:flex justify-center items-center space-x-4 font-semibold"
           >
-            <!-- Hamburger Menu Button (Mobile Only) -->
-            <button
-              id="mobile-menu-toggle"
-              aria-label="Open navigation menu"
-              class="lg:hidden flex items-center justify-center w-8 h-8"
-              type="button"
-            >
-              <svg
-                class="w-6 h-6 theme-text"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
             <!-- Search Icon -->
-
             <button
               class="theme-text p-2 rounded transition-colors duration-150 hover:text-[#FF0000]"
             >
@@ -126,7 +205,7 @@
                 viewBox="0 0 20 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="icon"
+                class="theme-icon"
               >
                 <path
                   d="M8.29032 15.2151C10.1774 15.2151 11.9194 14.5753 13.2742 13.5242L17.4839 17.5L18.5 16.5403L14.2903 12.5645C15.4032 11.2849 16.0806 9.63979 16.0806 7.85753C16.0806 3.79032 12.5726 0.5 8.29032 0.5C4.00806 0.5 0.5 3.79032 0.5 7.85753C0.5 11.9247 3.98387 15.2151 8.29032 15.2151ZM8.29032 1.84812C11.7984 1.84812 14.6532 4.54436 14.6532 7.85753C14.6532 11.1707 11.7984 13.8669 8.29032 13.8669C4.78226 13.8669 1.92742 11.1707 1.92742 7.85753C1.92742 4.54436 4.78226 1.84812 8.29032 1.84812Z"
@@ -136,6 +215,7 @@
               </svg>
             </button>
 
+            <!-- Desktop Theme Toggle -->
             <button
               id="theme-toggle-nav"
               aria-label="Toggle dark mode"
@@ -144,7 +224,7 @@
             >
               <!-- Sun (light) -->
               <svg
-                class="icon icon-sun"
+                class="icon icon-sun w-6 h-6 theme-icon"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +247,7 @@
               </svg>
               <!-- Moon (dark) -->
               <svg
-                class="icon icon-moon icon-hidden"
+                class="icon icon-moon icon-hidden w-6 h-6 theme-icon hidden"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +286,7 @@
 
       <!-- Red sub nav (Desktop Only) -->
       <div
-        class="bg-[#FF0000] shadow-md hidden lg:flex items-center justify-center h-16"
+        class="bg-[#FF0000] mt-5 md:mt-0 shadow-md min-w-[300px] max-w-[500px] w-full sm:w-full sm:min-w-full overflow-x-auto flex items-center justify-center h-12 md:h-16"
       >
         <div class="site-container mx-auto px-4 py-2 w-full">
           <nav
@@ -288,7 +368,7 @@
             </div>
 
             <button
-              class="bg-black text-white font-bold py-2 px-4 uppercase text-sm hover:bg-gray-800 transition-colors"
+              class="bg-black text-white min-w-[200px] mx-3 font-bold py-2 px-4 uppercase text-sm hover:bg-gray-800 transition-colors"
             >
               intelligence artificielle
             </button>
@@ -443,7 +523,7 @@
       <!-- Mobile Sidebar Navigation -->
       <div
         id="mobile-sidebar"
-        class="fixed inset-y-0 left-0 z-50 w-80 theme-bg-sidebar shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto"
+        class="fixed inset-y-0 left-0 z-50 min-w-80 max-w-[400px] w-full theme-bg-sidebar shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto"
       >
         <!-- Sidebar Header -->
         <div
@@ -461,26 +541,96 @@
               class="h-8 logo-dark"
             />
           </div>
-          <button
-            id="mobile-menu-close"
-            aria-label="Close navigation menu"
-            class="p-2"
-            type="button"
+
+          <div
+            class="flex justify-center items-center space-x-4 mt-5 font-semibold"
           >
-            <svg
-              class="w-6 h-6 theme-text-secondary"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <button
+              id="theme-toggle-nav"
+              aria-label="Toggle dark mode"
+              class="theme-toggle-button"
+              type="button"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
+              <!-- Sun (light) -->
+              <svg
+                class="icon icon-sun"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 4V2M12 22v-2M4.93 4.93L3.51 3.51M20.49 20.49l-1.42-1.42M2 12H4M20 12h2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+              <!-- Moon (dark) -->
+              <svg
+                class="icon icon-moon icon-hidden"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <span
+              class="theme-text text-medium flex items-center gap-2 justify-center cursor-pointer"
+              >FR
+              <svg
+                width="8"
+                height="6"
+                viewBox="0 0 8 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="theme-icon-fill"
+              >
+                <path
+                  d="M-6.81992e-08 1.74807L0 1.14097e-05L4 4.08111L8 3.39792e-07L8 1.74807L4 5.83015L-6.81992e-08 1.74807Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+
+            <button
+              id="mobile-menu-close"
+              aria-label="Close navigation menu"
+              class="p-2"
+              type="button"
+            >
+              <svg
+                class="w-6 h-6 theme-text-secondary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         <!-- Search Bar -->
@@ -626,7 +776,7 @@
         <!-- Newsletter Section -->
         <div class="border-t theme-border p-6">
           <button
-            class="w-full bg-red-600 text-white font-bold py-3 px-4 uppercase text-sm hover:bg-red-700 transition-colors"
+            class="w-[50%] bg-red-600 text-white font-bold py-3 px-4 uppercase text-sm hover:bg-red-700 transition-colors"
           >
             NEWSLETTER
           </button>
@@ -686,7 +836,7 @@
       <!-- Overlay (when sidebar is open) -->
       <div
         id="mobile-sidebar-overlay"
-        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"
+        class="fixed inset-0 bg-black/40 bg-opacity-50 z-40 hidden lg:hidden"
       ></div>
     </header>
     <!-- Main -->
