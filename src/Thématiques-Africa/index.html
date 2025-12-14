@@ -848,103 +848,99 @@
             <h3 class="theme-text text-base md:text-lg font-semibold mb-4">
               ACTUALITÉS
             </h3>
-            <div class="relative hero-bg rounded-lg overflow-hidden">
-              <!-- Content container -->
-              <div
-                class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
-              >
+
+            <div class="relative hero-bg overflow-hidden">
+              <div class="flex flex-col lg:flex-row">
+                <!-- Image column (mobile first) -->
+                <div class="w-full lg:w-[630px] order-1 lg:order-2">
+                  <img
+                    src="Africa-img/Banner-2.jpg"
+                    alt=""
+                    class="w-[350px] h-[200px] md:w-full md:h-auto lg:w-full object-cover"
+                  />
+                </div>
+
+                <!-- Text column -->
                 <div
-                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] theme-bg-surface"
+                  class="w-full lg:w-[330px] order-2 lg:order-1 flex flex-col gap-y-4 md:gap-y-6 px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 theme-bg-surface"
                 >
                   <div
-                    class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                    class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white w-fit text-sm font-semibold px-4"
                   >
-                    <span class="mt-2">AFRICA</span>
+                    AFRICA
                   </div>
 
                   <h4
-                    class="text-lg md:text-xl theme-text font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
+                    class="text-lg md:text-xl theme-text font-bold leading-tight"
                   >
                     "Je n'ai pas de sang sur les mains", se défend le président
                     du Kenya
                   </h4>
 
                   <p
-                    class="w-full max-w-[270px] mx-auto lg:mx-0 text-base font-medium theme-text leading-[150%] capitalize"
+                    class="hidden md:block text-base font-medium theme-text leading-relaxed"
                   >
                     Le 25 juin, la police avait tiré à balles réelles sur la
                     foule qui prenait d'assaut le Parlement. Le chef d'Etat
                     évoque un bilan de 19 tués.
                   </p>
 
-                  <div
-                    class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-                  >
-                    <a
-                      href="#"
-                      class="theme-text text-sm font-bold leading-[100%]"
-                      >En ce moment</a
-                    >
-                  </div>
-                </div>
-
-                <!-- Image column -->
-                <div
-                  class="w-full lg:max-w-[630px] lg:min-w-[400px] h-[250px] md:h-[350px] lg:h-[420px]"
-                >
-                  <img
-                    src="Africa-img/Banner-2.jpg"
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
+                  <a href="#" class="theme-text text-sm font-bold">
+                    En ce moment
+                  </a>
                 </div>
               </div>
             </div>
+
             <!-- img card -->
+
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6"
             >
               <div
-                class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
+                class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start lg:items-start"
               >
                 <img
                   src="./Africa-img/card-1.1.png"
                   alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto max-w-[350px] lg:max-w-[300px] object-cover mx-0"
                 />
                 <!-- badge -->
                 <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-0 lg:mx-0"
                 >
                   <span class="mt-2">AFRICA</span>
                 </div>
 
                 <!-- Text -->
-                <div class="px-4 md:px-0">
+                <div class="">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[350px] text-left theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Election présidentielle en Mauritanie le sortant Mohamed
                     Ould Cheikh El Ghazouani en tête
                   </p>
                   <a
                     href="#"
-                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-left"
                   >
                     Publié à 09h15
                   </a>
                 </div>
               </div>
+
               <div
-                class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
+                class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start lg:items-start"
               >
                 <img
                   src="../images/img-card/card-2.jpg"
                   alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto max-w-[350px] lg:max-w-[300px] object-cover mx-0"
                 />
                 <!-- badge -->
-                <div class="flex items-center justify-center lg:justify-start">
+                <div
+                  class="flex items-center justify-start lg:justify-start gap-2"
+                >
                   <div
                     class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
                   >
@@ -964,47 +960,48 @@
                 </div>
 
                 <!-- Text -->
-                <div class="px-4 md:px-0">
+                <div class="">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[350px] text-left text-black text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     une plateforme dynamique dédiée à la recherche et à la
                     promotion de solutions locales
                   </p>
                   <a
                     href="#"
-                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-left"
                   >
                     Publié à 8h03 | Mis à jour à 9h10
                   </a>
                 </div>
               </div>
+
               <div
-                class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
+                class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start lg:items-start"
               >
                 <img
                   src="./Africa-img/card1.3.png"
                   alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto max-w-[350px] lg:max-w-[300px] object-cover mx-0"
                 />
 
                 <!-- badge -->
                 <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 mx-0 lg:mx-0"
                 >
                   <span class="mt-2 uppercase">AFRICA</span>
                 </div>
                 <!-- Text -->
-                <div class="px-4 md:px-0">
+                <div class="">
                   <p
-                    class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full max-w-[350px] text-left text-black text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Déchets électroniques au Ghana à Arles, une exposition photo
                     décrit une filière économique
                   </p>
                   <a
                     href="#"
-                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-left"
                   >
                     Publié à 7h45
                   </a>
@@ -1014,7 +1011,7 @@
           </article>
 
           <!-- Sidebar -->
-          <aside class="mt-8 lg:mt-0">
+          <aside class="hidden md:block mt-8 lg:mt-0">
             <h3
               class="text-black text-base md:text-lg font-semibold w-full mb-4"
             >
@@ -1116,219 +1113,165 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Africa-img/Videos-1.1.png"
                   alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
+              <div class="flex items-center gap-1">
                 <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
+                  class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
                 >
-                  <span class="mt-2">AFRICA</span>
+                  AFRICA
                 </div>
                 <div
-                  class="bg-black h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4 uppercase"
+                  class="bg-black h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
                 >
-                  <span class="mt-2">Dossier</span>
+                  Dossier
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Déchets électroniques au Ghana à Arles, une exposition photo
                   décrit une filière économique
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Africa-img/Videos1.2.png"
                   alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
-              <div class="flex items-center justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
+
+              <div
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
+              >
+                AFRICA
               </div>
 
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Plongez dans la musique Découvrez l’âme vibrante
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 8h03 | Mis à jour à 9h10
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Africa-img/card1.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
 
-              <!-- badge -->
               <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">AFRICA</span>
+                AFRICA
               </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   connaissances sur la faune et la flore de la région
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 7h45
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Africa-img/VIDEOS1.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
 
-              <!-- badge -->
               <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">AFRICA</span>
+                AFRICA
               </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   un jeune homme de 25 ans, a toujours été fasciné par la nature
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 7h45
                 </a>
               </div>
@@ -1343,160 +1286,120 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
-                <img
-                  src="Africa-img/card3.1.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-              </div>
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card3.1.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
+              <div class="flex items-center justify-start">
                 <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
+                  class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
                 >
-                  <span class="mt-2">AFRICA</span>
+                  AFRICA
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Manifestations au Kenya : on vous explique la situation dans
                   le pays
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
-                <img
-                  src="Africa-img/card3.2.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-              </div>
-              <!-- badge -->
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card3.2.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div class="flex items-center justify-start">
                 <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                  class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
                 >
-                  <span class="mt-2">AFRICA</span>
+                  AFRICA
                 </div>
               </div>
 
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Au Kenya, le président retire le projet de budget à l'origine
                   des manifestations meurtrières
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
-                <img
-                  src="Africa-img/card3.3.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card3.3.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
+              <div class="flex items-center gap-1">
+                <div
+                  class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
+                >
+                  AFRICA
+                </div>
+                <div
+                  class="bg-black h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
+                >
+                  ESPACE PARTENAIRES
+                </div>
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
-                <div
-                  class="bg-black h-[30px] flex items-center justify-center text-white max-w-7xl text-sm font-semibold px-4 uppercase"
-                >
-                  <span class="mt-2"> ESPACE PARTENAIRES</span>
-                </div>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Jean-Claude Naimro de Kassav une résonance chez Aya Nakamura,
                   Maître Gims et bien d'autres
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card.3.4.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card.3.4.png"
-                  alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-              >
-                <span class="mt-2 uppercase">AFRICA</span>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Art-thérapie : à Lyon, le photographe béninois Louis Oke-Agbo
                   partage sa méthode de guérison
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
@@ -1511,154 +1414,108 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card4.1.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card4.1.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
-              </div>
-
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
+                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
                   a fait 20 morts en une semaine
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card4.2.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card4.2.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-              </div>
-              <!-- badge -->
-              <div class="flex items-center justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
+                AFRICA
               </div>
 
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Denis Sassou Nguesso chez Vladimir Poutine, coulisses d’une
                   visite très amicale
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card4.3.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card4.3.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Deux morts dans l’attaque d’un convoi humanitaire
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card-4.4.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card-4.4.png"
-                  alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-              >
-                <span class="mt-2 uppercase">AFRICA</span>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Plus de la moitié de la population confrontée à « une
-                  insécurité alimentaire aiguë »
+                  Plus de la moitié de la population confrontée à « une
+                  insécurité alimentaire aiguë »
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
@@ -1673,160 +1530,116 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card3.1.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card3.1.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
-              </div>
-
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Manifestations au Kenya : on vous explique la situation dans
                   le pays
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card3.2.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card3.2.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-              </div>
-              <!-- badge -->
-              <div class="flex items-center justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
+                AFRICA
               </div>
 
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Au Kenya, le président retire le projet de budget à l'origine
                   des manifestations meurtrières
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
-                <img
-                  src="Africa-img/card3.3.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card3.3.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
+              <div class="flex items-center gap-1">
+                <div
+                  class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
+                >
+                  AFRICA
+                </div>
+                <div
+                  class="bg-black h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
+                >
+                  ESPACE PARTENAIRES
+                </div>
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
-                <div
-                  class="bg-black h-[30px] flex items-center justify-center text-white max-w-7xl text-sm font-semibold px-4 uppercase"
-                >
-                  <span class="mt-2"> ESPACE PARTENAIRES</span>
-                </div>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Jean-Claude Naimro de Kassav une résonance chez Aya Nakamura,
                   Maître Gims et bien d'autres
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card.3.4.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card.3.4.png"
-                  alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-              >
-                <span class="mt-2 uppercase">AFRICA</span>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Art-thérapie : à Lyon, le photographe béninois Louis Oke-Agbo
                   partage sa méthode de guérison
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
@@ -1841,164 +1654,120 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card4.1.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card4.1.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
-              </div>
-
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
+                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
                   a fait 20 morts en une semaine
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card4.2.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card4.2.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-              </div>
-              <!-- badge -->
-              <div class="flex items-center justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
+                AFRICA
               </div>
 
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Denis Sassou Nguesso chez Vladimir Poutine, coulisses d’une
                   visite très amicale
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card4.3.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card4.3.png"
-                  alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div class="flex items-center justify-center lg:justify-start">
-                <div
-                  class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold min-w-[80px] uppercase"
-                >
-                  <span class="mt-2">AFRICA</span>
-                </div>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Deux morts dans l’attaque d’un convoi humanitaire
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div
-              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
-            >
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <img
+                src="Africa-img/card-4.4.png"
+                alt=""
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+              />
+
               <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <img
-                  src="Africa-img/card-4.4.png"
-                  alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
+                AFRICA
               </div>
 
-              <!-- badge -->
-              <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
-              >
-                <span class="mt-2 uppercase">AFRICA</span>
-              </div>
-              <!-- Text -->
-              <div
-                class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0"
-              >
+              <div class="text-left">
                 <p
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Plus de la moitié de la population confrontée à « une
-                  insécurité alimentaire aiguë »
+                  Plus de la moitié de la population confrontée à « une
+                  insécurité alimentaire aiguë »
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- VOIR PLUS -->
         <div
           class="theme-bg-surface h-[60px] mx-auto flex items-center justify-center text-black max-w-[630px] text-xl font-semibold my-[90px] hover:bg-gray-600 hover:text-white transition-all duration-200 cursor-pointer"
         >
-          <span>VOIR PLUS</span>
+          VOIR PLUS
         </div>
       </section>
     </main>

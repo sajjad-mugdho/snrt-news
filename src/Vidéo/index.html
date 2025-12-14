@@ -851,7 +851,7 @@
           <!-- Left Column -->
           <div class="w-full md:w-auto">
             <!-- List wrapper with top/bottom borders -->
-            <div class="max-w-[520px]">
+            <div class="w-full max-w-[350px] md:max-w-[520px] mx-auto">
               <!-- Item 1 -->
               <div
                 class="flex items-start gap-4 py-[18px] border-b border-black"
@@ -1093,15 +1093,17 @@
           </div>
 
           <!-- Right Column (Video Thumbnail) -->
-          <div class="relative">
+          <div
+            class="relative w-fit mx-auto md:mx-0 md:w-auto order-first md:order-last"
+          >
             <img
               src="Video-img/Video-banner.png"
               alt="Video Preview"
-              class="w-full object-cover"
+              class="object-cover w-[350px] h-[200px] md:w-full md:h-auto"
             />
             <!-- Play Button -->
             <div
-              class="absolute top-0 right-0 bg-red-600 text-white w-8 h-8 flex items-center justify-center r"
+              class="absolute top-0 right-0 bg-red-600 text-white w-8 h-8 flex items-center justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1128,176 +1130,143 @@
       <section class="theme-bg-surface py-6 md:py-8 lg:py-10">
         <div class="site-container max-w-[400px] mx-auto lg:max-w-none lg:mx-0">
           <h1 class="text-xl md:text-2xl font-bold mb-6 uppercase px-4 md:px-0">
-            VIDéos partenaires
+            VIDÉOS PARTENAIRES
           </h1>
 
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="../EspacePartenaires-/Photo-Espace/espace2.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Prenez Soin de Votre Peau avec les Produits de Cosmétiques
+                  Prenez soin de votre peau avec les produits de cosmétiques
                   Yves Rocher
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="../EspacePartenaires-/Photo-Espace/espace2.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Voyagez Confortablement avec Royal Air Maroc : Découvrez Nos
-                  Offres Exclusives
+                  Voyagez confortablement avec Royal Air Maroc : découvrez nos
+                  offres exclusives
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="../EspacePartenaires-/Photo-Espace/espace2.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Les Avantages de la Nouvelle Application Mobile de Banque
+                  Les avantages de la nouvelle application mobile de Banque
                   Populaire
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="../Thématiques-Africa/Africa-img/VIDEOS1.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Explorez la douceur de la nature et les plantes en africa park
+                  Explorez la douceur de la nature et les plantes en Africa Park
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                  >Publié à 09h15
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
+                  Publié à 09h15
                 </a>
               </div>
             </div>
@@ -1311,192 +1280,159 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Video1.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF6F61] h-[30px] flex items-center justify-center text-white max-w-22.5 text-sm font-semibold px-4"
+                class="bg-[#FF6F61] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Lifestyle</span>
+                Lifestyle
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Deadpool & Wolverine amasse 205 millions US dès sa sortie
+                  Deadpool & Wolverine amasse 205 millions US dès sa sortie
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/video1.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#24D5CC] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">SPORT</span>
+                Sport
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Dernier tour de piste pour la flamme olympique
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative">
                 <img
                   src="Video-img/video1.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#4682B4] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Monde</span>
+                Monde
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Donald Trump critique Kamala Harris sur ses positions quant au
                   Moyen-Orient
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/video1.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF6F61] h-[30px] flex items-center justify-center text-white max-w-22.5 text-sm font-semibold px-4"
+                class="bg-[#FF6F61] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Lifestyle</span>
+                Lifestyle
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Céline Dion était en mode « checkez-moi ben aller ! », selon
+                  Céline Dion était en mode « checkez-moi ben aller ! », selon
                   Scott Price
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
@@ -1511,194 +1447,161 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Video2.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FFC300] h-[30px] flex items-center justify-center text-white max-w-22.5 text-sm font-semibold px-4"
+                class="bg-[#FFC300] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">économie</span>
+                Économie
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
+                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
                   a fait 20 morts en une semaine
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Vide2.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">AFRICA</span>
+                Africa
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Denis Sassou Nguesso chez Vladimir Poutine, coulisses d’une
                   visite très amicale
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative">
                 <img
                   src="Video-img/Video2.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#708090] h-[30px] flex items-center justify-center text-white max-w-29 text-sm font-semibold px-4"
+                class="bg-[#708090] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Technologie</span>
+                Technologie
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Le Maroc se Positionne comme un Leader de l'Innovation
-                  Technologique en Afrique
+                  Le Maroc se positionne comme un leader de l'innovation
+                  technologique en Afrique
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Video2.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">AFRICA</span>
+                Africa
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Plus de la moitié de la population confrontée à « une
-                  insécurité alimentaire aiguë »
+                  Plus de la moitié de la population confrontée à « une
+                  insécurité alimentaire aiguë »
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
@@ -1706,198 +1609,166 @@
           </div>
         </div>
       </section>
+
       <!-- Section-Space-5 -->
       <section class="py-6 md:py-8 lg:py-10">
         <div class="site-container max-w-[400px] mx-auto lg:max-w-none lg:mx-0">
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Video1.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF6F61] h-[30px] flex items-center justify-center text-white max-w-22.5 text-sm font-semibold px-4"
+                class="bg-[#FF6F61] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Lifestyle</span>
+                Lifestyle
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Deadpool & Wolverine amasse 205 millions US dès sa sortie
+                  Deadpool & Wolverine amasse 205 millions US dès sa sortie
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/video1.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#24D5CC] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">SPORT</span>
+                Sport
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Dernier tour de piste pour la flamme olympique
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative">
                 <img
                   src="Video-img/video1.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#4682B4] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Monde</span>
+                Monde
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Donald Trump critique Kamala Harris sur ses positions quant au
                   Moyen-Orient
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/video1.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF6F61] h-[30px] flex items-center justify-center text-white max-w-22.5 text-sm font-semibold px-4"
+                class="bg-[#FF6F61] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Lifestyle</span>
+                Lifestyle
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Céline Dion était en mode « checkez-moi ben aller ! », selon
+                  Céline Dion était en mode « checkez-moi ben aller ! », selon
                   Scott Price
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
@@ -1912,204 +1783,173 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Video2.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FFC300] h-[30px] flex items-center justify-center text-white max-w-22.5 text-sm font-semibold px-4"
+                class="bg-[#FFC300] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">économie</span>
+                Économie
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
+                  Nigeria : recherches accélérées contre la fièvre de Lassa, qui
                   a fait 20 morts en une semaine
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Vide2.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">AFRICA</span>
+                Africa
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
                   Denis Sassou Nguesso chez Vladimir Poutine, coulisses d’une
                   visite très amicale
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative">
                 <img
                   src="Video-img/Video2.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#708090] h-[30px] flex items-center justify-center text-white max-w-29 text-sm font-semibold px-4"
+                class="bg-[#708090] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">Technologie</span>
+                Technologie
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Le Maroc se Positionne comme un Leader de l'Innovation
-                  Technologique en Afrique
+                  Le Maroc se positionne comme un leader de l'innovation
+                  technologique en Afrique
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
               <div class="relative">
                 <img
                   src="Video-img/Video2.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
-                  class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" fill="#FF0000" />
                     <path
-                      d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                      d="M27.78 19.44L15.28 26.66V12.23L27.78 19.44Z"
                       fill="white"
                     />
                   </svg>
                 </div>
               </div>
-              <!-- badge -->
+
               <div
-                class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white max-w-16 text-sm font-semibold px-4"
+                class="bg-[#FF4500] h-[30px] flex items-center px-4 text-white text-sm font-semibold uppercase"
               >
-                <span class="mt-2 uppercase">AFRICA</span>
+                Africa
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[20px] capitalize mb-3"
+                  class="w-[350px] text-black text-base font-bold leading-tight capitalize mb-3"
                 >
-                  Plus de la moitié de la population confrontée à « une
-                  insécurité alimentaire aiguë »
+                  Plus de la moitié de la population confrontée à « une
+                  insécurité alimentaire aiguë »
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié à 8h03
                 </a>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- VOIR PLUS -->
         <div
           class="theme-bg-surface h-[60px] mx-auto flex items-center justify-center text-black max-w-[630px] text-xl font-semibold my-[90px] hover:bg-gray-600 hover:text-white transition-all duration-200 cursor-pointer"
         >
-          <span>VOIR PLUS</span>
+          VOIR PLUS
         </div>
       </section>
     </main>
