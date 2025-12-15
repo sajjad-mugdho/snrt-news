@@ -849,12 +849,12 @@
               ACTUALITÉS
             </h3>
             <div class="relative hero-bg rounded-lg overflow-hidden">
-              <!-- Content container -->
               <div
-                class="relative flex flex-col lg:flex-row items-start my-4 md:my-6"
+                class="relative flex flex-col-reverse lg:flex-row items-start my-4 md:my-6"
               >
+                <!-- TEXT COLUMN -->
                 <div
-                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 min-h-[300px] md:h-[380px] lg:h-[420px] theme-bg-surface"
+                  class="flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-start w-full lg:max-w-[330px] px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 theme-bg-surface"
                 >
                   <div
                     class="bg-black h-[30px] flex items-center justify-center text-white max-w-[120px] text-sm font-semibold px-4"
@@ -863,47 +863,67 @@
                   </div>
 
                   <h4
-                    class="text-lg md:text-xl text-black font-bold w-full lg:w-[270px] leading-[110%] md:leading-[100%]"
+                    class="text-lg md:text-xl text-black font-bold w-[330px] mx-auto lg:mx-0 lg:w-[270px] leading-[110%]"
                   >
                     Découverte d'un Oasis de Dattes en Plein Désert du Sahara
                     Marocain ?
                   </h4>
 
                   <p
-                    class="w-full max-w-[270px] mx-auto lg:mx-0 text-base font-medium text-black leading-[150%] capitalize"
+                    class="hidden md:block w-full max-w-[270px] mx-auto lg:mx-0 text-base font-medium text-black leading-[150%] capitalize"
                   >
                     Dans une révélation surprenante, une expédition menée par
                     des archéologues marocains a découvert un oasis caché dans
-                    les profondeurs du désert du Sahara, où les dattes géantes
-                    poussent à une vitesse incroyable.
+                    les profondeurs du désert du Sahara.
                   </p>
 
-                  <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
-                    <a
-                      href="#"
-                      class="text-black text-sm font-bold leading-[100%]"
-                      >Lire la suite</a
-                    >
-                  </div>
+                  <a href="#" class="text-black text-sm font-bold">
+                    Lire la suite
+                  </a>
                 </div>
 
-                <!-- Image column -->
-                <div
-                  class="w-full lg:max-w-[630px] relative lg:min-w-[400px] h-[250px] md:h-[350px] lg:h-[420px]"
-                >
+                <!-- IMAGE COLUMN -->
+                <div class="w-full lg:w-[630px] order-1 lg:order-2">
                   <img
                     src="images/Fake-bg.png"
                     alt=""
-                    class="w-full h-full object-cover"
+                    class="w-[350px] h-[200px] md:w-full md:h-auto lg:w-full object-cover"
                   />
 
+                  <!-- ICON -->
                   <div
-                    class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
+                    class="w-fit absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center h-8"
+                  >
+                    <svg class="w-4 h-4" viewBox="0 0 14 20" fill="none">
+                      <path
+                        d="M0.94541 3.33349C2.19652 1.31087 4.42135 0 6.9934 0C8.28602 0 9.46826 0.306658 10.525 0.906725C12.6517 2.12011 14.0009 4.24022 14.0009 6.69443C14.0009 9.14864 12.6526 11.5063 10.4005 12.6639C9.76075 12.9847 9.38523 13.598 9.38523 14.3098V15.1048H5.0337V14.3098C5.0337 12.0647 6.28481 10.0563 8.32848 8.98206C9.1484 8.54952 9.63526 7.69864 9.63526 6.69443C9.63526 5.27188 8.48133 4.18437 6.9934 4.18437C5.50546 4.18437 4.35153 5.27188 4.35153 6.69443H0C0 5.46685 0.305702 4.3519 0.94541 3.33349ZM9.38145 20H5.03275V16.1478H9.38145V20Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- img card -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6"
+            >
+              <div class="flex flex-col gap-y-4 md:gap-y-6 items-start">
+                <!-- IMAGE + SVG -->
+                <div class="relative">
+                  <img
+                    src="images/Fake1.1.png"
+                    alt=""
+                    class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
+                  />
+
+                  <!-- SVG -->
+                  <div
+                    class="absolute top-0 right-0 bg-black w-fit h-8 px-2 flex items-center justify-center"
                   >
                     <svg
                       class="w-4 h-4"
-                      width="14"
-                      height="20"
                       viewBox="0 0 14 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -915,58 +935,32 @@
                     </svg>
                   </div>
                 </div>
-              </div>
-            </div>
-            <!-- img card -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6"
-            >
-              <div class="flex flex-col gap-y-4 md:gap-y-6 relative">
-                <img
-                  src="images/Fake1.1.png"
-                  alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
-                />
-                <div
-                  class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
-                >
-                  <svg
-                    class="w-4 h-4"
-                    width="14"
-                    height="20"
-                    viewBox="0 0 14 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.94541 3.33349C2.19652 1.31087 4.42135 0 6.9934 0C8.28602 0 9.46826 0.306658 10.525 0.906725C12.6517 2.12011 14.0009 4.24022 14.0009 6.69443C14.0009 9.14864 12.6526 11.5063 10.4005 12.6639C9.76075 12.9847 9.38523 13.598 9.38523 14.3098V15.1048H5.0337V14.3098C5.0337 12.0647 6.28481 10.0563 8.32848 8.98206C9.1484 8.54952 9.63526 7.69864 9.63526 6.69443C9.63526 5.27188 8.48133 4.18437 6.9934 4.18437C5.50546 4.18437 4.35153 5.27188 4.35153 6.69443H0C0 5.46685 0.305702 4.3519 0.94541 3.33349ZM9.38145 20H5.03275V16.1478H9.38145V20Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-                <!-- badge -->
+
+                <!-- BADGE -->
                 <div
                   class="bg-black h-[30px] flex items-center justify-center text-white max-w-[120px] font-nobelUno font-black text-[14px]"
                 >
                   <span class="mt-2">VRAI OR FAKE</span>
                 </div>
 
-                <!-- Text -->
-                <div class="px-4 md:px-0">
+                <!-- TEXT -->
+                <div class="text-left">
                   <p
-                    class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                    class="w-full text-black text-base font-bold leading-[120%] capitalize mb-2"
                   >
                     Une vache unique en son genre offre du lait au goût
                     chocolaté à Rabat ?
                   </p>
+
                   <a
                     href="#"
-                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                    class="block text-xs text-gray-400 font-bold hover:text-gray-900"
                   >
                     Publié à 09h15
                   </a>
                 </div>
               </div>
+
               <div class="flex flex-col gap-y-4 md:gap-y-6 relative">
                 <img
                   src="images/Fake1.2.png"
@@ -999,7 +993,7 @@
                 </div>
 
                 <!-- Text -->
-                <div class="px-4 md:px-0">
+                <div class="px-0 text-left">
                   <p
                     class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                   >
@@ -1008,7 +1002,7 @@
                   </p>
                   <a
                     href="#"
-                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                    class="block text-xs text-gray-400 font-bold hover:text-gray-900"
                   >
                     Publié à 7h45
                   </a>
@@ -1045,7 +1039,7 @@
                   <span class="mt-2">VRAI OR FAKE</span>
                 </div>
                 <!-- Text -->
-                <div class="px-4 md:px-0">
+                <div class="px-0 text-left">
                   <p
                     class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                   >
@@ -1053,7 +1047,7 @@
                   </p>
                   <a
                     href="#"
-                    class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                    class="block text-xs text-gray-400 font-bold hover:text-gray-900"
                   >
                     Publié à 7h45
                   </a>
@@ -1063,7 +1057,7 @@
           </article>
 
           <!-- Sidebar -->
-          <aside class="mt-8 lg:mt-0">
+          <aside class="hidden md:block mt-8 lg:mt-0">
             <h3
               class="text-black text-base md:text-lg font-semibold w-full mb-4"
             >
@@ -1073,7 +1067,7 @@
               <img
                 src="../images/BG2.jpg"
                 alt="Background"
-                class="w-full h-[210px] lg:h-[250px] max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover opacity-100"
+                class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
               />
               <!-- text section -->
               <ul class="space-y-2 text-sm text-gray-700 mt-3 px-2 md:px-0">
@@ -1156,22 +1150,20 @@
       <section class="theme-bg-surface py-6 md:py-8 lg:py-10">
         <div class="site-container max-w-[400px] mx-auto lg:max-w-none lg:mx-0">
           <h1 class="text-xl md:text-2xl font-bold mb-6 uppercase px-4 md:px-0">
-            FAST-CHEkING
+            FAST-CHECKING
           </h1>
 
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
-              <!-- IMAGE + BADGE -->
-              <div class="relative inline-block w-fit">
+            <!-- CARD 1 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative inline-block">
                 <img
                   src="images/Fake2.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
-
-                <!-- TOP–RIGHT BADGE -->
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 text-white font-nobelUno font-black text-[14px] h-[30px] flex items-center justify-center"
                 >
@@ -1179,31 +1171,27 @@
                 </div>
               </div>
 
-              <!-- TEXT -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   les lits des athlètes aux Jeux Olympiques sont-ils vraiment en
                   carton ?
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
             </div>
 
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+            <!-- CARD 2 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative inline-block">
                 <img
                   src="images/Fake2.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
-
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 text-white font-nobelUno font-black text-[14px] h-[30px] flex items-center justify-center"
                 >
@@ -1211,32 +1199,27 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   il n'y a aucun lien entre le cancer de Kate Middleton et le
                   vaccin contre le Covid-19 ?
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <!-- IMAGE + BADGE -->
-              <div class="relative inline-block w-fit">
+
+            <!-- CARD 3 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative inline-block">
                 <img
                   src="images/Fake2.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
-
-                <!-- TOP–RIGHT BADGE -->
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 text-white font-nobelUno font-black text-[14px] h-[30px] flex items-center justify-center"
                 >
@@ -1244,31 +1227,26 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   l'eau du robinet rend stérile ?
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <!-- IMAGE + BADGE -->
-              <div class="relative inline-block w-fit">
+
+            <!-- CARD 4 -->
+            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start">
+              <div class="relative inline-block">
                 <img
                   src="images/Fake2.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
-
-                <!-- TOP–RIGHT BADGE -->
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 text-white font-nobelUno font-black text-[14px] h-[30px] flex items-center justify-center"
                 >
@@ -1276,18 +1254,14 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   un amateur a-t-il vraiment décodé la signification des
                   peintures pariétales grâce à internet ?
                 </p>
-                <a
-                  href="#"
-                  class="text-xs text-[#FF0000] font-bold hover:text-gray-900"
-                >
+                <a href="#" class="text-xs text-[#FF0000] font-bold">
                   Publié à 09h15
                 </a>
               </div>
@@ -1302,16 +1276,20 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+            <!-- CARD 1 -->
+            <div
+              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake3.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
                 >
+                  <!-- SVG -->
                   <svg
                     class="w-4 h-4"
                     width="14"
@@ -1328,28 +1306,28 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'oxygène est le gaz le plus abondant dans l'atmosphère
                   terrestre ?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 2 -->
+            <div
+              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake3.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1370,28 +1348,28 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'intelligence artificielle peut apprendre seule sans
                   intervention humaine?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 3 -->
+            <div
+              class="flex flex-col gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake3.3.jpg"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1412,28 +1390,28 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'oxygène est le gaz le plus abondant dans l'atmosphère
                   terrestre ?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 4 -->
+            <div
+              class="flex flex-col gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake3.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1454,18 +1432,14 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'intelligence artificielle peut apprendre seule sans
                   intervention humaine?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
@@ -1480,12 +1454,15 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
-              <div class="relative inline-block w-fit">
+            <!-- CARD 1 -->
+            <div
+              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake4.1.jpg"
                   alt=""
-                  class="w-full max-w-[300px] mx-auto lg:mx-0 object-cover h-[200px]"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1506,28 +1483,28 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'oxygène est le gaz le plus abondant dans l'atmosphère
                   terrestre ?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 2 -->
+            <div
+              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake4.2.jpg"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1548,28 +1525,28 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'intelligence artificielle peut apprendre seule sans
                   intervention humaine?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 3 -->
+            <div
+              class="flex flex-col gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake4.3.jpg"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1590,28 +1567,28 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'oxygène est le gaz le plus abondant dans l'atmosphère
                   terrestre ?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+
+            <!-- CARD 4 -->
+            <div
+              class="flex flex-col gap-y-6 w-full items-start lg:items-start"
+            >
+              <div class="relative inline-block">
                 <img
                   src="images/Fake4.4.jpg"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] lg:w-full lg:h-auto lg:max-w-[300px] object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1632,18 +1609,14 @@
                 </div>
               </div>
 
-              <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="lg:w-[300px] text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'intelligence artificielle peut apprendre seule sans
                   intervention humaine?
                 </p>
-                <a
-                  href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
-                >
+                <a href="#" class="block text-xs text-gray-400 font-bold">
                   Publié le 3 juin
                 </a>
               </div>
@@ -1659,11 +1632,11 @@
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-0"
           >
             <div class="flex flex-col gap-y-4 md:gap-y-6 relative">
-              <div class="relative relative inline-block w-fit">
+              <div class="relative inline-block w-fit">
                 <img
                   src="images/Fack5.1.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-[210px] lg:max-w-[300px] lg:h-auto object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1685,27 +1658,29 @@
               </div>
 
               <!-- Text -->
-              <div class="px-4 md:px-0">
+              <div class="px-0 text-left">
                 <p
-                  class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
+                  class="w-full lg:w-[300px] mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
                   L'oxygène est le gaz le plus abondant dans l'atmosphère
                   terrestre ?
                 </p>
                 <a
                   href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                  class="block text-xs text-gray-400 font-bold hover:text-gray-900"
                 >
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+            <div
+              class="flex flex-col gap-y-4 md:gap-y-6 w-full items-center lg:items-start"
+            >
+              <div class="relative inline-block w-fit">
                 <img
                   src="images/Fack5.2.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-[210px] lg:max-w-[300px] lg:h-auto object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1727,7 +1702,7 @@
               </div>
 
               <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="px-0 text-left">
                 <p
                   class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
@@ -1736,18 +1711,20 @@
                 </p>
                 <a
                   href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                  class="block text-xs text-gray-400 font-bold hover:text-gray-900"
                 >
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
-              <div class="relative relative inline-block w-fit">
+            <div
+              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
+            >
+              <div class="relative inline-block w-fit">
                 <img
                   src="images/Fack5.3.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-[210px] lg:max-w-[300px] lg:h-auto object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1769,7 +1746,7 @@
               </div>
 
               <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="px-0 text-left">
                 <p
                   class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
@@ -1778,18 +1755,20 @@
                 </p>
                 <a
                   href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                  class="block text-xs text-gray-400 font-bold hover:text-gray-900"
                 >
                   Publié le 3 juin
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-y-6 w-full items-center lg:items-start">
+            <div
+              class="flex flex-col gap-y-6 w-full items-center lg:items-start"
+            >
               <div class="relative inline-block w-fit">
                 <img
                   src="images/Fake5.4.png"
                   alt=""
-                  class="w-full h-[210px] lg:h-auto max-w-[400px] lg:max-w-[300px] mx-auto lg:mx-0 object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-[210px] lg:max-w-[300px] lg:h-auto object-cover"
                 />
                 <div
                   class="absolute top-0 right-0 bg-black px-2 py-1 flex items-center justify-center max-w-[33px] h-8"
@@ -1811,7 +1790,7 @@
               </div>
 
               <!-- Text -->
-              <div class="text-center lg:text-left w-full mx-auto lg:mx-0 min-h-[110px] px-2 lg:px-0">
+              <div class="px-0 text-left">
                 <p
                   class="w-full lg:w-[300px] mx-auto lg:mx-0 text-black text-base font-bold leading-[100%] capitalize mb-3"
                 >
@@ -1820,7 +1799,7 @@
                 </p>
                 <a
                   href="#"
-                  class="block text-xs text-gray-400 font-bold hover:text-gray-900 text-center lg:text-left"
+                  class="block text-xs text-gray-400 font-bold hover:text-gray-900"
                 >
                   Publié le 3 juin
                 </a>
@@ -1829,9 +1808,9 @@
           </div>
         </div>
         <div
-          class="theme-bg-surface h-[60px] mx-auto flex items-center justify-center text-black max-w-[630px] text-xl font-semibold my-[90px] hover:bg-gray-600 hover:text-white transition-all duration-200 cursor-pointer"
+          class="theme-bg-surface w-[205px] h-[60px] md:w-full max-w-[630px] mx-auto flex items-center justify-center text-black text-xl font-semibold my-[90px] hover:bg-gray-600 hover:text-white transition-all duration-200 cursor-pointer"
         >
-          <span>VOIR PLUS</span>
+          VOIR PLUS
         </div>
       </section>
     </main>

@@ -853,69 +853,69 @@
             </h3>
             <!-- Search row -->
             <form class="flex flex-col gap-3 md:gap-4 lg:gap-6">
-              <!-- Inputs group -->
-              <div class="flex flex-col sm:flex-row w-full gap-3 md:gap-4">
-                <!-- Main search -->
-                <input
-                  type="text"
-                  placeholder="Rechercher…"
-                  class="w-full h-[60px] border-2 border-black/60 px-4 text-sm outline-none focus:ring-2 focus:ring-black"
-                />
+              <!-- Main search -->
+              <input
+                type="text"
+                placeholder="Rechercher…"
+                class="w-full h-[60px] border-2 border-black/60 px-4 text-sm outline-none focus:ring-2 focus:ring-black"
+              />
 
-                <!-- Secondary SELECTs -->
-                <div
-                  class="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto"
-                >
+              <!-- Filters + Button -->
+              <div class="flex gap-2 w-full">
+                <!-- SELECTS (COLUMN) -->
+                <div class="flex flex-col gap-2 flex-1">
                   <select
-                    class="w-full sm:w-[190px] h-[60px] border border-black/60 px-4 text-sm outline-none focus:ring-2 focus:ring-black bg-white"
+                    class="w-full h-[60px] border border-black/60 px-3 text-sm outline-none focus:ring-2 focus:ring-black bg-white"
                   >
-                    <option value="">Filtre</option>
+                    <option value="">Les plus récents</option>
                     <option value="recent">Les plus récentes</option>
                     <option value="pertinent">Les plus pertinentes</option>
                   </select>
 
                   <select
-                    class="w-full sm:w-[190px] h-[60px] border border-black/60 px-4 text-sm outline-none focus:ring-2 focus:ring-black bg-white"
+                    class="w-full h-[60px] border border-black/60 px-3 text-sm outline-none focus:ring-2 focus:ring-black bg-white"
                   >
-                    <option value="">Filtre</option>
+                    <option value="">Les plus pertinents</option>
                     <option value="recent">Les plus récentes</option>
                     <option value="pertinent">Les plus pertinentes</option>
                   </select>
                 </div>
-              </div>
 
-              <!-- Button -->
-              <button
-                type="submit"
-                class="h-[60px] px-6 bg-black text-white text-sm font-semibold w-full sm:w-auto"
-              >
-                CHERCHER
-              </button>
+                <!-- BUTTON -->
+                <button
+                  type="submit"
+                  class="h-[60px] px-4 bg-black text-white text-sm font-semibold whitespace-nowrap self-start"
+                >
+                  CHERCHER
+                </button>
+              </div>
             </form>
 
             <!-- img card -->
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 mt-6"
             >
+              <!-- CARD 1 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <img
                   src="./images/img-card/card1.jpg"
                   alt=""
-                  class="w-full h-auto object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
+
                 <!-- badge -->
                 <div
-                  class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4"
                 >
                   <span class="mt-2">MONDE</span>
                 </div>
 
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     La Ville qui Ne Dort Jamais Une Vue Nocturne de New York Les
                     rues parsemées de taxis jaunes
@@ -924,22 +924,23 @@
                     href="#"
                     class="text-xs text-gray-400 font-bold hover:text-gray-900"
                   >
-                    Publié à Publié le 3 juin
+                    Publié le 3 juin
                   </a>
                 </div>
               </div>
+
+              <!-- CARD 2 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <img
                   src="./images/img-card/card-2.jpg"
                   alt=""
-                  class="w-full h-auto object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-                <!-- badge -->
-                <div
-                  class="flex items-center justify-center lg:justify-start gap-2 md:gap-3 flex-wrap"
-                >
+
+                <!-- badges -->
+                <div class="flex items-center gap-2 flex-wrap">
                   <div
                     class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4"
                   >
@@ -950,7 +951,6 @@
                   >
                     <span class="mt-2">Dossier</span>
                   </div>
-
                   <div
                     class="bg-white h-[30px] min-w-[80px] border-2 border-black flex items-center justify-center theme-text text-sm font-semibold"
                   >
@@ -959,9 +959,9 @@
                 </div>
 
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     une plateforme dynamique dédiée à la recherche et à la
                     promotion de solutions locales
@@ -974,25 +974,28 @@
                   </a>
                 </div>
               </div>
+
+              <!-- CARD 3 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <img
                   src="./images/img-card/card-3.jpg"
                   alt=""
-                  class="w-full h-auto object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
 
                 <!-- badge -->
                 <div
-                  class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 uppercase"
                 >
-                  <span class="mt-2 uppercase">société</span>
+                  <span class="mt-2">société</span>
                 </div>
+
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Une alerte importante a été lancée sur les marchés après la
                     découverte de produits alimentaires contaminés
@@ -1006,47 +1009,45 @@
                 </div>
               </div>
             </div>
+
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 mt-6"
             >
+              <!-- CARD 1 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <div class="relative">
                   <img
                     src="Vidéo/Video-img/video1.3.png"
                     alt=""
-                    class="w-full h-auto object-cover"
+                    class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                   />
+                  <!-- play -->
                   <div
-                    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                   >
-                    <svg
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                       <rect width="40" height="40" fill="#FF0000" />
                       <path
-                        d="M27.7778 19.4427L15.2778 26.6596L15.2778 12.2258L27.7778 19.4427Z"
+                        d="M27.7778 19.4427L15.2778 26.6596V12.2258L27.7778 19.4427Z"
                         fill="white"
                       />
                     </svg>
                   </div>
                 </div>
+
                 <!-- badge -->
                 <div
-                  class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#4682B4] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4"
                 >
                   <span class="mt-2 uppercase">Monde</span>
                 </div>
 
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Donald Trump critique Kamala Harris sur ses positions quant
                     au Moyen-Orient
@@ -1059,17 +1060,19 @@
                   </a>
                 </div>
               </div>
+
+              <!-- CARD 2 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <div class="relative">
                   <img
                     src="Vidéo/Video-img/video1.4.png"
                     alt=""
-                    class="w-full h-auto object-cover"
+                    class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                   />
                   <div
-                    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                   >
                     <svg
                       width="40"
@@ -1086,19 +1089,20 @@
                     </svg>
                   </div>
                 </div>
+
                 <!-- badge -->
                 <div
-                  class="bg-[#FF6F61] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#FF6F61] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4"
                 >
                   <span class="mt-2 uppercase">Lifestyle</span>
                 </div>
 
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
-                    Céline Dion était en mode « checkez-moi ben aller ! », selon
+                    Céline Dion était en mode « checkez-moi ben aller ! », selon
                     Scott Price
                   </p>
                   <a
@@ -1109,17 +1113,19 @@
                   </a>
                 </div>
               </div>
+
+              <!-- CARD 3 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <img
                   src="images/Flower.png"
                   alt=""
-                  class="w-full h-auto object-cover"
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                 />
-                <div
-                  class="flex items-center justify-center lg:justify-start gap-2 md:gap-3 flex-wrap"
-                >
+
+                <!-- badges -->
+                <div class="flex items-center gap-2 flex-wrap">
                   <div
                     class="bg-[#FF6F61] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4"
                   >
@@ -1128,14 +1134,14 @@
                   <div
                     class="bg-black h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 uppercase"
                   >
-                    <span class="mt-2"> Dossier</span>
+                    <span class="mt-2">Dossier</span>
                   </div>
                 </div>
 
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Les Meilleures Plages Propres du Maroc : Où Aller cet Été
                   </p>
@@ -1148,24 +1154,22 @@
                 </div>
               </div>
             </div>
+
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 mt-6"
             >
+              <!-- CARD 1 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
-                <div class="">
-                  <img
-                    src="Thématiques-Africa/Africa-img/card3.3.png"
-                    alt=""
-                    class="w-full h-auto object-cover"
-                  />
-                </div>
+                <img
+                  src="Thématiques-Africa/Africa-img/card3.3.png"
+                  alt=""
+                  class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
+                />
 
-                <!-- badge -->
-                <div
-                  class="flex items-center justify-center lg:justify-start gap-2 md:gap-3 flex-wrap"
-                >
+                <!-- badges -->
+                <div class="flex items-center gap-2 flex-wrap">
                   <div
                     class="bg-[#FF4500] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 uppercase"
                   >
@@ -1174,13 +1178,14 @@
                   <div
                     class="bg-black h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 uppercase"
                   >
-                    <span class="mt-2"> ESPACE PARTENAIRES</span>
+                    <span class="mt-2">ESPACE PARTENAIRES</span>
                   </div>
                 </div>
+
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Jean-Claude Naimro de Kassav une résonance chez Aya
                     Nakamura, Maître Gims et bien d'autres
@@ -1193,18 +1198,19 @@
                   </a>
                 </div>
               </div>
+
+              <!-- CARD 2 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <div class="relative">
                   <img
                     src="./images/videos/videos3.png"
                     alt=""
-                    class="w-full h-auto object-cover"
+                    class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                   />
-
                   <div
-                    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                   >
                     <svg
                       width="40"
@@ -1224,14 +1230,15 @@
 
                 <!-- badge -->
                 <div
-                  class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#32CD32] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 uppercase"
                 >
-                  <span class="mt-2 uppercase">société</span>
+                  <span class="mt-2">société</span>
                 </div>
+
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Une alerte importante a été lancée sur les marchés après la
                     découverte de produits alimentaires contaminés
@@ -1244,18 +1251,19 @@
                   </a>
                 </div>
               </div>
+
+              <!-- CARD 3 -->
               <div
-                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0"
+                class="flex flex-col gap-y-3 md:gap-y-4 lg:gap-y-6 items-start w-full"
               >
                 <div class="relative">
                   <img
                     src="./images/videos/videos4.png"
                     alt=""
-                    class="w-full h-auto object-cover"
+                    class="w-[350px] h-[200px] md:w-full md:h-auto lg:max-w-[300px] object-cover"
                   />
-
                   <div
-                    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                   >
                     <svg
                       width="40"
@@ -1275,14 +1283,15 @@
 
                 <!-- badge -->
                 <div
-                  class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 mx-auto lg:mx-0"
+                  class="bg-[#24D5CC] h-[30px] flex items-center justify-center text-white text-sm font-semibold px-4 uppercase"
                 >
-                  <span class="mt-2 uppercase">Sport</span>
+                  <span class="mt-2">Sport</span>
                 </div>
+
                 <!-- Text -->
-                <div class="px-2 md:px-0">
+                <div class="text-left">
                   <p
-                    class="w-full theme-text text-base font-bold leading-[100%] capitalize mb-3"
+                    class="theme-text text-base font-bold leading-[100%] capitalize mb-3"
                   >
                     Homme Escalade Des Murs D'escalade trop fort
                   </p>
@@ -1298,7 +1307,7 @@
           </article>
 
           <!-- Sidebar -->
-          <aside class="mt-8 lg:mt-0">
+          <aside class="hidden md:block mt-8 lg:mt-0">
             <h3
               class="text-black text-base md:text-lg font-semibold w-full mb-4 uppercase"
             >
@@ -1388,9 +1397,9 @@
           </aside>
         </section>
         <div
-          class="theme-bg-surface h-[60px] mx-auto flex items-center justify-center text-black max-w-[630px] text-xl font-semibold my-[90px] hover:bg-gray-600 hover:text-white transition-all duration-200 cursor-pointer"
+          class="theme-bg-surface w-[205px] h-[60px] md:w-full max-w-[630px] mx-auto flex items-center justify-center text-black text-xl font-semibold my-[90px] hover:bg-gray-600 hover:text-white transition-all duration-200 cursor-pointer"
         >
-          <span>VOIR PLUS</span>
+          VOIR PLUS
         </div>
       </div>
     </main>
